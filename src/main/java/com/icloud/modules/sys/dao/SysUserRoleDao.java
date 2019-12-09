@@ -2,14 +2,12 @@ package com.icloud.modules.sys.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.icloud.modules.sys.entity.SysUserRoleEntity;
-import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
 /**
  * 用户与角色对应关系
  */
-@Mapper
 public interface SysUserRoleDao extends BaseMapper<SysUserRoleEntity> {
 	
 	/**

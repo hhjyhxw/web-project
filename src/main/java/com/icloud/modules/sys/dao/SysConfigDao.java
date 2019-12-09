@@ -2,7 +2,6 @@ package com.icloud.modules.sys.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.icloud.modules.sys.entity.SysConfigEntity;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 /**
@@ -10,7 +9,6 @@ import org.apache.ibatis.annotations.Param;
  *
  * @author Mark sunlightcs@gmail.com
  */
-@Mapper
 public interface SysConfigDao extends BaseMapper<SysConfigEntity> {
 
 	/**

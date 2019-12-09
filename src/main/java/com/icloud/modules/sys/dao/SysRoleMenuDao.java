@@ -1,14 +1,12 @@
 package com.icloud.modules.sys.dao;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.icloud.modules.sys.entity.SysRoleMenuEntity;
-import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
 /**
  * 角色与菜单对应关系
  */
-@Mapper
 public interface SysRoleMenuDao extends BaseMapper<SysRoleMenuEntity> {
 	
 	/**

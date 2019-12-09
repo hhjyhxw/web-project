@@ -2,10 +2,13 @@ package com.icloud.config.interceptor;
 
 import com.icloud.config.resolver.LoginUserHandlerMethodArgumentResolver;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import java.util.List;
 
@@ -30,16 +33,40 @@ class InterceptorsStack implements WebMvcConfigurer {
 //        registry.addInterceptor(permissionsInterceptor).addPathPatterns(new String[] { "/admin/**" }).addPathPatterns(new String[] { "/backpage/**" });
 //        registry.addInterceptor(new AddTokenInterceptor()).addPathPatterns(new String[] { "/beanGoods/goodsDetail" });
 //        registry.addInterceptor(new RemoveTokenInterceptor()).addPathPatterns(new String[] { "/checkToken/removeToken" });
-        registry.addInterceptor(xcxLoginInterceptor).addPathPatterns(new String[] { "/xcxpath/**" }).excludePathPatterns(new String[] { "/xcxpath/xcxUserLogin/**" });
+        registry.addInterceptor(xcxLoginInterceptor).addPathPatterns(new String[]{"/xcxpath/**"}).excludePathPatterns(new String[]{"/xcxpath/xcxUserLogin/**"});
 //        registry.addInterceptor(new ThirdInterfaceInterceptor()).addPathPatterns(new String[] { "/thirdInterfacePath/**" });
     }
 
     /**
      * 参数处理拦截
+     *
      * @param argumentResolvers
      */
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
         argumentResolvers.add(loginUserHandlerMethodArgumentResolver);
     }
+
+    /**
+     * 静态资源处理
+     *
+     * @param registry
+     */
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/statics/**").addResourceLocations("classpath:/statics/");
+    }
+
+
+
+//    @Bean
+//    public InternalResourceViewResolver viewResolver() {
+//        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+//        viewResolver.setViewClass(HandleResourceViewExists.class); //设置检查器
+//        viewResolver.setPrefix("/");
+//        viewResolver.setSuffix(".ftl");
+//        viewResolver.setOrder(1);
+//        viewResolver.setContentType("text/html;charset=UTF-8");
+//        return viewResolver;
+//    }
 }

@@ -51,7 +51,7 @@ spring:
         expose-request-attributes: true  #req访问request
         expose-session-attributes: true  #req访问request
         request-context-attribute: request  #req访问request
-        suffix: .ftl  #后缀名
+        suffix: .html  #后缀名
         content-type: text/html
         enabled: true
         cache: false #缓存配置
