@@ -1,5 +1,6 @@
 package com.icloud.modules.generate.service;
 
+import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.icloud.common.PageUtils;
@@ -8,6 +9,8 @@ import com.icloud.modules.generate.dao.GeneratorDao;
 import com.icloud.modules.generate.utils.GenUtils;
 import com.icloud.modules.generate.utils.Query;
 import org.apache.commons.io.IOUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +25,9 @@ import java.util.zip.ZipOutputStream;
  */
 @Service
 public class SysGeneratorService {
+
+    private Logger log = LoggerFactory.getLogger(getClass());
+
 	@Autowired
 	private GeneratorDao generatorDao;
 
@@ -41,9 +47,12 @@ public class SysGeneratorService {
 	}
 
 	public byte[] generatorCode(String[] tableNames,String moduleName) {
+
+        log.info("moduleName____"+moduleName);
+        log.info("null.equals(moduleName)===================="+("null".equals(moduleName)));
 		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 		ZipOutputStream zip = new ZipOutputStream(outputStream);
-
+        String tempmoduleName = moduleName;
 		for(String tableName : tableNames){
 			//查询表信息
 			Map<String, String> table = queryTable(tableName);
@@ -51,10 +60,14 @@ public class SysGeneratorService {
 			List<Map<String, String>> columns = queryColumns(tableName);
 			//生成代码
             String[] arry = tableName.split("_");
-            if(!StringUtil.checkStr(moduleName) && arry!=null && arry.length>1){
-                moduleName = arry[1];
+            log.info("arry======================================================="+ JSON.toJSONString(arry));
+            if(!"".equals(moduleName) && StringUtil.checkStr(moduleName) && arry!=null && arry.length>1){
+                tempmoduleName = arry[1];
+            }else {
+                tempmoduleName = moduleName;
             }
-			GenUtils.generatorCode(table, columns, zip,moduleName);
+            log.info("tempmoduleName======"+tempmoduleName);
+			GenUtils.generatorCode(table, columns, zip,tempmoduleName);
 		}
 		IOUtils.closeQuietly(zip);
 		return outputStream.toByteArray();

@@ -51,7 +51,7 @@ public class ${className}Controller {
     @RequestMapping("/info/{${pk.attrname}}")
     @RequiresPermissions("${moduleName}:${pathName}:info")
     public R info(@PathVariable("${pk.attrname}") ${pk.attrType} ${pk.attrname}){
-        ${className} ${classname} = (${classname})${classname}Service.getById(${pk.attrname});
+        ${className} ${classname} = (${className})${classname}Service.getById(${pk.attrname});
 
         return R.ok().put("${classname}", ${classname});
     }
