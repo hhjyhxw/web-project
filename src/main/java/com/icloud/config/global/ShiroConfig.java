@@ -37,7 +37,7 @@ public class ShiroConfig {
      */
     @Bean
     @ConditionalOnProperty(prefix = "ohoh", name = "cluster", havingValue = "false")
-    public DefaultWebSessionManager sessionManager(@Value("${renren.globalSessionTimeout:3600}") long globalSessionTimeout){
+    public DefaultWebSessionManager sessionManager(@Value("${ohoh.globalSessionTimeout:3600}") long globalSessionTimeout){
         DefaultWebSessionManager sessionManager = new DefaultWebSessionManager();
         sessionManager.setSessionValidationSchedulerEnabled(true);
         sessionManager.setSessionIdUrlRewritingEnabled(false);
@@ -85,6 +85,10 @@ public class ShiroConfig {
         filterMap.put("/sys/login", "anon");
         filterMap.put("/favicon.ico", "anon");
         filterMap.put("/captcha.jpg", "anon");
+
+        filterMap.put("/xcxpath/**", "anon");//放行小程序端
+        filterMap.put("/thirdInterfacePath/**", "anon");//放行第三放接口
+
         filterMap.put("/**", "authc");
         shiroFilter.setFilterChainDefinitionMap(filterMap);
 

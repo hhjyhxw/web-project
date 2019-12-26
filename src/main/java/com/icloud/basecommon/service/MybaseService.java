@@ -1,6 +1,7 @@
 package com.icloud.basecommon.service;
 
-import com.github.pagehelper.PageInfo;
+import com.icloud.common.PageUtils;
+
 import java.util.Map;
 
 public interface MybaseService<T> {
@@ -9,5 +10,8 @@ public interface MybaseService<T> {
      * @return
      * @throws Exception
      */
-    public PageInfo<T> findByPage(int pageNo, int pageSize, Map<String, Object> query);
+    public PageUtils<T> findByPage(int pageNo, int pageSize, Map<String, Object> query);
+
+
+
 }

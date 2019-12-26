@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import java.io.Serializable;
 import java.util.List;
 
-public class PageUtils implements Serializable {
+public class PageUtils<T> implements Serializable {
     private static final long serialVersionUID = 1L;
     /**
      * 总记录数

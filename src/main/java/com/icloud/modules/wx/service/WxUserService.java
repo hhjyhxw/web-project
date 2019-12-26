@@ -1,18 +1,11 @@
 package com.icloud.modules.wx.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
-import com.icloud.basecommon.model.Query;
-
-import com.icloud.basecommon.service.MybaseServiceImpl;
+import com.icloud.basecommon.service.BaseServiceImpl;
 import com.icloud.modules.wx.dao.WxUserMapper;
 import com.icloud.modules.wx.entity.WxUser;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
-import java.util.Map;
 
 /**
  * 
@@ -22,7 +15,7 @@ import java.util.Map;
  */
 @Service
 @Transactional
-public class WxUserService extends MybaseServiceImpl<WxUserMapper, WxUser> {
+public class WxUserService extends BaseServiceImpl<WxUserMapper, WxUser> {
 
     public WxUser findByOpenId(String openId) {
         QueryWrapper<WxUser> queryWrapper = new QueryWrapper<WxUser>();

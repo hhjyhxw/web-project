@@ -1,8 +1,5 @@
 package com.icloud.modules.sys.entity;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -19,7 +16,8 @@ public class SysDeptEntity implements Serializable {
 	/**
 	 * 部门ID
 	 */
-	@TableId
+    /*  */
+    @TableId(value="dept_id", type= IdType.AUTO)
 	private Long deptId;
 	/**
 	 * 上级部门ID，一级部门为0

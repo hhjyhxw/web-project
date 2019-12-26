@@ -60,8 +60,9 @@ mybatis-plus:
 ohoh:
   cluster: true  #集群配置  true集群环境   false单机环境，还需打开pom.xml里的spring-session-data-redis注释
   globalSessionTimeout: 3600   #单机环境，session过期时间为60分钟
-  redis:
-    open: false  #是否开启redis缓存  true开启   false关闭
+  database: mysql #指定数据库，可选值有【mysql、oracle、sqlserver、postgresql】
+  #redis:
+  #  open: false  #是否开启redis缓存  true开启   false关闭
 
 #热部署配置
 devtools:
