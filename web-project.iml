@@ -76,7 +76,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-web:5.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:5.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.2.0.RELEASE" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.tomcat:tomcat-servlet-api:8.0.36" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context-support:5.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:5.2.0.RELEASE" level="project" />
@@ -84,36 +83,16 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.9.4" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-redis:1.4.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: redis.clients:jedis:3.1.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.commons:commons-pool2:2.7.0" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.session:spring-session-data-redis:2.2.0.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.session:spring-session-core:2.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-redis:2.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-keyvalue:2.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:2.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-oxm:5.2.0.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.28" level="project" />
+    <orderEntry type="library" name="Maven: redis.clients:jedis:3.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-pool2:2.7.0" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.session:spring-session-data-redis:2.2.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.session:spring-session-core:2.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.31" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba:druid:1.0.29" level="project" />
-    <orderEntry type="module-library">
-      <library name="Maven: com.alibaba:jconsole:1.8.0">
-        <CLASSES>
-          <root url="jar://C:/Program Files/Java/jdk1.8.0_211/lib/jconsole.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: com.alibaba:tools:1.8.0">
-        <CLASSES>
-          <root url="jar://C:/Program Files/Java/jdk1.8.0_211/lib/tools.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:3.4.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:5.2.0.RELEASE" level="project" />
@@ -123,6 +102,7 @@
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.7-dmr" level="project" />
     <orderEntry type="library" name="Maven: org.quartz-scheduler:quartz:2.2.2" level="project" />
     <orderEntry type="library" name="Maven: c3p0:c3p0:0.9.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.28" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-freemarker:2.1.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.freemarker:freemarker:2.3.29" level="project" />
     <orderEntry type="library" name="Maven: com.github.pagehelper:pagehelper:4.1.6" level="project" />
@@ -202,28 +182,15 @@
     <orderEntry type="library" name="Maven: org.attoparser:attoparser:2.0.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.unbescape:unbescape:1.1.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.thymeleaf.extras:thymeleaf-extras-java8time:3.0.4.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:sharding-jdbc-core:4.0.0-RC3" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:sharding-core-entry:4.0.0-RC3" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:sharding-core-api:4.0.0-RC3" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:sharding-core-common:4.0.0-RC3" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:druid-spring-boot-starter:1.1.10" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:druid:1.1.10" level="project" />
+    <orderEntry type="library" name="Maven: io.shardingjdbc:sharding-jdbc-core:2.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy:indy:2.4.5" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:sharding-core-parse-common:4.0.0-RC3" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:sharding-core-parse-spi:4.0.0-RC3" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.commons:commons-collections4:4.2" level="project" />
-    <orderEntry type="library" name="Maven: org.antlr:antlr4-runtime:4.7.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:sharding-core-parse-sql92:4.0.0-RC3" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:sharding-core-parse-mysql:4.0.0-RC3" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:sharding-core-parse-postgresql:4.0.0-RC3" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:sharding-core-parse-oracle:4.0.0-RC3" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:sharding-core-parse-sqlserver:4.0.0-RC3" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:sharding-core-preprocessor:4.0.0-RC3" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:sharding-core-route:4.0.0-RC3" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:sharding-core-rewrite:4.0.0-RC3" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:sharding-core-execute:4.0.0-RC3" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:sharding-core-merge:4.0.0-RC3" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:sharding-transaction-core:4.0.0-RC3" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:jcl-over-slf4j:1.7.28" level="project" />
     <orderEntry type="library" name="Maven: commons-configuration:commons-configuration:1.10" level="project" />
     <orderEntry type="library" name="Maven: org.apache.velocity:velocity:1.7" level="project" />
+    <orderEntry type="library" name="Maven: com.github.binarywang:weixin-java-mp:3.6.0" level="project" />
+    <orderEntry type="library" name="Maven: com.github.binarywang:weixin-java-common:3.6.0" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:jcl-over-slf4j:1.7.28" level="project" />
+    <orderEntry type="library" name="Maven: org.dom4j:dom4j:2.1.1" level="project" />
   </component>
 </module>

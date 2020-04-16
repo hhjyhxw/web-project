@@ -5,7 +5,7 @@
 
 
     <!-- 基础map -->
-    <resultMap type="${package}.${sonModule}.model.${className}" id="BaseResultMap">
+    <resultMap type="${package}.${moduleName}.entity.${className}" id="BaseResultMap">
 #foreach($column in $columns)
 #if($column.columnName == $pk.columnName)
      <id property="${column.attrname}" column="${column.columnName}"/>

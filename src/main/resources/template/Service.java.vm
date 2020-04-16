@@ -4,7 +4,7 @@ import ${package}.${moduleName}.entity.${className};
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.icloud.basecommon.service.BaseServiceImpl;
-
+import ${package}.${moduleName}.dao.${className}Mapper;
 
 /**
  * ${comments}

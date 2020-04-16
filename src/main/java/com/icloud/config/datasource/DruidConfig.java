@@ -1,131 +1,41 @@
-//package com.icloud.config.datasource;
-//
-//import com.alibaba.druid.pool.DruidDataSource;
-//import com.github.pagehelper.PageHelper;
-//import org.apache.ibatis.plugin.Interceptor;
-//import org.apache.ibatis.session.SqlSessionFactory;
-//import org.mybatis.spring.SqlSessionFactoryBean;
-//import org.springframework.beans.factory.annotation.Value;
-//import org.springframework.context.annotation.Bean;
-//import org.springframework.context.annotation.Configuration;
-//import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-//import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-//import org.springframework.transaction.PlatformTransactionManager;
-//
-//import javax.sql.DataSource;
-//import java.sql.SQLException;
-//import java.util.Properties;
-//
-//@Configuration
-//public class DruidConfig {
-//
-//	/** 数据源 **/
-//	@Value("${spring.datasource.driverClassName}")
-//	String driver;
-//	@Value("${spring.datasource.url}")
-//	String url;
-//	@Value("${spring.datasource.username}")
-//	String username;
-//	@Value("${spring.datasource.password}")
-//	String password;
-//
-//	@Value("${spring.datasource.initialSize}")
-//    private int initialSize;
-//
-//    @Value("${spring.datasource.minIdle}")
-//    private int minIdle;
-//
-//    @Value("${spring.datasource.maxActive}")
-//    private int maxActive;
-//
-//    @Value("${spring.datasource.maxWait}")
-//    private int maxWait;
-//
-//    @Value("${spring.datasource.timeBetweenEvictionRunsMillis}")
-//    private int timeBetweenEvictionRunsMillis;
-//
-//    @Value("${spring.datasource.minEvictableIdleTimeMillis}")
-//    private int minEvictableIdleTimeMillis;
-//
-//    @Value("${spring.datasource.validationQuery}")
-//    private String validationQuery;
-//
-//    @Value("${spring.datasource.testWhileIdle}")
-//    private boolean testWhileIdle;
-//
-//    @Value("${spring.datasource.testOnBorrow}")
-//    private boolean testOnBorrow;
-//
-//    @Value("${spring.datasource.testOnReturn}")
-//    private boolean testOnReturn;
-//
-//    @Value("${spring.datasource.poolPreparedStatements}")
-//    private boolean poolPreparedStatements;
-//
-//    @Value("${spring.datasource.maxPoolPreparedStatementPerConnectionSize}")
-//    private int maxPoolPreparedStatementPerConnectionSize;
-//
-//    @Value("${spring.datasource.filters}")
-//    private String filters;
-//
-//    @Value("{spring.datasource.connectionProperties}")
-//    private String connectionProperties;
-//
-//
-//	@Bean
-//	public DataSource dataSource() {
-//		DruidDataSource druidDataSource = new DruidDataSource();
-//		druidDataSource.setDriverClassName(driver);
-//		druidDataSource.setUrl(url);
-//		druidDataSource.setUsername(username);
-//		druidDataSource.setPassword(password);
-//		druidDataSource.setInitialSize(initialSize);
-//		druidDataSource.setMinIdle(minIdle);
-////        druidDataSource.setMaxActive(maxActive);
-//		druidDataSource.setMaxActive(200);
-//        druidDataSource.setMaxWait(maxWait);
-//        druidDataSource.setTimeBetweenEvictionRunsMillis(timeBetweenEvictionRunsMillis);
-//        druidDataSource.setMinEvictableIdleTimeMillis(minEvictableIdleTimeMillis);
-//        druidDataSource.setValidationQuery(validationQuery);
-//        druidDataSource.setTestWhileIdle(testWhileIdle);
-//        druidDataSource.setTestOnBorrow(testOnBorrow);
-//        druidDataSource.setTestOnReturn(testOnReturn);
-//        druidDataSource.setPoolPreparedStatements(poolPreparedStatements);
-//        druidDataSource.setMaxPoolPreparedStatementPerConnectionSize(maxPoolPreparedStatementPerConnectionSize);
-//    	try {
-//    		druidDataSource.setFilters(filters);
-//		} catch (SQLException e) {
-//			System.out.println("druid configuration initialization filter"+e);
-//		}
-//	    druidDataSource.setConnectionProperties(connectionProperties);
-//
-//		return druidDataSource;
-//	}
-//
-//	/** SqlSessionFactory */
-//	@Bean
-//	public SqlSessionFactory sqlSessionFactoryBean() throws Exception {
-//		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
-//		sqlSessionFactoryBean.setDataSource(dataSource());
-//
-//		PageHelper pageHelper = new PageHelper();
-//		Properties properties = new Properties();
-//		properties.setProperty("reasonable", "true");
-//		properties.setProperty("supportMethodsArguments", "true");
-//		properties.setProperty("returnPageInfo", "check");
-//		properties.setProperty("params", "count=countSql");
-//		pageHelper.setProperties(properties);
-//		sqlSessionFactoryBean.setPlugins(new Interceptor[]{pageHelper});
-//
-//		PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-//		sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:/com/icloud/dao/*/mapping/*.xml")); // "**"代表多个文件夹下
-//		return sqlSessionFactoryBean.getObject();
-//	}
-//
-//	/** 事物管理 **/
-//	@Bean
-//	public PlatformTransactionManager transactionManager() {
-//		return new DataSourceTransactionManager(dataSource());
-//	}
-//
-//}
+package com.icloud.config.datasource;
+
+import com.alibaba.druid.support.http.StatViewServlet;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class DruidConfig {
+
+
+//    @Bean
+//    public Filter statFilter(){
+//        StatFilter filter = new StatFilter();
+//        filter.setSlowSqlMillis(5000);
+//        filter.setLogSlowSql(true);
+//        filter.setMergeSql(true);
+//        return filter;
+//    }
+
+    /**
+     *阿里数据源
+     * @return
+     */
+    @Bean
+    public ServletRegistrationBean statViewServlet(){
+        //创建servlet注册实体
+        ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new StatViewServlet(),"/druid/*");
+        //设置ip白名单
+        servletRegistrationBean.addInitParameter("allow","192.168.110.1,127.0.0.1");
+        //设置ip黑名单，如果allow与deny共同存在时,deny优先于allow
+        //servletRegistrationBean.addInitParameter("deny","192.168.0.19");
+        //设置控制台管理用户
+        servletRegistrationBean.addInitParameter("loginUsername","admin");
+        servletRegistrationBean.addInitParameter("loginPassword","admin");
+        //是否可以重置数据
+        servletRegistrationBean.addInitParameter("resetEnable","false");
+        return servletRegistrationBean;
+    }
+
+}

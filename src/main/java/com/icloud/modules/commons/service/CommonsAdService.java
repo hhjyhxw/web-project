@@ -1,9 +1,10 @@
 package com.icloud.modules.commons.service;
 
+import com.icloud.basecommon.service.BaseServiceImpl;
+import com.icloud.modules.commons.dao.CommonsAdMapper;
 import com.icloud.modules.commons.entity.CommonsAd;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.icloud.basecommon.service.BaseServiceImpl;
 
 
 /**

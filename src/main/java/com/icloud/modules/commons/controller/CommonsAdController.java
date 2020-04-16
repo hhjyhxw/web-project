@@ -23,7 +23,7 @@ import java.util.Map;
  * 菜单主连接： modules/commons/commonsad.html
  */
 @RestController
-@RequestMapping("commons/commonsad")
+@RequestMapping(value = "/commons/commonsad")
 public class CommonsAdController {
     @Autowired
     private CommonsAdService commonsAdService;

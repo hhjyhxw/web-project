@@ -88,6 +88,7 @@ public class ShiroConfig {
 
         filterMap.put("/xcxpath/**", "anon");//放行小程序端
         filterMap.put("/thirdInterfacePath/**", "anon");//放行第三放接口
+        filterMap.put("/druid/**", "anon");//sql监控
 
         filterMap.put("/**", "authc");
         shiroFilter.setFilterChainDefinitionMap(filterMap);

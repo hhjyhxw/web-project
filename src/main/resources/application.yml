@@ -11,9 +11,11 @@ server:
         timeout: 600s
 # mysql
 spring:
+    main:
+      allow-bean-definition-overriding: true
     # 环境 dev|test|pro
     profiles:
-        active: dev
+        active: dev-shardingjdbc-bak
     # jackson时间格式化
     jackson:
         time-zone: GMT+8

@@ -32,6 +32,7 @@
         <swagger.version>2.7.0</swagger.version>
         <commons.configuration.version>1.10</commons.configuration.version>
         <velocity.version>1.7</velocity.version>
+        <weixintools.version>3.6.0</weixintools.version>
     </properties>
 
     <dependencies>
@@ -73,17 +74,18 @@
                 </exclusion>
             </exclusions>-->
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-servlet-api</artifactId>
             <version>8.0.36</version>
             <scope>provided</scope>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
         </dependency>
+
         <!-- sping aop -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -102,11 +104,11 @@
             <artifactId>spring-session-data-redis</artifactId>
             <version>2.2.0.RELEASE</version>
         </dependency>
-        <dependency>
+       <!-- <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-redis</artifactId>
             <version>2.2.0.RELEASE</version>
-        </dependency>
+        </dependency>-->
         <!-- fastjson -->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -114,11 +116,11 @@
             <version>1.2.31</version>
         </dependency>
         <!-- druid数据源 -->
-        <dependency>
+      <!--  <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
             <version>1.0.29</version>
-        </dependency>
+        </dependency>-->
         <!-- jdbc -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -421,13 +423,36 @@
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>-->
-
-        <!-- https://mvnrepository.com/artifact/org.apache.shardingsphere/sharding-jdbc-core -->
         <dependency>
-            <groupId>org.apache.shardingsphere</groupId>
-            <artifactId>sharding-jdbc-core</artifactId>
-            <version>4.0.0-RC3</version>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.1.10</version>
         </dependency>
+<!--
+
+        <dependency>
+            <groupId>io.shardingsphere</groupId>
+            <artifactId>sharding-jdbc-core</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.shardingsphere</groupId>
+            <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.shardingsphere</groupId>
+            <artifactId>sharding-jdbc-spring-namespace</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+-->
+
+        <dependency>
+            <groupId>io.shardingjdbc</groupId>
+            <artifactId>sharding-jdbc-core</artifactId>
+            <version>2.0.3</version>
+        </dependency>
+
         <dependency>
             <groupId>commons-configuration</groupId>
             <artifactId>commons-configuration</artifactId>
@@ -438,6 +463,55 @@
             <groupId>org.apache.velocity</groupId>
             <version>${velocity.version}</version>
         </dependency>
+        <!--微信小程序-->
+        <!--dependency>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>weixin-java-miniapp</artifactId>
+            <version>${weixintools.version}</version>
+        </dependency>-->
+        <!--微信支付-->
+        <!--dependency>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>weixin-java-pay</artifactId>
+            <version>${weixintools.version}</version>
+        </dependency>-->
+        <!--微信开放平台-->
+        <!--<dependency>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>weixin-java-open</artifactId>
+            <version>${weixintools.version}</version>
+        </dependency>-->
+        <!--公众号（包括订阅号和服务号）-->
+       <dependency>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>weixin-java-mp</artifactId>
+            <version>${weixintools.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.thoughtworks.xstream</groupId>
+                    <artifactId>xstream</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.httpcomponents</groupId>
+                    <artifactId>httpmime</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.code.gson</groupId>
+                    <artifactId>gson</artifactId>
+                </exclusion>
+            </exclusions>
+
+        </dependency>
+        <!--企业号/企业微信-->
+       <!-- <dependency>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>weixin-java-cp</artifactId>
+            <version>${weixintools.version}</version>
+        </dependency>-->
     </dependencies>
 
     <dependencyManagement>
@@ -530,5 +604,5 @@
         </resources>
 
     </build>
-    <description>房源小程序</description>
+    <description>后台管理系统</description>
 </project>

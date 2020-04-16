@@ -217,7 +217,7 @@ CREATE TABLE `schedule_job_log` (
 INSERT INTO `schedule_job` (`bean_name`, `params`, `cron_expression`, `status`, `remark`, `create_time`) VALUES ('testTask', 'renren', '0 0/30 * * * ?', '0', '参数测试', now());
 
 
---  quartz自带表结构
+--  quartz自带表结构QRTZ_JOB_DETAILS qrtz_job_details
 CREATE TABLE QRTZ_JOB_DETAILS(
   SCHED_NAME VARCHAR(120) NOT NULL,
   JOB_NAME VARCHAR(200) NOT NULL,
