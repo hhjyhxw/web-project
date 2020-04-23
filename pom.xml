@@ -208,10 +208,10 @@
         </dependency>
 
         <!-- httpclient -->
-        <dependency>
+     <!--   <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
-        </dependency>
+        </dependency>-->
 
         <!-- <dependency>
             <groupId>commons-httpclient</groupId>
@@ -231,7 +231,7 @@
             <version>3.22.0-CR1</version>
         </dependency>
 
-        <!-- 通过cmd命令把jar放到本地库：mvn install:install-file -Dfile=D:/QQFile/alex-word-filter-1.0.0.jar 
+        <!-- 通过cmd命令把jar放到本地库：mvn install:install-file -Dfile=D:/QQFile/alex-word-filter-1.0.0.jar
         -DgroupId=com.zhumeng -DartifactId=alex-word-filter -Dversion=1.0.0 -Dpackaging=jar -->
         <dependency>
             <groupId>com.zhumeng</groupId>
