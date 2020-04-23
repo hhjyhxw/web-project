@@ -10,23 +10,14 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
-import org.apache.http.conn.ssl.TrustStrategy;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.util.EntityUtils;
 
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSession;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.security.GeneralSecurityException;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -168,6 +159,7 @@ public class HttpClientUtils {
 		CloseableHttpClient httpclient;
 		if ("https".equals(httpRequest.getURI().getScheme())){
 			httpclient = createSSLInsecureClient();
+
 		}else{
 			httpclient = HttpClients.createDefault();
 		}
@@ -191,28 +183,29 @@ public class HttpClientUtils {
 		}
 		return result;
 	}
-	
+
 	/**
 	 * 创建 SSL连接
 	 */
 	public static CloseableHttpClient createSSLInsecureClient() {
-		try {
-			SSLContext sslContext = new SSLContextBuilder().loadTrustMaterial(new TrustStrategy() {
-				@Override
-				public boolean isTrusted(X509Certificate[] chain, String authType) throws CertificateException {
-					return true;
-				}
-			}).build();
-			SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(sslContext, new HostnameVerifier() {
-				@Override
-				public boolean verify(String hostname, SSLSession session) {
-					return true;
-				}
-			});
-			return HttpClients.custom().setSSLSocketFactory(sslsf).build();
-		} catch (GeneralSecurityException ex) {
-			throw new RuntimeException(ex);
-		}
+//		try {
+//			SSLContext sslContext = new SSLContextBuilder().loadTrustMaterial(new TrustStrategy() {
+//				@Override
+//				public boolean isTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+//					return true;
+//				}
+//			}).build();
+//			SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(sslContext, new HostnameVerifier() {
+//				@Override
+//				public boolean verify(String hostname, SSLSession session) {
+//					return true;
+//				}
+//			});
+//			return HttpClients.custom().setSSLSocketFactory(sslsf).build();
+//		} catch (GeneralSecurityException ex) {
+//			throw new RuntimeException(ex);
+//		}
+        return null;
 	}
-	
+
 }

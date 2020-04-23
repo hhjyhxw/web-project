@@ -20,7 +20,7 @@ public class OrderUtil {
 	 * @return
 	 */
 	public static String bulidOrderNo(String lastString) {
-		return "ldsc" + DateTools.convertDateToString("yyyyMMddhhmmss") + lastString;
+		return "zssp" + DateTools.convertDateToString("yyyyMMddhhmmss") + lastString;
 	}
 	
 	/**

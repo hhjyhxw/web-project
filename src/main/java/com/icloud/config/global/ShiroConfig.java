@@ -87,6 +87,7 @@ public class ShiroConfig {
         filterMap.put("/captcha.jpg", "anon");
 
         filterMap.put("/xcxpath/**", "anon");//放行小程序端
+        filterMap.put("/frontpage/**", "anon");//h5端放行
         filterMap.put("/thirdInterfacePath/**", "anon");//放行第三放接口
         filterMap.put("/druid/**", "anon");//sql监控
 

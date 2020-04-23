@@ -3,6 +3,7 @@ package com.icloud.modules.sys.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.icloud.common.Constant;
+import com.icloud.config.redis.RedisUtils;
 import com.icloud.modules.sys.dao.SysMenuDao;
 import com.icloud.modules.sys.entity.SysMenuEntity;
 import com.icloud.modules.sys.entity.SysRoleMenuEntity;
@@ -22,6 +23,8 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuDao, SysMenuEntity> i
 	private SysUserService sysUserService;
 	@Autowired
 	private SysRoleMenuService sysRoleMenuService;
+    @Autowired
+    private RedisUtils redisUtils;
 	
 	@Override
 	public List<SysMenuEntity> queryListParentId(Long parentId, List<Long> menuIdList) {
@@ -67,6 +70,10 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuDao, SysMenuEntity> i
 		this.removeById(menuId);
 		//删除菜单与角色关联
 		sysRoleMenuService.remove(new QueryWrapper<SysRoleMenuEntity>().eq("menu_id", menuId));
+        //更新缓存
+        new Thread(()->updateRedisMenu() ).start();
+
+
 	}
 
 	/**
@@ -97,4 +104,29 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuDao, SysMenuEntity> i
 		
 		return subMenuList;
 	}
+
+	@Override
+	public boolean save(SysMenuEntity entity){
+	    super.save(entity);
+	    //更新缓存
+        new Thread(()->updateRedisMenu() ).start();
+	    return true;
+    }
+
+    public boolean updateById(SysMenuEntity entity){
+        super.updateById(entity);
+        //更新缓存
+        new Thread(()->updateRedisMenu() ).start();
+        return true;
+    }
+	 private void updateRedisMenu(){
+        List<SysMenuEntity> menuList = list();
+        for(SysMenuEntity sysMenuEntity : menuList){
+            SysMenuEntity parentMenuEntity = getById(sysMenuEntity.getParentId());
+            if(parentMenuEntity != null){
+                sysMenuEntity.setParentName(parentMenuEntity.getName());
+            }
+        }
+         redisUtils.set("allmenu",menuList);
+    }
 }

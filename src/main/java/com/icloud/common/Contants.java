@@ -21,9 +21,9 @@ public class Contants {
 //	/**图片服务器路径**/
 //	public static final String IMG_SERVER = ConfigUtil.get("imageserver");
 	/**图片上传基本路径**/
-	public static final String IMG_BASE_PATH_ = ConfigUtil.get("uploadPath");
-	public static final String _DO_MAIN_ = "https://www.leiyi.club";
-	
+	public static final String IMG_BASE_PATH_ = ConfigUtil.get("uploadpath");
+	public static final String _DO_MAIN_ = ConfigUtil.get("service_domain");
+
 	/**腾讯地图API**/
 	public static final String TX_LBS_API_KEY = "WWKBZ-NNPR3-JON3J-3JMPX-KM6ES-ODFCH";
 	//逆地址转换API 地址-》坐标

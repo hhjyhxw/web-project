@@ -1,21 +1,28 @@
 package com.icloud.common.util;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.alibaba.fastjson.JSONObject;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.WriterException;
+import com.google.zxing.client.j2se.MatrixToImageWriter;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
 import com.icloud.common.ConfigUtil;
 import com.icloud.common.Contants;
 import com.icloud.common.ftp.FtpUtils;
 import com.icloud.common.ftp.FtpUtils.UploadStatus;
 import com.icloud.common.util.wx.HttpRequestUtil;
 import com.icloud.common.util.wx.WxConst;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 public class AppQRCodeUtil {
 	
@@ -26,6 +33,7 @@ public class AppQRCodeUtil {
 //	}
 	
 	/**
+     * 生成微信场景二维码
 	 * @param accessToken
 	 * @return url
 	 * @throws Exception 
@@ -66,5 +74,23 @@ public class AppQRCodeUtil {
 		}
 		return Contants._DO_MAIN_ + Contants.IMG_BASE_PATH_ + fileName;
 	}
-	
+
+
+
+    /**自定义生成二维码
+     * @param text 内容
+     * @param width 款
+     * @param height 高
+     * @param filePath 绝对路径
+     * @throws WriterException
+     * @throws IOException
+     */
+    public static void generateQRCodeImage(String text, int width, int height, String filePath) throws WriterException, IOException {
+        QRCodeWriter qrCodeWriter = new QRCodeWriter();
+        BitMatrix bitMatrix = qrCodeWriter.encode(text, BarcodeFormat.QR_CODE, width, height);
+        Path path = FileSystems.getDefault().getPath(filePath);
+        MatrixToImageWriter.writeToPath(bitMatrix, "PNG", path);
+    }
+
+
 }

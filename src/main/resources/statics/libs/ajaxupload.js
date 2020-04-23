@@ -616,58 +616,58 @@
                     // response is a xml document
                     response = doc;
                 }
-                
+
                 settings.onComplete.call(self, file, response);
-                
+
                 // Reload blank page, so that reloading main page
                 // does not re-submit the post. Also, remember to
                 // delete the frame
                 toDeleteFlag = true;
-                
+
                 // Fix IE mixed content issue
                 iframe.src = "javascript:'<html></html>';";
-            });            
-        },        
+            });
+        },
         /**
          * Upload file contained in this._input
          */
-        submit: function(){                        
+        submit: function(){
             var self = this, settings = this._settings;
-            
-            if ( ! this._input || this._input.value === ''){                
-                return;                
-            }
-                                    
-            var file = fileFromPath(this._input.value);
-            
-            // user returned false to cancel upload
-            if (false === settings.onSubmit.call(this, file, getExt(file))){
-                this._clearInput();                
+
+            if ( ! this._input || this._input.value === ''){
                 return;
             }
-            
-            // sending request    
+
+            var file = fileFromPath(this._input.value);
+
+            // user returned false to cancel upload
+            if (false === settings.onSubmit.call(this, file, getExt(file))){
+                this._clearInput();
+                return;
+            }
+
+            // sending request
             var iframe = this._createIframe();
             var form = this._createForm(iframe);
-            
+
             // assuming following structure
             // div -> input type='file'
-            removeNode(this._input.parentNode);            
+            removeNode(this._input.parentNode);
             removeClass(self._button, self._settings.hoverClass);
-                        
+
             form.appendChild(this._input);
-                        
+
             form.submit();
 
-            // request set, clean up                
-            removeNode(form); form = null;                          
+            // request set, clean up
+            removeNode(form); form = null;
             removeNode(this._input); this._input = null;
-            
-            // Get response from iframe and fire onComplete event when ready
-            this._getResponse(iframe, file);            
 
-            // get ready for next request            
+            // Get response from iframe and fire onComplete event when ready
+            this._getResponse(iframe, file);
+
+            // get ready for next request
             this._createInput();
         }
     };
-})(); 
+})();

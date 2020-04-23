@@ -1,14 +1,10 @@
 package com.icloud.xcx.service;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import javax.servlet.http.HttpServletRequest;
 import cn.hutool.extra.emoji.EmojiUtil;
+import com.alibaba.druid.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.icloud.basecommon.service.redis.RedisService;
 import com.icloud.basecommon.util.HttpUtils;
-import com.icloud.common.ConfigUtil;
 import com.icloud.common.ShaEncry;
 import com.icloud.common.util.RandomUtil;
 import com.icloud.common.util.StringUtil;
@@ -22,7 +18,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.alibaba.druid.util.StringUtils;
+import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 @Service
 public class XcxUserLoginService {
@@ -79,18 +78,18 @@ public class XcxUserLoginService {
                         WxUser user = wxUserService.findByOpenId(openId);
                         JSONObject user_raw =  JSONObject.parseObject(json.getString("user_raw"));
                         if(user!=null){
-                            user.setNickName(decryDataJson.containsKey("nickName")? EmojiUtil.toAlias(decryDataJson.getString("nickName")):user.getNickName());
-                            user.setHeadphoto(decryDataJson.containsKey("avatarUrl")?decryDataJson.getString("avatarUrl"):user.getHeadphoto());
-                            user.setModiftyTime(new Date());
+                            user.setNickname(decryDataJson.containsKey("nickName")? EmojiUtil.toAlias(decryDataJson.getString("nickName")):user.getNickname());
+                            user.setHeadimgurl(decryDataJson.containsKey("avatarUrl")?decryDataJson.getString("avatarUrl"):user.getHeadimgurl());
+                            user.setModifyTime(new Date());
                             user.setUnionid(decryDataJson.containsKey("unionId")?decryDataJson.getString("unionId"):user.getUnionid());
                             wxUserService.updateById(user);
                         }else{
                             user = new WxUser();
-                            user.setNickName(decryDataJson.containsKey("nickName")? EmojiUtil.toAlias(decryDataJson.getString("nickName")):user.getNickName());
-                            user.setHeadphoto(decryDataJson.containsKey("avatarUrl")?decryDataJson.getString("avatarUrl"):user.getHeadphoto());
+                            user.setNickname(decryDataJson.containsKey("nickName")? EmojiUtil.toAlias(decryDataJson.getString("nickName")):user.getNickname());
+                            user.setHeadimgurl(decryDataJson.containsKey("avatarUrl")?decryDataJson.getString("avatarUrl"):user.getHeadimgurl());
                             user.setCreateTime(new Date());
                             user.setUnionid(decryDataJson.containsKey("unionId")?decryDataJson.getString("unionId"):user.getUnionid());
-                            user.setModiftyTime(new Date());
+                            user.setModifyTime(new Date());
                             user.setOpenid(openId);
                             wxUserService.save(user);
                         }

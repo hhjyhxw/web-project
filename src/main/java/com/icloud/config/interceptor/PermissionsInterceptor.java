@@ -12,16 +12,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
-import java.util.List;
 
 /**
- * 权限拦截器
+ * 后台拦截器
  * @author leiyi
  *
  */
@@ -46,15 +41,15 @@ public class PermissionsInterceptor implements HandlerInterceptor {
 			log.debug("开始计时: {}  URI: {}", new SimpleDateFormat("hh:mm:ss.SSS")
 					.format(beginTime), request.getRequestURI());
 		}
-
-		HttpSession session = request.getSession();
-		Object obj = session.getAttribute("admin_user");
-//		printlnVisitInfo(request,handler);
-		if(null==obj){
-//			response.sendRedirect("/hyzypay/tologin");
-            response.sendRedirect("/house/tologin");
-			return false;
-		}
+        printlnVisitInfo(request,handler);
+//		HttpSession session = request.getSession();
+//		Object obj = session.getAttribute("admin_user");
+////		printlnVisitInfo(request,handler);
+//		if(null==obj){
+////			response.sendRedirect("/hyzypay/tologin");
+//            response.sendRedirect("/house/tologin");
+//			return false;
+//		}
 		return true;
 //        if (request.getHeader("x-requested-with") != null && request.getHeader("x-requested-with").equalsIgnoreCase("XMLHttpRequest"))
 //        {
@@ -126,15 +121,19 @@ public class PermissionsInterceptor implements HandlerInterceptor {
 		 // 所有请求第一个进入的方法  
         String reqURL = request.getRequestURL().toString();  
         String ip = IpUtil.getIpAddr(request);
-        InputStream  is = request.getInputStream ();  
+//        InputStream  is = request.getInputStream ();
         StringBuilder responseStrBuilder = new StringBuilder ();  
-        BufferedReader streamReader = new BufferedReader (new InputStreamReader (is,"UTF-8"));  
+//        BufferedReader streamReader = new BufferedReader (new InputStreamReader (is,"UTF-8"));
         String inputStr;  
-         while ((inputStr = streamReader.readLine ()) != null)  
-         responseStrBuilder.append (inputStr);  
-         String parmeter = responseStrBuilder.toString();  
-           
-       long startTime = System.currentTimeMillis();  
+//         while ((inputStr = streamReader.readLine ()) != null)
+//         responseStrBuilder.append (inputStr);
+//         String parmeter = BodyReaderHttpServletRequestWrapper.getRequestBody(request);
+//         log.info("BodyReaderHttpServletRequestWrapper===");
+        String parmeter = null;
+         if(parmeter==null){
+             parmeter = request.getQueryString();
+         }
+       long startTime = System.currentTimeMillis();
        request.setAttribute("startTime", startTime);  
        if (handler instanceof HandlerMethod) {  
            StringBuilder sb = new StringBuilder(1000);  

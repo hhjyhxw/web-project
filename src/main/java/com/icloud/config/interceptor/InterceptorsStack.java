@@ -2,13 +2,11 @@ package com.icloud.config.interceptor;
 
 import com.icloud.config.resolver.LoginUserHandlerMethodArgumentResolver;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import java.util.List;
 
@@ -22,6 +20,8 @@ class InterceptorsStack implements WebMvcConfigurer {
     private XcxLoginInterceptor xcxLoginInterceptor;
     @Autowired
     private PermissionsInterceptor permissionsInterceptor;
+    @Autowired
+    private WxUserLoginInterceptor wxUserLoginInterceptor;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
@@ -30,11 +30,13 @@ class InterceptorsStack implements WebMvcConfigurer {
 //                .excludePathPatterns(new String[] { "/checkToken/removeToken" })
 //                .excludePathPatterns(new String[] { "/backpage/setting/beforeUpdate" })
 //                .excludePathPatterns(new String[] { "/backpage/setting/update" });
-//        registry.addInterceptor(permissionsInterceptor).addPathPatterns(new String[] { "/admin/**" }).addPathPatterns(new String[] { "/backpage/**" });
+        registry.addInterceptor(permissionsInterceptor).addPathPatterns(new String[] { "/sys/**" });
 //        registry.addInterceptor(new AddTokenInterceptor()).addPathPatterns(new String[] { "/beanGoods/goodsDetail" });
 //        registry.addInterceptor(new RemoveTokenInterceptor()).addPathPatterns(new String[] { "/checkToken/removeToken" });
         registry.addInterceptor(xcxLoginInterceptor).addPathPatterns(new String[]{"/xcxpath/**"}).excludePathPatterns(new String[]{"/xcxpath/xcxUserLogin/**"});
 //        registry.addInterceptor(new ThirdInterfaceInterceptor()).addPathPatterns(new String[] { "/thirdInterfacePath/**" });
+        //h5端拦截器
+        registry.addInterceptor(wxUserLoginInterceptor).addPathPatterns(new String[]{"/frontpage/**"});
     }
 
     /**

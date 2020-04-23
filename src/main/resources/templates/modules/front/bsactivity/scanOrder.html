@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <#include "/header.html">
+</head>
+<body>
+<div id="icloudapp" v-cloak>
+    <div>哈哈哈</div>
+    <div v-if="showerror==true">
+        数据错误
+    </div>
+    <div v-if="showerror==false">
+        <img :src="qcode.imgpath"/>
+        <div>商品价格:{{goods.marketPrice}}</div>
+    </div>
+</div>
+
+<script src="${request.contextPath}/statics/js/front/bsactivity/scanOrder.js?_${.now?long}"></script>
+</body>
+</html>

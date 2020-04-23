@@ -4,6 +4,8 @@ $.jgrid.defaults.responsive = true;
 $.jgrid.defaults.styleUI = 'Bootstrap';
 
 var baseURL = "../../";
+//var imgURL = "../../";//本地
+var imgURL = "http://zl.haiyunzy.com/bsactivity/";
 
 //工具集合Tools
 window.T = {};

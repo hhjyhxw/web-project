@@ -4,6 +4,7 @@ import com.icloud.annotation.AuthIgnore;
 import com.icloud.basecommon.service.redis.RedisService;
 import com.icloud.basecommon.util.lang.StringUtils;
 import com.icloud.common.util.StringUtil;
+import com.icloud.config.global.Constants;
 import com.icloud.modules.wx.entity.WxUser;
 import com.icloud.modules.wx.service.WxUserService;
 import com.icloud.xcx.util.XcxUserSession;
@@ -17,8 +18,6 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.Map;
 
 @Component
 public class XcxLoginInterceptor extends HandlerInterceptorAdapter {
@@ -30,7 +29,6 @@ public class XcxLoginInterceptor extends HandlerInterceptorAdapter {
     @Autowired
     private WxUserService wxUserService;
 
-    public static final String USER_KEY = "userId";
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -103,7 +101,7 @@ public class XcxLoginInterceptor extends HandlerInterceptorAdapter {
             return false;
         }else{
             //用于其他方法获取用户信息
-            request.setAttribute(USER_KEY, wxUser);
+            request.setAttribute(Constants.USER_KEY, wxUser);
 //            redisService.set(unionid.toString(), t, LoginUtils.LOGIN_EXPIRY_TIME);  //重新激活登录时间
         }
         log.info("======验证token成功");

@@ -15,7 +15,7 @@ spring:
       allow-bean-definition-overriding: true
     # 环境 dev|test|pro
     profiles:
-        active: dev-shardingjdbc-bak
+        active: dev
     # jackson时间格式化
     jackson:
         time-zone: GMT+8

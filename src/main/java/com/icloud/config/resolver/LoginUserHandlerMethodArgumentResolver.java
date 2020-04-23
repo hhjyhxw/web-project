@@ -1,7 +1,7 @@
 package com.icloud.config.resolver;
 
 import com.icloud.annotation.LoginUser;
-import com.icloud.config.interceptor.XcxLoginInterceptor;
+import com.icloud.config.global.Constants;
 import com.icloud.modules.wx.entity.WxUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,13 +30,13 @@ public class LoginUserHandlerMethodArgumentResolver implements HandlerMethodArgu
     public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer container,
                                   NativeWebRequest request, WebDataBinderFactory factory) {
         //获取用户ID
-        Object object = request.getAttribute(XcxLoginInterceptor.USER_KEY, RequestAttributes.SCOPE_REQUEST);
+        Object object = request.getAttribute(Constants.USER_KEY, RequestAttributes.SCOPE_REQUEST);
         if(object == null){
             return null;
         }
         //获取用户信息
         WxUser user = (WxUser)object;
-        logger.info("======当前登录用户id:{},昵称：{}",user.getId(),user.getNickName());
+        logger.info("======当前登录用户id:{},昵称：{}",user.getId(),user.getNickname());
         return user;
     }
 }

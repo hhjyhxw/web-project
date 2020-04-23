@@ -204,14 +204,14 @@ public class AesUtils {
 //
 //		String s = "hello word!";
 //		System.out.println(s);
-//		
+//
 //		String k = genKeyString();
-//		System.out.println(k);
+//		System.out.println("key="+k);
 //		String ss = encode(s, k);
 //		System.out.println(ss);
 //		String sss = decode(ss, k);
 //		System.out.println(sss);
-//		
+//
 //	}
 	
 }

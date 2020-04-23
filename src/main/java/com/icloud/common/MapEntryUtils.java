@@ -8,11 +8,11 @@ import org.springframework.beans.BeanUtils;
 import java.beans.BeanInfo;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class MapEntryUtils {
@@ -349,4 +349,21 @@ public class MapEntryUtils {
         return null;
     }
 
+    public static Map<String, Object> clearNullValue( Map<String, Object> map){
+//        for (Map.Entry entry: map.entrySet()) {
+//            if(entry.getKey()!=null && (entry.getValue()==null || "".equals(entry.getValue().toString().trim()))){
+//                map.remove(entry.getKey());
+//            }
+//        }
+        Iterator<Map.Entry<String, Object>> iter=map.entrySet().iterator();
+        while (iter.hasNext()) {
+            Map.Entry<String, Object> entry = iter.next();
+            System.out.println(entry.getKey()+"======="+entry.getValue());
+            if(entry.getKey()!=null && (entry.getValue()==null || "".equals(entry.getValue().toString().trim()))){
+                iter.remove();
+            }
+        }
+
+        return map;
+    }
 }

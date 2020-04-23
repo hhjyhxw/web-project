@@ -3,6 +3,7 @@ package com.icloud.modules.sys.controller;
 import com.icloud.annotation.SysLog;
 import com.icloud.common.Constant;
 import com.icloud.common.R;
+import com.icloud.config.redis.RedisUtils;
 import com.icloud.exceptions.BaseException;
 import com.icloud.modules.sys.entity.SysMenuEntity;
 import com.icloud.modules.sys.service.SysMenuService;
@@ -25,6 +26,8 @@ import java.util.List;
 public class SysMenuController extends AbstractController {
 	@Autowired
 	private SysMenuService sysMenuService;
+    @Autowired
+    private RedisUtils redisUtils;
 
 	/**
 	 * 导航菜单
@@ -41,14 +44,25 @@ public class SysMenuController extends AbstractController {
 	@RequestMapping("/list")
 	@RequiresPermissions("sys:menu:list")
 	public List<SysMenuEntity> list(){
-		List<SysMenuEntity> menuList = sysMenuService.list();
-		for(SysMenuEntity sysMenuEntity : menuList){
-			SysMenuEntity parentMenuEntity = sysMenuService.getById(sysMenuEntity.getParentId());
-			if(parentMenuEntity != null){
-				sysMenuEntity.setParentName(parentMenuEntity.getName());
-			}
-		}
-
+//		List<SysMenuEntity> menuList = sysMenuService.list();
+//		for(SysMenuEntity sysMenuEntity : menuList){
+//			SysMenuEntity parentMenuEntity = sysMenuService.getById(sysMenuEntity.getParentId());
+//			if(parentMenuEntity != null){
+//				sysMenuEntity.setParentName(parentMenuEntity.getName());
+//			}
+//		}
+        logger.info("before_list===");
+        List<SysMenuEntity> menuList = redisUtils.get("allmenu",List.class);
+        logger.info("menuList_redis=="+(menuList!=null? menuList.size():0));
+        if(menuList==null){
+            menuList = sysMenuService.list();
+            for(SysMenuEntity sysMenuEntity : menuList){
+                    SysMenuEntity parentMenuEntity = sysMenuService.getById(sysMenuEntity.getParentId());
+                    if(parentMenuEntity != null){
+                        sysMenuEntity.setParentName(parentMenuEntity.getName());
+                    }
+		    }
+        }
 		return menuList;
 	}
 	

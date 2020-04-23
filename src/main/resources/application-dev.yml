@@ -39,6 +39,7 @@ spring:
     host: 127.0.0.1
     port: 6379
     password:
+#    password: nnyr2018 #84测试
 #    password: r#3vl8v@ZMtws       # 密码（默认为空）
     timeout: 5000  # 连接超时时长（毫秒）
     pool:

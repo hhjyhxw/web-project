@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.icloud.modules.bsactivity.dao.BsactivityOrderMapper">
+
+
+    <!-- 基础map -->
+    <resultMap type="com.icloud.modules.bsactivity.entity.BsactivityOrder" id="BaseResultMap">
+     <id property="id" column="id"/>
+     <result property="orderNo" column="order_no"/>
+     <result property="totalAmount" column="total_amount"/>
+     <result property="goodName" column="good_name"/>
+     <result property="userid" column="userid"/>
+     <result property="openid" column="openid"/>
+     <result property="orderType" column="order_type"/>
+     <result property="orderStatus" column="order_status"/>
+     <result property="shippingStatus" column="shipping_status"/>
+     <result property="deleteStatus" column="delete_status"/>
+     <result property="createTime" column="create_time"/>
+     <result property="modifyTime" column="modify_time"/>
+     <result property="goodid" column="goodid"/>
+     <result property="qcodeid" column="qcodeid"/>
+     <result property="name" column="name"/>
+     <result property="phone" column="phone"/>
+     <result property="provinceName" column="province_name"/>
+     <result property="cityName" column="city_name"/>
+     <result property="countyName" column="county_name"/>
+     <result property="townsName" column="towns_name"/>
+     <result property="detailAddress" column="detail_address"/>
+     <result property="zipCode" column="zip_code"/>
+        <result property="transationid" column="transationid"/>
+    </resultMap>
+
+   <!-- 基础字段列 -->
+   <sql id="Base_Column_List" >
+id,order_no,total_amount,good_name,userid,openid,order_type,order_status,shipping_status,delete_status,create_time,modify_time,goodid,qcodeid,
+       name,phone,province_name,city_name,county_name,towns_name,detail_address,zip_code,transationid
+    </sql>
+
+    <!--获取订单编号-->
+    <select id="getOrderNo" resultType="String"  parameterType="java.lang.String" flushCache="true" useCache="false">
+        select  system_sequence('zssp_order_no') FROM DUAL
+    </select>
+</mapper>
