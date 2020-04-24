@@ -93,7 +93,7 @@ var vm = new Vue({
 			       vm.showerror = true;//显示非商品内容
 			    }else{
 			       vm.exchangeSuccess = false;//在次调试使用
-			       vm.msg = r.msg!=null?(r.msg!=''?r.msg!='':'兑换失败'):'兑换失败';
+			       vm.msg = r.msg!=null?(r.msg!=''?r.msg:'兑换失败'):'兑换失败';
 			       vm.showerror = true;////显示非商品内容
                    //layer.msg("兑换失败", {icon: 1});
 			    }

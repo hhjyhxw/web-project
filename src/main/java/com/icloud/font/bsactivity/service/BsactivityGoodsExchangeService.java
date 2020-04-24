@@ -60,10 +60,12 @@ public class BsactivityGoodsExchangeService {
                 if(qcodeBean.getStatus().intValue()==1){
                     throw new BeanException("二维码已使用!");
                 }
+
                 updateGoodsStore(goods,exchangeNum); //冻结库存、增加销量
                 verfiyGoodsQcode(qcodeBean,user.getId().longValue());//核销二维码
-                comsueLongCoin(user,order.getTotalAmount().toString()); //扣减龙币
+                String seq = comsueLongCoin(user,order.getTotalAmount().toString()); //扣减龙币
                 order.setOrderStatus(1);//已支付
+                order.setTransationid(seq);
                 bsactivityOrderService.updateById(order);
             } else { // 获取锁失败
                 //获取锁失败业务代码
@@ -155,7 +157,7 @@ public class BsactivityGoodsExchangeService {
      * @param user
      * @param consumeamount
      */
-    private void comsueLongCoin(WxUser user,String consumeamount){
+    private String comsueLongCoin(WxUser user,String consumeamount){
         LongConsumeEntity entity = new LongConsumeEntity();
             entity.setSid(ConfigUtil.get("sid"));
             entity.setSeq(longCoinUtil.getSerialNumber());
@@ -175,6 +177,7 @@ public class BsactivityGoodsExchangeService {
         }
         if(result!=null && "000000".equals(result.getString("returncode"))){
             log.error("龙币消费成功=="+result.getString("consumeamount"));
+            return entity.getSeq();
         }else{
             log.error("龙币消费失败=="+result.getString("returnmsg"));
             throw new BeanException(LongbiServiceImpl.getCodeMap().get(result.getString("returncode")));
