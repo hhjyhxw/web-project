@@ -57,6 +57,9 @@ public class BsactivityGoodsExchangeService {
         DistributedLock lock = distributedLockUtil.getDistributedLock("zssp_createorder");
         try {
             if (lock.acquire()) {
+                if(qcodeBean.getStatus().intValue()==1){
+                    throw new BeanException("二维码已使用!");
+                }
                 updateGoodsStore(goods,exchangeNum); //冻结库存、增加销量
                 verfiyGoodsQcode(qcodeBean,user.getId().longValue());//核销二维码
                 comsueLongCoin(user,order.getTotalAmount().toString()); //扣减龙币

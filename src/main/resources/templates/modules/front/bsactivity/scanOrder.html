@@ -1,19 +1,234 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+
     <title></title>
     <#include "/header.html">
+    <style>
+        .goodimg{
+            display: flex;
+            justify-content: space-around;
+            padding: 2rem 1rem;
+            height: 21rem;
+        }
+        .goodimg img{
+
+        }
+        .goodname{
+            display: flex;
+            justify-content: space-around;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .content{
+            border-top: 2px solid #eee;
+            border-bottom: 2px solid #eee;
+            margin: 1rem;
+        }
+        .content_body{
+           display: flex;
+           justify-content: space-around;
+           padding:2rem;
+           font-size: 1.5rem;
+        }
+       .content .content_left{
+          flex:1;
+           display: flex;
+           justify-content: space-around;
+        }
+       .content .content_left .countnum{
+            display:inline-block;
+            display: inline-block;
+            width: 3rem;
+            border: none;
+            text-align:center;
+            color:#FF6600;
+        }
+
+        .content .content_left .numdes{
+                font-weight: bold;
+                padding-right: 1rem;
+                flex: 1;
+                text-align: right;
+        }
+
+        .content .content_left .icon{
+        　
+        }
+        .content .content_left .minus{
+            display: inline-block;
+            height: 2.2rem;
+            width: 28px;
+            text-indent: -9999px;
+            background:url("${request.contextPath}/statics/images/bsactivity/minus.png") no-repeat;
+            background-size: 20px auto;
+            text-indent:-9999px;
+            background-position:center;
+
+        }
+        .content .content_left .plus{
+            display: inline-block;
+            height: 2.2rem;
+            width: 28px;
+            text-indent: -9999px;
+            background:url("${request.contextPath}/statics/images/bsactivity/plus.png") no-repeat;
+            background-size: 20px auto;
+            text-indent:-9999px;
+             background-position:center;
+        }
+        .content_right{
+            flex:1;
+           display: flex;
+           justify-content: center;
+        }
+        .content_right .cashcoin{
+           width: 2.2rem;
+            height: 2.2rem;
+        }
+         .content_right .goodprice{
+            font-size: 1.7rem;
+            color: #FF6600;
+            font-weight: bold;
+            padding-left: 5px;
+        }
+        .longcoin{
+           flex:1;
+           display: flex;
+           justify-content: center;
+            padding:1rem;
+        }
+        .footer{
+            display: flex;
+           justify-content: center;
+            padding:1rem;
+        }
+       .footer .btn_confin_ok{
+            border-radius: 6px;
+            width: 66%;
+            background-color: rgb(0,204,0);
+            color: white;
+            height: 3.5rem;
+            line-height: 3rem;
+            font-size: 1.5rem;
+            margin-top: 3rem;
+        }
+        .footer .btn_confin_unok{
+            border-radius: 6px;
+            width: 66%;
+            background-color: lightgrey;
+            color: white;
+            height: 3.5rem;
+            line-height: 3rem;
+            font-size: 1.5rem;
+            margin-top: 3rem;
+            border:none;
+        }
+
+        .error_content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 5rem;
+            font-size: 2rem;
+            color: rgb(255, 102, 0);
+            align-items: center;
+        }
+        .error_content .fairimg{
+            height:5rem;
+            width:5rem;
+            margin-bottom:2rem;
+        }
+        .error_content .successimg{
+            height:5rem;
+            width:5rem;
+            margin-bottom:2rem;
+        }
+        .msgcolor_fair{
+
+        }
+         .msgcolor_success{
+            color:#12f51b;
+        }
+        .success_footer{
+            display: flex;
+            height: 6rem;
+            border: 1px dashed lightgrey;
+            width: 100%;
+            margin-top: 3rem;
+            padding: 1rem;
+            font-size: 1.3rem;
+            text-align: center;
+            line-height: 3.5rem;
+        }
+    </style>
 </head>
 <body>
 <div id="icloudapp" v-cloak>
-    <div>哈哈哈</div>
-    <div v-if="showerror==true">
-        数据错误
+
+    <!--商品兑换-->
+    <div v-if="!showerror">
+        <!--头部-->
+        <div>
+            <div class="goodimg">
+                <img :src="goodimg"  />
+            </div>
+            <div class="goodname">({{goods.name}})</div>
+        </div>
+        <!--中部-->
+        <div class="content">
+            <div class="content_body">
+                <div class="content_left">
+                    <div class="numdes">数量:</div>
+
+                    <i class="icon minus" @click="minus">减</i>
+                    <input :value="exchangeNum" class="countnum" readonly/>
+                    <i class="icon plus" @click="plus">加</i>
+
+                </div>
+                <div class="content_right">
+                    <img class="cashcoin" src="${request.contextPath}/statics/images/bsactivity/cashcoin.png">
+                    <!--<div class="goodprice">{{goods.marketPrice}}</div>-->
+                    <div class="goodprice">{{totalAmount}}</div>
+                </div>
+            </div>
+            <div class="longcoin">{{dcurrencyInfo}}</div>
+        </div>
+        <!--底部-->
+        <div class="footer">
+            <button v-if="btnshow" class="btn_confin_ok" @click="submitorder">确认兑换</button>
+            <button v-if="!btnshow" class="btn_confin_unok">确认兑换</button>
+        </div>
     </div>
-    <div v-if="showerror==false">
-        <img :src="qcode.imgpath"/>
-        <div>商品价格:{{goods.marketPrice}}</div>
+
+
+    <!--兑换失败或者 扫码异常-->
+    <div v-if="showerror">
+                <!--兑换失败-->
+                <div class="error_content" v-if="!exchangeSuccess">
+                    <img class="fairimg" src="${request.contextPath}/statics/images/bsactivity/fair.png"/>
+                    <div class="msgcolor_fair">
+                        {{msg}}
+                    </div>
+                </div>
+                <!--兑换成功-->
+                <div class="error_content" v-if="exchangeSuccess">
+                        <img class="successimg" src="${request.contextPath}/statics/images/bsactivity/success.png"/>
+                         <div  class="msgcolor_success">
+                            恭喜你,兑换成功!
+                        </div>
+                        <div class="success_footer">
+                            <div style="color:red;">温馨提示：</div><div style="color:black;">店铺还有其它活动，赶快了解参与吧~~~</div>
+                        </div>
+                 </div>
     </div>
+
+
 </div>
 
 <script src="${request.contextPath}/statics/js/front/bsactivity/scanOrder.js?_${.now?long}"></script>

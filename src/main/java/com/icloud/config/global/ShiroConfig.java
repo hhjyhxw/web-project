@@ -86,9 +86,15 @@ public class ShiroConfig {
         filterMap.put("/favicon.ico", "anon");
         filterMap.put("/captcha.jpg", "anon");
 
+        filterMap.put("/*.jpg", "anon");
+        filterMap.put("/*.png", "anon");
+        filterMap.put("/*.js", "anon");
+
         filterMap.put("/xcxpath/**", "anon");//放行小程序端
         filterMap.put("/frontpage/**", "anon");//h5端放行
         filterMap.put("/thirdInterfacePath/**", "anon");//放行第三放接口
+        filterMap.put("/uploadpath/**", "anon");//上传的文件类直接放行
+
         filterMap.put("/druid/**", "anon");//sql监控
 
         filterMap.put("/**", "authc");

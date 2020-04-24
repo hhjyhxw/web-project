@@ -4,8 +4,11 @@ $.jgrid.defaults.responsive = true;
 $.jgrid.defaults.styleUI = 'Bootstrap';
 
 var baseURL = "../../";
-//var imgURL = "../../";//本地
-var imgURL = "http://zl.haiyunzy.com/bsactivity/";
+var imgURL = "http://localhost:8080/";//本地
+var fontbaseURL="http://localhost:8080/";
+//
+//var imgURL = "http://zl.haiyunzy.com/bsactivity/";
+//var fontbaseURL = "http://zl.haiyunzy.com/bsactivity/";
 
 //工具集合Tools
 window.T = {};

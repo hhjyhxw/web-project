@@ -2,6 +2,7 @@ package com.icloud.config.interceptor;
 
 import com.icloud.config.resolver.LoginUserHandlerMethodArgumentResolver;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -13,7 +14,6 @@ import java.util.List;
 @Configuration
 class InterceptorsStack implements WebMvcConfigurer {
 
-
     @Autowired
     private LoginUserHandlerMethodArgumentResolver loginUserHandlerMethodArgumentResolver;
     @Autowired
@@ -21,7 +21,13 @@ class InterceptorsStack implements WebMvcConfigurer {
     @Autowired
     private PermissionsInterceptor permissionsInterceptor;
     @Autowired
-    private WxUserLoginInterceptor wxUserLoginInterceptor;
+    private LoginInterceptor loginInterceptor;
+    @Autowired
+    private LoginInterceptor_local loginInterceptor_local;
+
+
+    @Value("${activein}")
+	private String activein;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
@@ -36,7 +42,13 @@ class InterceptorsStack implements WebMvcConfigurer {
         registry.addInterceptor(xcxLoginInterceptor).addPathPatterns(new String[]{"/xcxpath/**"}).excludePathPatterns(new String[]{"/xcxpath/xcxUserLogin/**"});
 //        registry.addInterceptor(new ThirdInterfaceInterceptor()).addPathPatterns(new String[] { "/thirdInterfacePath/**" });
         //h5端拦截器
-        registry.addInterceptor(wxUserLoginInterceptor).addPathPatterns(new String[]{"/frontpage/**"});
+        //本地
+        if("local".equals(activein)){
+            registry.addInterceptor(loginInterceptor_local).addPathPatterns(new String[]{"/frontpage/**"});
+        }else{
+            registry.addInterceptor(loginInterceptor).addPathPatterns(new String[]{"/frontpage/**"});
+        }
+
     }
 
     /**

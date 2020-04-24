@@ -65,6 +65,7 @@ $(function () {
                     alert("上传成功!");
                     vm.bsactivityGoods.goodimg = r.url;
                     vm.goodsimgshow = imgURL + r.url;
+                      console.log("vm.goodsimgshow=="+vm.goodsimgshow);
                     //vm.reload();
                 }else{
                     alert(r.msg);

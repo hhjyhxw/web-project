@@ -58,12 +58,21 @@ public class ScanOrderController {
         try {
             user.setQcode(qcode);
             request.getSession().setAttribute("wx_user",user);
-            return "modules/front/bsactivity/scanOrder";
+            String decodeQcode = AesUtils.decode(qcode,bsactivityGoodsqcodeProperties.getAsekey());
+            log.info("decodeQcode=="+decodeQcode);
+            QueryWrapper<BsactivityGoodsqcode> queryWrapper = new QueryWrapper<BsactivityGoodsqcode>();
+            queryWrapper.lambda().eq(BsactivityGoodsqcode::getQcode, decodeQcode);
+            BsactivityGoodsqcode bsactivityGoodsqcode = (BsactivityGoodsqcode)bsactivityGoodsqcodeService.getOne(queryWrapper);
+            if(bsactivityGoodsqcode.getStatus().intValue()==1){
+                return "modules/front/bsactivity/scanOrderComsued";
+            }else{
+                return "modules/front/bsactivity/scanOrder";
+            }
 //            return "modules/front/bsactivity/confirOrder?qcode="+qcode+"&time="+ RandomUtil.getRandomString(12);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "modules/front/bsactivity/scanOrder";
+        return "modules/front/bsactivity/error";
 //        return "modules/front/bsactivity/confirOrder?qcode=0000&time="+ RandomUtil.getRandomString(12);
     }
 
@@ -101,13 +110,13 @@ public class ScanOrderController {
     /**
      * 用户扫商品专属二维码，跳转到专属二维码活动首页
      * @param goodsId
-     * @param qcode
      * @return
      */
     @RequestMapping("/exchange")
     @ResponseBody
-    public R exchange(@LoginUser WxUser wxUser, Long goodsId,String qcode,Long exchangeNum){
+    public R exchange(@LoginUser WxUser wxUser, Long goodsId,Long exchangeNum){
         try {
+            String qcode = wxUser.getQcode();
             log.info("exchange_goodsId==="+goodsId+";qcode=="+qcode+";exchangeNum=="+exchangeNum);
             if(exchangeNum==null || exchangeNum.longValue()<=0 || exchangeNum.longValue()>100){
                 return R.error("兑换数量非法!");
@@ -120,7 +129,7 @@ public class ScanOrderController {
             }
             String decodeQcode = AesUtils.decode(qcode,bsactivityGoodsqcodeProperties.getAsekey());
             BsactivityGoods bsactivityGoods = bsactivityGoodsService.selectByQcode(decodeQcode);
-            BsactivityGoods bsactivityGoods2 = (BsactivityGoods) bsactivityGoodsqcodeService.getById(goodsId);
+            BsactivityGoods bsactivityGoods2 = (BsactivityGoods) bsactivityGoodsService.getById(goodsId);
             if(bsactivityGoods.getId()!=bsactivityGoods2.getId()){
               log.info("exchange_result=参数不匹配");
               return R.error("参数不匹配");
@@ -130,7 +139,7 @@ public class ScanOrderController {
             queryWrapper.lambda().eq(BsactivityGoodsqcode::getQcode, decodeQcode);
             BsactivityGoodsqcode bsactivityGoodsqcode = (BsactivityGoodsqcode)bsactivityGoodsqcodeService.getOne(queryWrapper);
 
-            if(bsactivityGoods.getStore()-bsactivityGoods.getFreezeStore()<exchangeNum){
+            if(bsactivityGoods.getStore()-(bsactivityGoods.getFreezeStore()!=null?bsactivityGoods.getFreezeStore():0)<exchangeNum){
                 return R.error("库存不足");
             }
             bsactivityGoodsExchangeService.scanExchange(bsactivityGoods,bsactivityGoodsqcode,wxUser,exchangeNum);
