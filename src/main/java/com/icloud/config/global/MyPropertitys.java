@@ -33,14 +33,15 @@ public class MyPropertitys {
 
     @Data
     public static class LongCoin{
-        private String sid;
-        private String key;
-        private String rechargetype;//
-        private String consumetype;//
-        private String queryUrl;//
-        private String rechargeUrl;//
-        private String consumeUrl;//
-        private String sid_signup;//
-        private String key_signup;//
+        private String sid;//商户号
+        private String key;//数据签名key
+        private String rechargetype;//充值类型
+        private String consumetype;//消费类型
+        private String queryUrl;//查询url
+        private String rechargeUrl;//充值url
+        private String consumeUrl;//消费url
+        private String sid_signup;//新会员注册充值 商户号
+        private String key_signup;//新会员注册充值 签名key
+        private String chareAmount;//给新用户充值的龙币值
     }
 }

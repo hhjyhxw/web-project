@@ -25,4 +25,18 @@ ${column.columnName}
 #end
 #end
     </sql>
+
+
+<select id="queryMixList" resultMap="BaseResultMap">
+select * from ${tableName} t
+<where>
+#foreach($column in $columns)
+#if($foreach.hasNext)
+<if test="${column.columnName} != null">
+    and t.${column.columnName} = #{${column.columnName}}
+</if>
+#end
+#end
+</where>
+</select>
 </mapper>

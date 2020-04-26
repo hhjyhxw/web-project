@@ -156,16 +156,7 @@ public class BsactivityGoodsExchangeService {
      * @param consumeamount
      */
     private String comsueLongCoin(WxUser user,String consumeamount){
-        LongConsumeEntity entity = new LongConsumeEntity();
-            entity.setSid(longCoinUtil.getMachineNo());
-            entity.setSeq(longCoinUtil.getSerialNumber());
-            entity.setKey(longCoinUtil.getKey());
-            entity.setAccounttype("2");
-            entity.setConsumetype(longCoinUtil.getConsumetype());
-            entity.setTimestamp(longCoinUtil.getTimeStamp());
-            entity.setUseraccount(user.getOpenid());
-            entity.setConsumeamount(consumeamount);
-
+        LongConsumeEntity entity = longCoinUtil.getComsueEntity(user.getOpenid(),consumeamount);
         JSONObject result = null;
         try {
             result = longbiServiceImpl.consume(entity.getRequestParamMap());

@@ -7,6 +7,9 @@ import com.icloud.common.DateUtil;
 import com.icloud.common.util.StringUtil;
 import com.icloud.config.global.MyPropertitys;
 import com.icloud.exceptions.BeanException;
+import com.icloud.thirdinterfaces.score.entity.LongChargeEntity;
+import com.icloud.thirdinterfaces.score.entity.LongConsumeEntity;
+import com.icloud.thirdinterfaces.score.entity.LongQueryEntity;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpException;
 import org.apache.commons.httpclient.methods.PostMethod;
@@ -299,4 +302,76 @@ public class LongCoinUtil {
     }
 
 
+    /**
+     * 获取查询对象参数
+     * @param openid
+     * @return
+     */
+    public LongQueryEntity getQueryEntity(String openid){
+        LongQueryEntity entity = new LongQueryEntity();
+        entity.setSid(getMachineNo());
+        entity.setSeq(getSerialNumber());
+        entity.setUseraccount(openid);
+        entity.setKey(getKey());
+        entity.setAccounttype("2");
+        entity.setTimestamp(getTimeStamp());
+        return entity;
+    }
+
+    /**
+     * 获取一般充值对象参数
+     * @param openid
+     * @return
+     */
+    public LongChargeEntity getChargeEntity(String openid,String chargeAmount){
+        LongChargeEntity entity = new LongChargeEntity();
+            entity.setSid(getMachineNo());
+            entity.setKey(getKey());
+            entity.setSeq(getSerialNumber());
+            entity.setUseraccount(openid);
+            entity.setAccounttype("2");
+            entity.setRechargetype(getRechargetype());
+            entity.setRechargeamount(chargeAmount);
+            entity.setTimestamp(getTimeStamp());
+        return entity;
+    }
+
+    /**
+     * 获取消费对象参数
+     * @param openid
+     *  @param consumeamount
+     * @return
+     */
+    public LongConsumeEntity getComsueEntity(String openid, String consumeamount){
+        LongConsumeEntity entity = new LongConsumeEntity();
+        entity.setSid(getMachineNo());
+        entity.setKey(getKey());
+        entity.setSeq(getSerialNumber());
+        entity.setUseraccount(openid);
+        entity.setAccounttype("2");
+        entity.setConsumetype(getConsumetype());
+        entity.setTimestamp(getTimeStamp());
+        entity.setConsumeamount(consumeamount);
+        return entity;
+    }
+
+    /**
+     *
+     * 获取特殊充值对象参数
+     * 会员没注册直接注册成会员
+     * @param openid
+     * @return
+     */
+    public LongChargeEntity getSpecifyChargeEntity(String openid,String chargeAmount){
+        LongChargeEntity entity = new LongChargeEntity();
+        entity.setSid(myPropertitys.getLongcoin().getSid_signup());
+        entity.setKey(myPropertitys.getLongcoin().getKey_signup());
+        entity.setSeq(getSerialNumber_signup());
+        entity.setUseraccount(openid);
+        entity.setAccounttype("2");
+        entity.setRechargetype(getRechargetype());
+        entity.setRechargeamount(chargeAmount);
+        entity.setTimestamp(getTimeStamp());
+        return entity;
+    }
 }

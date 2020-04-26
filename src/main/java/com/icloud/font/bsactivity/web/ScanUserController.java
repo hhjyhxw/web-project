@@ -3,7 +3,10 @@ package com.icloud.font.bsactivity.web;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.icloud.common.R;
+import com.icloud.config.global.MyPropertitys;
+import com.icloud.modules.bsactivity.service.BsactivityFollowuserService;
 import com.icloud.modules.wx.entity.WxUser;
+import com.icloud.thirdinterfaces.score.entity.LongChargeEntity;
 import com.icloud.thirdinterfaces.score.entity.LongQueryEntity;
 import com.icloud.thirdinterfaces.score.service.LongbiServiceImpl;
 import com.icloud.thirdinterfaces.score.utils.LongCoinUtil;
@@ -34,7 +37,10 @@ public class ScanUserController {
     private  LongbiServiceImpl longbiServiceImpl;
     @Autowired
     private LongCoinUtil longCoinUtil;
-
+    @Autowired
+    private MyPropertitys myPropertitys;
+    @Autowired
+    private BsactivityFollowuserService bsactivityFollowuserService;
     /**
      * @return
      */
@@ -43,13 +49,7 @@ public class ScanUserController {
     public R userInfo(){
         try {
             WxUser user = (WxUser) request.getSession().getAttribute("wx_user");
-            LongQueryEntity entity = new LongQueryEntity();
-            entity.setSid(longCoinUtil.getMachineNo());
-            entity.setSeq(longCoinUtil.getSerialNumber());
-            entity.setUseraccount(user.getOpenid());
-            entity.setKey(longCoinUtil.getKey());
-            entity.setAccounttype("2");
-            entity.setTimestamp(longCoinUtil.getTimeStamp());
+            LongQueryEntity entity = longCoinUtil.getQueryEntity(user.getOpenid());
             log.info("LongQueryEntity=="+ JSON.toJSONString(entity));
             JSONObject result = longbiServiceImpl.queryLongbi(entity.getRequestParamMap());
             log.info("userInfo_querylongbi=="+ result);
@@ -64,4 +64,45 @@ public class ScanUserController {
         }
 
     }
+
+
+    /**
+     * 1、用户扫描pos机二维码，如果用户已注册会员，直接提示谢谢参与
+     * 2、如果没注册会员，直接注册成会员，并且赠送龙币
+     * @param qcode
+     * @return
+     */
+    @RequestMapping("/scanpos")
+    public String scanExchange(String qcode){
+        WxUser user = (WxUser) request.getSession().getAttribute("wx_user");
+        try {
+
+//            return "modules/front/bsactivity/registersuccess";//跳转注册成功页面
+            LongQueryEntity entity = longCoinUtil.getQueryEntity(user.getOpenid());
+            log.info("LongQueryEntity=="+ JSON.toJSONString(entity));
+            JSONObject result = longbiServiceImpl.queryLongbi(entity.getRequestParamMap());
+            log.info("scanpos_querylongbi=="+ result);
+
+            if(result!=null && result.containsKey("returncode") && "000000".equals(result.getString("returncode"))){
+                //保存引流登陆日志
+                bsactivityFollowuserService.saveOrUpdate(user,0,0,1);
+                return "modules/front/bsactivity/thanksattend";//跳转谢谢参与页面
+            }
+
+            LongChargeEntity charge = longCoinUtil.getSpecifyChargeEntity(user.getOpenid(),myPropertitys.getLongcoin().getChareAmount());
+            log.info("LongChargeEntity=="+ JSON.toJSONString(entity));
+            result = longbiServiceImpl.recharge(charge.getRequestParamMap());
+            if(result!=null && result.containsKey("returncode") && "000000".equals(result.getString("returncode"))){
+                //保存引流登陆日志
+                bsactivityFollowuserService.saveOrUpdate(user,Integer.parseInt(myPropertitys.getLongcoin().getChareAmount()),1,1);
+                return "modules/front/bsactivity/registersuccess";//跳转注册成功页面
+            }else{
+                return "modules/front/bsactivity/thanksattend";//注册充值失败，跳转谢谢参与
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "modules/front/bsactivity/error";
+    }
+
 }

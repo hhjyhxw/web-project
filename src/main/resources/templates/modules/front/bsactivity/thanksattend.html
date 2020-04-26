@@ -109,17 +109,19 @@
             display: flex;
            justify-content: center;
             padding:1rem;
+            width:80%;
         }
        .footer .btn_confin_ok{
                 border-radius: 6px;
                 width: 66%;
-                background-color: rgb(0,204,0);
+                background-color: blue;
                 color: white;
                 height: 3.5rem;
-                line-height: 3rem;
+                line-height: 3.5rem;
                 font-size: 1.6rem;
                 margin-top: 3rem;
                 border: none;
+                text-align:center;
         }
         .footer .btn_confin_unok{
             border-radius: 6px;
@@ -173,64 +175,26 @@
     </style>
 </head>
 <body>
-<div id="icloudapp" v-cloak>
+<!--扫Pos机码，已注册会员，提示谢谢参与-->
+<div id="icloudapp" >
 
-    <!--商品兑换-->
-    <div v-if="!showerror">
-        <!--头部-->
-        <div>
-            <div class="goodimg">
-                <img :src="goodimg"  />
+
+        <!---->
+        <div class="error_content">
+            <img class="fairimg" src="${request.contextPath}/statics/images/bsactivity/fair.png"/>
+            <div class="msgcolor_fair">
+                很遗憾,您没能抽到奖励!
             </div>
-            <div class="goodname">({{goods.name}})</div>
-        </div>
-        <!--中部-->
-        <div class="content">
-            <div class="content_body">
-                <div class="content_left">
-                    <div class="numdes">数量:</div>
 
-                    <i class="icon minus" @click="minus">减</i>
-                    <input :value="exchangeNum" class="countnum" readonly/>
-                    <i class="icon plus" @click="plus">加</i>
-
-                </div>
-                <div class="content_right">
-                    <img class="cashcoin" src="${request.contextPath}/statics/images/bsactivity/cashcoin.png">
-                    <!--<div class="goodprice">{{goods.marketPrice}}</div>-->
-                    <div class="goodprice">{{totalAmount}}</div>
-                </div>
+            <!--底部-->
+            <div class="footer">
+                <a  class="btn_confin_ok" href="http://zl.haiyunzy.com/zlnewpro/frontpage/score/scoreLogin">龙币商城</a>
             </div>
-            <div class="longcoin">{{dcurrencyInfo}}</div>
-        </div>
-        <!--底部-->
-        <div class="footer">
-            <button v-if="btnshow" class="btn_confin_ok" @click="submitorder">确认兑换</button>
-            <button v-if="!btnshow" class="btn_confin_unok">确认兑换</button>
-        </div>
-    </div>
 
-
-    <!--兑换失败或者 扫码异常-->
-    <div v-if="showerror">
-                <!--兑换失败-->
-                <div class="error_content" v-if="!exchangeSuccess">
-                    <img class="fairimg" src="${request.contextPath}/statics/images/bsactivity/fair.png"/>
-                    <div class="msgcolor_fair">
-                        {{msg}}
-                    </div>
-                </div>
-                <!--兑换成功-->
-                <div class="error_content" v-if="exchangeSuccess">
-                        <img class="successimg" src="${request.contextPath}/statics/images/bsactivity/success.png"/>
-                         <div  class="msgcolor_success">
-                            恭喜你,兑换成功!
-                        </div>
-                        <div class="success_footer">
-                            <div style="color:red;">温馨提示：</div><div style="color:black;">店铺还有其它活动，赶快了解参与吧~~~</div>
-                        </div>
-                 </div>
-    </div>
+            <div class="success_footer">
+                <div style="color:red;">温馨提示：</div><div style="color:black;">店铺还有其它活动，赶快了解参与吧~~~</div>
+            </div>
+        </div>
 
 
 </div>

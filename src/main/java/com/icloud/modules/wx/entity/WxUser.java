@@ -65,4 +65,12 @@ public class WxUser implements Serializable {
     @TableField(exist = false)
     private String qcode;
 
+    /* 临时存储用户位置经度的值 */
+    @TableField(exist = false)
+    private String lnt;
+
+    /* 临时存储用户位置纬度的值  */
+    @TableField(exist = false)
+    private String lat;
+
 }
