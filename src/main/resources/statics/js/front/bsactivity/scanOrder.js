@@ -52,6 +52,7 @@ var vm = new Vue({
 			    }else{
 //                  vm.dcurrencyInfo = '您当前扫码微信号还不是真龙会员';
                   vm.dcurrencyInfo = r.msg;
+                   vm.dcurrencyInfo = r.msg!=null?(r.msg!=''?r.msg:'正在查询您的龙币'):'正在查询您的龙币';
                   vm.btnshow = false;//不能兑换商品
 			    }
 
@@ -84,20 +85,24 @@ var vm = new Vue({
         },
         //确认兑换
         submitorder:function () {
+            let content = '兑换数量:'+vm.exchangeNum+";扣减龙币数:"+vm.totalAmount;
+           layer.confirm(content, {btn: ['确定', '取消'], title: "提示"}, function () {
+                     $.get(fontbaseURL + "/frontpage/bsactivity/order/exchange?goodsId="+vm.goodsId+"&exchangeNum="+vm.exchangeNum, function(r){
+                        console.log("r=="+JSON.stringify(r));
+                        if(r.code==0){
+                           vm.exchangeSuccess = true;//兑换成功
+                           vm.msg = "兑换成功";
+                           vm.showerror = true;//显示非商品内容
+                        }else{
+                           vm.exchangeSuccess = false;//在次调试使用
+                           vm.msg = r.msg!=null?(r.msg!=''?r.msg:'兑换失败'):'兑换失败';
+                           vm.showerror = true;////显示非商品内容
+                             //layer.msg("兑换失败", {icon: 1});
+                        }
+                      })
+               });
 
-            $.get(fontbaseURL + "/frontpage/bsactivity/order/exchange?goodsId="+vm.goodsId+"&exchangeNum="+vm.exchangeNum, function(r){
-			    console.log("r=="+JSON.stringify(r));
-			    if(r.code==0){
-			       vm.exchangeSuccess = true;//兑换成功
-			       vm.msg = "兑换成功";
-			       vm.showerror = true;//显示非商品内容
-			    }else{
-			       vm.exchangeSuccess = false;//在次调试使用
-			       vm.msg = r.msg!=null?(r.msg!=''?r.msg:'兑换失败'):'兑换失败';
-			       vm.showerror = true;////显示非商品内容
-                   //layer.msg("兑换失败", {icon: 1});
-			    }
-            })
+
         },
 	}
 });

@@ -2,7 +2,6 @@ package com.icloud.font.bsactivity.web;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.icloud.common.ConfigUtil;
 import com.icloud.common.R;
 import com.icloud.modules.wx.entity.WxUser;
 import com.icloud.thirdinterfaces.score.entity.LongQueryEntity;
@@ -45,10 +44,10 @@ public class ScanUserController {
         try {
             WxUser user = (WxUser) request.getSession().getAttribute("wx_user");
             LongQueryEntity entity = new LongQueryEntity();
-            entity.setSid(ConfigUtil.get("sid"));
+            entity.setSid(longCoinUtil.getMachineNo());
             entity.setSeq(longCoinUtil.getSerialNumber());
             entity.setUseraccount(user.getOpenid());
-            entity.setKey(ConfigUtil.get("key"));
+            entity.setKey(longCoinUtil.getKey());
             entity.setAccounttype("2");
             entity.setTimestamp(longCoinUtil.getTimeStamp());
             log.info("LongQueryEntity=="+ JSON.toJSONString(entity));

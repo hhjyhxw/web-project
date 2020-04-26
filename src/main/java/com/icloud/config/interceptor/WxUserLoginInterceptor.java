@@ -5,13 +5,13 @@ import cn.hutool.extra.emoji.EmojiUtil;
 import cn.hutool.http.HttpRequest;
 import com.icloud.common.AjaxRequestUitl;
 import com.icloud.config.global.Constants;
+import com.icloud.config.global.MyPropertitys;
 import com.icloud.modules.wx.entity.WxUser;
 import com.icloud.modules.wx.service.WxUserService;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -38,14 +38,8 @@ public class WxUserLoginInterceptor implements HandlerInterceptor {
 	@Autowired
 	private WxUserService wxUserService;
 
-
-
-	@Value("${appid}")
-	private String appid ;
-	@Value("${appsecret}")
-	private String secret;
-    @Value("${domain}")
-    private String domain;
+    @Autowired
+    private MyPropertitys myPropertitys;
 
 	//微信登录方式 请求微信服务器
 	private String code_user = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&redirect_uri=REDIRECT_URI&response_type=code&scope=SCOPE&state=STATE#wechat_redirect";
@@ -89,7 +83,7 @@ public class WxUserLoginInterceptor implements HandlerInterceptor {
         			  return false;
         		  }else{
         			  session.setAttribute("wx_user", user);
-                      session.setAttribute("domain", domain);
+                      session.setAttribute("domain", myPropertitys.getService_domain());
         		  }
         	}else{
         		 sendRedirectToWx(request,response);
@@ -127,7 +121,7 @@ public class WxUserLoginInterceptor implements HandlerInterceptor {
 	private WxUser getUserInfoByCode(String code) {
 		com.alibaba.fastjson.JSONObject result =
 				com.alibaba.fastjson.JSONObject.parseObject(
-						HttpRequest.get(web_access_token.replace("APPID", appid).replace("SECRET", secret).replace("CODE", code)).execute().body()
+						HttpRequest.get(web_access_token.replace("APPID", myPropertitys.getWx().getAppid()).replace("SECRET", myPropertitys.getWx().getAppsecret()).replace("CODE", code)).execute().body()
 						);
 
 		if(null!=result){
@@ -178,7 +172,7 @@ public class WxUserLoginInterceptor implements HandlerInterceptor {
 		sburl.append(request.getRequestURI());
 		if (request.getQueryString() != null)
 			sburl.append("?" + request.getQueryString());
-		 response.sendRedirect(code_user.replace("REDIRECT_URI",URLEncoder.encode(sburl.toString(),"UTF-8")).replace("SCOPE", "snsapi_userinfo").replace("APPID", appid));
+		 response.sendRedirect(code_user.replace("REDIRECT_URI",URLEncoder.encode(sburl.toString(),"UTF-8")).replace("SCOPE", "snsapi_userinfo").replace("APPID", myPropertitys.getWx().getAppid()));
 	}
 
 }

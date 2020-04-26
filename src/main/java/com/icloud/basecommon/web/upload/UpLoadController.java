@@ -34,7 +34,7 @@ import java.util.UUID;
  */
 
 @Controller
-@RequestMapping(value = "${backPath}/upload")
+@RequestMapping(value = "/upload")
 public class UpLoadController extends AppBaseController {
 	
 	@Autowired

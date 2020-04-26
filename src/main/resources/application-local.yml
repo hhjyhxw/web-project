@@ -38,8 +38,8 @@ spring:
     database: 0
     host: 127.0.0.1
     port: 6379
-#    password:
-    password: nnyr2018 #84测试
+    password:
+#    password: nnyr2018 #84测试
 #    password: r#3vl8v@ZMtws       # 密码（默认为空）
     timeout: 5000  # 连接超时时长（毫秒）
     pool:
@@ -82,7 +82,7 @@ spring:
 #本地全局属性
 mypros:
   uploadpath: /uploadpath/ #文件保存目录前缀
-  activein: dev #local 本地 dev 开发  pro生产
+  activein: local #local 本地 dev 开发  pro生产
   service_domain: http://zl.haiyunzy.com/bsactivity/
   wx: #微信相关参数
     appid: wxccb43a09acc5a5c8

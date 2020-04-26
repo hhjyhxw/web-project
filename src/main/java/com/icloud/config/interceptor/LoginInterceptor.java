@@ -1,10 +1,10 @@
 package com.icloud.config.interceptor;
 
 
-import com.icloud.common.ConfigUtil;
 import com.icloud.common.MD5Utils;
 import com.icloud.common.util.StringUtil;
 import com.icloud.config.global.Constants;
+import com.icloud.config.global.MyPropertitys;
 import com.icloud.modules.wx.entity.WxUser;
 import com.icloud.modules.wx.service.WxUserService;
 import org.slf4j.Logger;
@@ -34,6 +34,8 @@ public class LoginInterceptor implements HandlerInterceptor{
 	public final static Logger log = LoggerFactory.getLogger(LoginInterceptor.class);
     @Autowired
 	private WxUserService wxUserService;
+    @Autowired
+    private MyPropertitys myPropertitys;
 	@Override
 	public void afterCompletion(HttpServletRequest reqeust, HttpServletResponse response, Object arg2, Exception arg3)
 			throws Exception {
@@ -45,23 +47,6 @@ public class LoginInterceptor implements HandlerInterceptor{
 			throws Exception {
 
 	}
-//
-//	@Override
-//	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object arg2) throws Exception {
-//        /** 不缓存页面*/
-//        response.setDateHeader("Expires", 0);
-//        response.setHeader("Cache-Control", "no-cache");
-//        response.setHeader("Pragma", "no-cache");
-//	    request.setAttribute("pictureVisitUrl", ConfigUtil.get("pictureVisitUrl"));
-//        HttpSession session = request.getSession();
-//        WxUser user = (WxUser) session.getAttribute("wx_user");
-//        if(null==user){
-//            WxUser users = wxUserService.findByOpenId("ocoMKt2a_9XrLt2NBG5CupS6THE4");
-//            session.setAttribute("wx_user",users);
-//        }
-//        return true;
-//	}
-
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object arg2) throws Exception {
@@ -98,9 +83,9 @@ public class LoginInterceptor implements HandlerInterceptor{
             if(StringUtil.checkStr(openid) && StringUtil.checkStr(nickName)){
                 String newsign = "";
                 if(StringUtil.checkStr(unionid)){
-                    newsign = MD5Utils.encode2hex("openid="+openid+"&unionid="+unionid+"&key="+ConfigUtil.get("infokey"));
+                    newsign = MD5Utils.encode2hex("openid="+openid+"&unionid="+unionid+"&key="+myPropertitys.getWx().getInfokey());
                 }else{
-                    newsign = MD5Utils.encode2hex("openid="+openid+"&key="+ConfigUtil.get("."));
+                    newsign = MD5Utils.encode2hex("openid="+openid+"&key="+myPropertitys.getWx().getInfokey());
                 }
                 log.error("sign====="+sign+"&newsign===="+newsign);
                 if(!newsign.equals(sign)){
@@ -150,8 +135,12 @@ public class LoginInterceptor implements HandlerInterceptor{
                 String state = Base64.getEncoder()
                         .encodeToString(visiturl.toString().getBytes(StandardCharsets.UTF_8))
                         .replace("=", "-").replace("/", "_");
-                String redirectUrl = ConfigUtil.get("getUserInfo")
-                        .replace("APPID", ConfigUtil.get("appid"))
+                String getUserInfo = myPropertitys.getWx().getGetUserInfo();
+//                String redirectUrl = ConfigUtil.get("getUserInfo")
+//                        .replace("APPID", myPropertitys.getWx().getAppid())
+//                        .replace("STATE", state);
+                String redirectUrl = getUserInfo
+                        .replace("APPID", myPropertitys.getWx().getAppid())
                         .replace("STATE", state);
                 response.sendRedirect(redirectUrl);
                 return false;

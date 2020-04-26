@@ -19,7 +19,7 @@ import java.util.Map;
  *
  */
 @RestController
-@RequestMapping(value = "${xcxPath}/xcxUserLogin")
+@RequestMapping(value = "/xcxpath/xcxUserLogin")
 public class XcxUserLoginController {
     private Logger log = LoggerFactory.getLogger(getClass());
 	@Autowired

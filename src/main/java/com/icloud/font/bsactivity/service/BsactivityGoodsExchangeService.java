@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.icloud.basecommon.service.redislock.DistributedLock;
 import com.icloud.basecommon.service.redislock.DistributedLockUtil;
 import com.icloud.basecommon.util.OrderUtil;
-import com.icloud.common.ConfigUtil;
 import com.icloud.exceptions.BeanException;
 import com.icloud.exceptions.SendPrizeException;
 import com.icloud.modules.bsactivity.entity.BsactivityGoods;
@@ -151,7 +150,6 @@ public class BsactivityGoodsExchangeService {
             throw new BeanException("核销商品二维码识别");
         }
     }
-
     /**
      * 核销二维码
      * @param user
@@ -159,12 +157,11 @@ public class BsactivityGoodsExchangeService {
      */
     private String comsueLongCoin(WxUser user,String consumeamount){
         LongConsumeEntity entity = new LongConsumeEntity();
-            entity.setSid(ConfigUtil.get("sid"));
+            entity.setSid(longCoinUtil.getMachineNo());
             entity.setSeq(longCoinUtil.getSerialNumber());
-
-            entity.setKey(ConfigUtil.get("key"));
+            entity.setKey(longCoinUtil.getKey());
             entity.setAccounttype("2");
-            entity.setConsumetype(ConfigUtil.get("consumetype"));
+            entity.setConsumetype(longCoinUtil.getConsumetype());
             entity.setTimestamp(longCoinUtil.getTimeStamp());
             entity.setUseraccount(user.getOpenid());
             entity.setConsumeamount(consumeamount);

@@ -82,7 +82,7 @@ public class BsactivityGoodsqcodeService extends BaseServiceImpl<BsactivityGoods
        //二维码内容：用户扫码后后跳转地址
        String text = bsactivityGoodsqcodeProperties.getText().replace("QCODE",encodeqcode);
         try {
-            AppQRCodeUtil.generateQRCodeImage(text,bsactivityGoodsqcodeProperties.getWidth(),bsactivityGoodsqcodeProperties.getHeight(),absolutPath);
+            AppQRCodeUtil.generateQRCodeImage2(text,bsactivityGoodsqcodeProperties.getWidth(),bsactivityGoodsqcodeProperties.getHeight(),absolutPath);
         } catch (Exception e) {
             e.printStackTrace();
              throw new BeanException("生成专属商品二维码失败");
@@ -119,7 +119,7 @@ public class BsactivityGoodsqcodeService extends BaseServiceImpl<BsactivityGoods
                //二维码内容：用户扫码后后跳转地址
                String text = bsactivityGoodsqcodeProperties.getText().replace("QCODE",encodeqcode);
                try {
-                   AppQRCodeUtil.generateQRCodeImage(text,bsactivityGoodsqcodeProperties.getWidth(),bsactivityGoodsqcodeProperties.getHeight(),absolutPath+"/"+qcodeStr+".png");
+                   AppQRCodeUtil.generateQRCodeImage2(text,bsactivityGoodsqcodeProperties.getWidth(),bsactivityGoodsqcodeProperties.getHeight(),absolutPath+"/"+qcodeStr+".png");
                } catch (Exception e) {
                    e.printStackTrace();
                    throw new BeanException("生成专属商品二维码失败");

@@ -4,14 +4,9 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.icloud.basecommon.web.AppBaseController;
-import com.icloud.common.ConfigUtil;
 import com.icloud.common.Contants;
 import com.icloud.common.DateTools;
-import com.icloud.common.HttpUtils;
 import com.icloud.common.ftp.FtpFileService;
-import com.icloud.common.util.AccessTokenAndJsapiTicketUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,12 +15,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.Base64;
 import java.util.Date;
 import java.util.UUID;
@@ -44,7 +36,7 @@ import java.util.UUID;
  */
 
 @Controller
-@RequestMapping(value = "${frontPath}/upload")
+@RequestMapping(value = "/frontpage/upload")
 public class PreUpLoadController extends AppBaseController {
 	
 	@Autowired

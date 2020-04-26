@@ -18,7 +18,7 @@ import java.io.File;
 import java.util.UUID;
 
 @Controller
-@RequestMapping(value = "${xcxPath}/uploads")
+@RequestMapping(value = "/xcxpath/uploads")
 public class XcxUploadController extends AppBaseController {
 
     public final Logger log = LoggerFactory.getLogger(this.getClass());

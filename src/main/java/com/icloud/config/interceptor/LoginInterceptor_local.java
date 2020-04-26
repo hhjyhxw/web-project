@@ -1,8 +1,8 @@
 package com.icloud.config.interceptor;
 
 
-import com.icloud.common.ConfigUtil;
 import com.icloud.config.global.Constants;
+import com.icloud.config.global.MyPropertitys;
 import com.icloud.modules.wx.entity.WxUser;
 import com.icloud.modules.wx.service.WxUserService;
 import org.slf4j.Logger;
@@ -28,6 +28,8 @@ public class LoginInterceptor_local implements HandlerInterceptor{
 	public final static Logger log = LoggerFactory.getLogger(LoginInterceptor_local.class);
     @Autowired
 	private WxUserService wxUserService;
+    @Autowired
+    private MyPropertitys myPropertitys;
 	@Override
 	public void afterCompletion(HttpServletRequest reqeust, HttpServletResponse response, Object arg2, Exception arg3)
 			throws Exception {
@@ -46,8 +48,10 @@ public class LoginInterceptor_local implements HandlerInterceptor{
         response.setDateHeader("Expires", 0);
         response.setHeader("Cache-Control", "no-cache");
         response.setHeader("Pragma", "no-cache");
-	    request.setAttribute("pictureVisitUrl", ConfigUtil.get("pictureVisitUrl"));
         HttpSession session = request.getSession();
+
+        log.info("myPropertitys.wx.appid=="+(myPropertitys.getWx().getAppid()));
+
         WxUser user = (WxUser) session.getAttribute("wx_user");
         if(null==user){
             user = wxUserService.findByOpenId("ocoMKt2a_9XrLt2NBG5CupS6THE4");

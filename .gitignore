@@ -1,2 +1,9 @@
 /target/
+/src/test/
+/src/main/resources/application*
+/src/main/resources/dataSource*
+/src/main/resources/config*
+
+
+
 

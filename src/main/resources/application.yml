@@ -13,9 +13,9 @@ server:
 spring:
     main:
       allow-bean-definition-overriding: true
-    # 环境 dev|test|pro
+    # 环境 dev|test|pro local
     profiles:
-        active: dev
+        active: local
     # jackson时间格式化
     jackson:
         time-zone: GMT+8

@@ -3,9 +3,9 @@ package com.icloud.thirdinterfaces.score.utils;
 import com.icloud.basecommon.service.redis.RedisService;
 import com.icloud.basecommon.service.redislock.DistributedLock;
 import com.icloud.basecommon.service.redislock.DistributedLockUtil;
-import com.icloud.common.ConfigUtil;
 import com.icloud.common.DateUtil;
 import com.icloud.common.util.StringUtil;
+import com.icloud.config.global.MyPropertitys;
 import com.icloud.exceptions.BeanException;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpException;
@@ -38,6 +38,8 @@ public class LongCoinUtil {
     private DistributedLockUtil distributedLockUtil;
     @Autowired
     private RedisService redisService;
+    @Autowired
+    private MyPropertitys myPropertitys;
     /**
      * 获取流水号中的第三部分
      * @return
@@ -125,7 +127,7 @@ public class LongCoinUtil {
      * @return
      */
     public String getSerialNumber() {
-        String machineNo = ConfigUtil.get("sid");
+        String machineNo = myPropertitys.getLongcoin().getSid();
         String currentTime = DateUtil.getYearMonthDayWithMinus(new Date());
         String runNum = getBinaryString();
         return machineNo + currentTime + runNum;
@@ -137,7 +139,7 @@ public class LongCoinUtil {
      * @return
      */
     public String getSerialNumber_signup() {
-        String machineNo = ConfigUtil.get("sid_signup");
+        String machineNo =  myPropertitys.getLongcoin().getSid_signup();
         String currentTime = DateUtil.getYearMonthDayWithMinus(new Date());
         String runNum = getBinaryString();
         return machineNo + currentTime + runNum;
@@ -150,7 +152,8 @@ public class LongCoinUtil {
      * @return
      */
     public String getMachineNo() {
-        return ConfigUtil.get("sid");
+        return myPropertitys.getLongcoin().getSid();
+
     }
 
     /**
@@ -159,7 +162,7 @@ public class LongCoinUtil {
      * @return
      */
     public String getKey() {
-        return ConfigUtil.get("key");
+        return myPropertitys.getLongcoin().getKey();
 
     }
 
@@ -169,7 +172,7 @@ public class LongCoinUtil {
      * @return
      */
     public String getRechargetype() {
-        return ConfigUtil.get("rechargetype");
+        return myPropertitys.getLongcoin().getRechargetype();
     }
 
     /**
@@ -178,7 +181,7 @@ public class LongCoinUtil {
      * @return
      */
     public String getQueryUrl() {
-        return ConfigUtil.get("queryUrl");
+        return myPropertitys.getLongcoin().getQueryUrl();
     }
 
     /**
@@ -187,7 +190,7 @@ public class LongCoinUtil {
      * @return
      */
     public String getRechargeUrl() {
-        return ConfigUtil.get("rechargeUrl");
+        return myPropertitys.getLongcoin().getRechargeUrl();
     }
 
     /**
@@ -196,7 +199,7 @@ public class LongCoinUtil {
      * @return
      */
     public String getConsumeUrl() {
-        return ConfigUtil.get("consumeUrl");
+        return myPropertitys.getLongcoin().getConsumeUrl();
     }
 
     /**
@@ -205,7 +208,7 @@ public class LongCoinUtil {
      * @return
      */
     public String getConsumetype() {
-        return ConfigUtil.get("consumetype");
+        return myPropertitys.getLongcoin().getConsumetype();
     }
 
     /**

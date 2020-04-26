@@ -3,8 +3,8 @@ package com.icloud.modules.oss.controller; /**
 
 
 import com.alibaba.fastjson.JSONObject;
-import com.icloud.common.Contants;
 import com.icloud.common.DateUtil;
+import com.icloud.config.global.MyPropertitys;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,7 +33,8 @@ public class SysLocalUplaodController {
 
     private Logger log = LoggerFactory.getLogger(getClass());
 
-
+    @Autowired
+    private MyPropertitys myPropertitys;
     @Autowired
     private HttpServletRequest request;
     @Autowired
@@ -70,7 +71,7 @@ public class SysLocalUplaodController {
                 //可以对文件大小进行检查
             }
             //文件存储的相对路径
-            String basePath = Contants.IMG_BASE_PATH_+"/goods/"+ DateUtil.getYearMonthDay(new Date());
+            String basePath = myPropertitys.getUploadpath()+"/goods/"+ DateUtil.getYearMonthDay(new Date());
             //获取项目根路径的绝对路径
             String realPath = request.getSession().getServletContext().getRealPath(basePath);
             log.error(realPath);

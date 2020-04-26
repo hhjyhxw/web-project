@@ -1,8 +1,8 @@
 package com.icloud.config.interceptor;
 
+import com.icloud.config.global.MyPropertitys;
 import com.icloud.config.resolver.LoginUserHandlerMethodArgumentResolver;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -26,8 +26,8 @@ class InterceptorsStack implements WebMvcConfigurer {
     private LoginInterceptor_local loginInterceptor_local;
 
 
-    @Value("${activein}")
-	private String activein;
+    @Autowired
+	private MyPropertitys myPropertitys;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
@@ -43,7 +43,7 @@ class InterceptorsStack implements WebMvcConfigurer {
 //        registry.addInterceptor(new ThirdInterfaceInterceptor()).addPathPatterns(new String[] { "/thirdInterfacePath/**" });
         //h5端拦截器
         //本地
-        if("local".equals(activein)){
+        if("local".equals(myPropertitys.getActivein())){
             registry.addInterceptor(loginInterceptor_local).addPathPatterns(new String[]{"/frontpage/**"});
         }else{
             registry.addInterceptor(loginInterceptor).addPathPatterns(new String[]{"/frontpage/**"});

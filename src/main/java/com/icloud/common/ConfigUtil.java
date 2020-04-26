@@ -16,20 +16,20 @@ public class ConfigUtil {
 	public static final String get(String key) {
 		return bundle.getString(key);
 	}
-	
+
 	/**
 	 * 获取管理端根路径
 	 */
 	public static String getBackPath() {
 		return get("backPath");
 	}
-	
+
 	/**
 	 * 获取前端根路径
 	 */
 	public static String getFrontPath() {
 		return get("frontPath");
 	}
-	
+
 
 }

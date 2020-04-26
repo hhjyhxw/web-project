@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Data
 @Configuration
-@ConfigurationProperties(prefix = "bsactivity.goodsqcode")
+@ConfigurationProperties(prefix = "bsactivity")
 public class BsactivityGoodsqcodeProperties {
 
     private String text;//二维码内容

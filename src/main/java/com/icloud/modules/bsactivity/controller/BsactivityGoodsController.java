@@ -2,10 +2,10 @@ package com.icloud.modules.bsactivity.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.icloud.basecommon.model.Query;
-import com.icloud.common.ConfigUtil;
 import com.icloud.common.PageUtils;
 import com.icloud.common.R;
 import com.icloud.common.validator.ValidatorUtils;
+import com.icloud.config.global.MyPropertitys;
 import com.icloud.modules.bsactivity.entity.BsactivityGoods;
 import com.icloud.modules.bsactivity.entity.BsactivityGoodsqcode;
 import com.icloud.modules.bsactivity.service.BsactivityGoodsService;
@@ -47,7 +47,8 @@ public class BsactivityGoodsController {
     private BsactivityGoodsService bsactivityGoodsService;
     @Autowired
     private BsactivityGoodsqcodeService bsactivityGoodsqcodeService;
-
+    @Autowired
+    private MyPropertitys myPropertitys;
     /**
      * 列表
      */
@@ -113,12 +114,12 @@ public class BsactivityGoodsController {
     @RequiresPermissions("bsactivity:bsactivitygoods:update")
     public R creatGoodsQcode(@RequestBody BsactivityGoods bsactivityGoods){
         log.info("creatGoodsQcode_bsactivityGoods="+ JSON.toJSONString(bsactivityGoods));
-        String basepath = request.getSession().getServletContext().getRealPath(ConfigUtil.get("uploadpath"))+"/"+bsactivityGoods.getId();
+        String basepath = request.getSession().getServletContext().getRealPath(myPropertitys.getUploadpath())+"/"+bsactivityGoods.getId();
         File file = new File(basepath);
         if(!file.exists()){
             file.mkdirs();
         }
-        List<BsactivityGoodsqcode> list = bsactivityGoodsqcodeService.createQcodeList(bsactivityGoods,ConfigUtil.get("uploadpath"),basepath);
+        List<BsactivityGoodsqcode> list = bsactivityGoodsqcodeService.createQcodeList(bsactivityGoods,myPropertitys.getUploadpath(),basepath);
         log.info("creatGoodsQcode_list="+ JSON.toJSONString(list));
         bsactivityGoodsqcodeService.saveBatch(list);
         return R.ok();
