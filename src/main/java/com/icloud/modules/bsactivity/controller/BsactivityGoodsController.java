@@ -114,15 +114,33 @@ public class BsactivityGoodsController {
     @RequiresPermissions("bsactivity:bsactivitygoods:update")
     public R creatGoodsQcode(@RequestBody BsactivityGoods bsactivityGoods){
         log.info("creatGoodsQcode_bsactivityGoods="+ JSON.toJSONString(bsactivityGoods));
-        String basepath = request.getSession().getServletContext().getRealPath(myPropertitys.getUploadpath())+"/"+bsactivityGoods.getId();
-        File file = new File(basepath);
-        if(!file.exists()){
-            file.mkdirs();
+        Long[] ids = bsactivityGoods.getIds();
+        BsactivityGoods paramgoods = null;
+        for (int i = 0; i <ids.length ; i++) {
+            String basepath = request.getSession().getServletContext().getRealPath(myPropertitys.getUploadpath())+"/"+ids[i];
+            File file = new File(basepath);
+            if(!file.exists()){
+                file.mkdirs();
+            }
+            paramgoods = new BsactivityGoods();
+            paramgoods.setId(ids[i]);
+            paramgoods.setGernerNum(bsactivityGoods.getGernerNum());
+            List<BsactivityGoodsqcode> list = bsactivityGoodsqcodeService.createQcodeList(paramgoods,myPropertitys.getUploadpath(),basepath);
+            log.info("creatGoodsQcode_list="+ JSON.toJSONString(list));
+            bsactivityGoodsqcodeService.saveBatch(list);
         }
-        List<BsactivityGoodsqcode> list = bsactivityGoodsqcodeService.createQcodeList(bsactivityGoods,myPropertitys.getUploadpath(),basepath);
-        log.info("creatGoodsQcode_list="+ JSON.toJSONString(list));
-        bsactivityGoodsqcodeService.saveBatch(list);
         return R.ok();
     }
 
+    /**
+     * 下载二维
+     */
+    @RequestMapping("/downLoadGoodsQcode")
+    @RequiresPermissions("bsactivity:bsactivitygoods:update")
+    public R downLoadGoodsQcode(@RequestBody BsactivityGoods bsactivityGoods){
+        log.info("creatGoodsQcode_bsactivityGoods="+ JSON.toJSONString(bsactivityGoods));
+        Long[] ids = bsactivityGoods.getIds();
+        BsactivityGoods paramgoods = null;
+        return R.ok();
+    }
 }

@@ -91,4 +91,7 @@ public class BsactivityGoods implements Serializable {
         /* 前端传入生成二维码的数量 */
         @TableField(exist = false)
         private Long gernerNum;//
+
+        @TableField(exist = false)
+        private Long[] ids;//
 }

@@ -142,7 +142,11 @@ var vm = new Vue({
 		showList: true,
 		showCreateQcode:false,//是否显示二维码生成弹窗
 		title: null,
-		bsactivityGoods: {},
+		bsactivityGoods: {
+		    ids:[],
+		    gernerNum:10
+
+		},
 		goodsimgshow:''
 	},
 	methods: {
@@ -191,15 +195,26 @@ var vm = new Vue({
          		},
         //打开生成二维码弹窗
         updateCreate: function (event) {
-                var id = getSelectedRow();
-                if(id == null){
+                var ids = getSelectedRows();
+                if(ids == null){
                     return ;
                 }
+                vm.bsactivityGoods.ids = ids;
+//                var id = getSelectedRow();
+//                if(id == null){
+//                    return ;
+//                }
                 vm.showList = false;
                 vm.showCreateQcode = true;
-                vm.getInfo(id)
+//                vm.getInfo(id)
          },
 		createQcode: function (event) {
+		     if(vm.bsactivityGoods.ids  == null){
+                return ;
+             }
+             if(vm.bsactivityGoods.gernerNum<=0){
+                 return ;
+              }
 		    $('#btnCreateQcode').button('loading').delay(1000).queue(function() {
                 var url = "bsactivity/bsactivitygoods/creatGoodsQcode";
                 $.ajax({
