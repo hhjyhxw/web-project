@@ -20,7 +20,11 @@ $(function () {
 			{ label: '修改时间', name: 'modifyTime', index: 'modify_time', width: 80 }, 			
 			{ label: '修改人', name: 'modifyMan', index: 'modify_man', width: 80 }, 			
 			{ label: 'openid', name: 'openid', index: 'openid', width: 80 }, 			
-			{ label: 'status 0停用 1启用', name: 'status', index: 'status', width: 80 }			
+			{ label: '状态', name: 'status', width: 60, formatter: function(value, options, row){
+                        				return value === 0 ?
+                        					'<span class="label label-danger">停用</span>' :
+                        					'<span class="label label-success">启用</span>';
+                        			}}
         ],
 		viewrecords: true,
         height: 385,
@@ -47,6 +51,32 @@ $(function () {
         	$("#jqGrid").closest(".ui-jqgrid-bdiv").css({ "overflow-x" : "hidden" }); 
         }
     });
+
+     new AjaxUpload('#upload', {
+                action: baseURL + "local/localUplaod/upload",
+                name: 'file',
+                autoSubmit:true,
+                responseType:"json",
+                onSubmit:function(file, extension){
+                    if (!(extension && /^(jpg|jpeg|png|gif)$/.test(extension.toLowerCase()))){
+                        alert('只支持jpg、png、gif格式的图片！');
+                        return false;
+                    }
+                },
+                onComplete : function(file, r){
+                    console.log("r=="+JSON.stringify(r));
+                    console.log("file=="+file);
+                    if(r.code == 0){
+                        alert("上传成功!");
+                        vm.bsactivityShop.shopImg = r.url;
+                        vm.goodsimgshow = imgURL + r.url;
+                          console.log("vm.goodsimgshow=="+vm.goodsimgshow);
+                        //vm.reload();
+                    }else{
+                        alert(r.msg);
+                    }
+                }
+        });
 });
 
 var vm = new Vue({
@@ -54,7 +84,8 @@ var vm = new Vue({
 	data:{
 		showList: true,
 		title: null,
-		bsactivityShop: {}
+		bsactivityShop: {},
+		goodsimgshow:''
 	},
 	methods: {
 		query: function () {
@@ -129,7 +160,9 @@ var vm = new Vue({
 		},
 		getInfo: function(id){
 			$.get(baseURL + "bsactivity/bsactivityshop/info/"+id, function(r){
+               vm.goodsimgshow = imgURL + r.bsactivityShop.shopImg;
                 vm.bsactivityShop = r.bsactivityShop;
+
             });
 		},
 		reload: function (event) {

@@ -12,17 +12,8 @@ import org.springframework.stereotype.Component;
 
 
 /**   
- * @filename     : JsSDK.java   
- * @description  : TODO JSSDK实体类
- * @version      : V 1.0
- * @author       : FUXING
- * @create       : 2015-3-30 下午5:58:24  
- * @Copyright    : HYZY Corporation 2015    
- * 
  * Modification History:
- * 	Date			Author			Version			Description
  *--------------------------------------------------------------
- *2015-3-30 下午5:58:24
  */
 @Component
 public class JsSDKUtil  {
@@ -35,6 +26,7 @@ public class JsSDKUtil  {
         try {
             JsSDK jssdk = new JsSDK();
             jssdk.setUrl(url);
+            jssdk.setAppid(appid);
             jssdk.setJsTick(accessTokenAndJsapiTicketUtil.getJsapiTicket());
             jssdk.setTimeStamp(PayUtil.getTimeStamp());
             jssdk.setNonceStr(PayUtil.getNonceStr());

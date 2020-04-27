@@ -1,6 +1,54 @@
+
 $(function () {
+            //头图滚动
+//        var mySwiper = new Swiper(".swiper-container", {
+//            autoplay: 2000, //可选选项，自动滑动
+//            autoplayDisableOnInteraction:false,
+//            observer: true,
+//            observeParents: true,
+//            paginationClickable: true,
+//            watchSlidesProgress: true,
+//            watchSlidesVisibility: true
+//        });
+
+        var mySwiper = new Swiper(".swiper-container", {
+            autoplay: {
+              delay: 2500,
+              disableOnInteraction: false,
+            },
+            observer: true,
+            observeParents: true,
+            paginationClickable: true,
+            watchSlidesProgress: true,
+            watchSlidesVisibility: true
+        });
+         //获取广告列表
+         adlist();
+});
+
+
+     //获取微信jssdk参数
+    var wxdata = '';
+    getJssdk();
+     wx.config({
+            debug: false,
+            appId: wxdata.appid,
+            timestamp: wxdata.timeStamp,
+            nonceStr: wxdata.nonceStr,
+            signature: wxdata.sign,
+            jsApiList: ['getLocation']
+     });
+     wx.ready(() => {
+          getLocations();
+     });
+
+
+    function getJssdk(){
         //加载微信配置
         var link = (window.location.href).split('#')[0];
+        if(link.indexOf("?")>=0){
+             link = link.split('?')[0];
+        }
          console.log("link=="+link);
         $.ajax({
             url:fontbaseURL + "/frontpage/jsSdkConfig/getJsSdkConfig",//后台给你提供的接口
@@ -9,94 +57,45 @@ $(function () {
             async:false,
             dataType:"json",
             success:function (data){
-                 console.log("data=="+JSON.stringify(data));
-                wx.config({
-                    debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来
-                    appId: data.appid, // 必填，公众号的唯一标识
-                    timestamp: data.timeStamp, // 必填，生成签名的时间戳
-                    nonceStr: data.nonceStr, // 必填，生成签名的随机串
-                    signature: data.sign,// 必填，签名，见附录1
-                    jsApiList: [
-                        "getLocation",
-                        "onMenuShareTimeline",
-                        "onMenuShareAppMessage",
-                        "onMenuShareAppMessage"
-                    ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
-                });
-                wx.error(function (res) {
-                    alert(res);
-                     console.log("res=="+JSON.stringify(res));
-                });
+                // console.log("data=="+JSON.stringify(data));
+                 wxdata = data
             },
             error:function (error){
-             console.log("error=="+JSON.stringify(error));
-                alert(error)
+             //console.log("error=="+JSON.stringify(error));
+               // alert(error)
             }
         });
+    }
 
-      wx.ready(function(){
-          // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
-           /* wx.hideMenuItems({
-                menuList: ['menuItem:favorite', 'menuItem:share:facebook',
-                  'menuItem:copyUrl', 'menuItem:readMode',
-                  'menuItem:openWithQQBrowser',
-                  'menuItem:openWithSafari', 'menuItem:share:email']
-                // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮，所有menu项见附录3
-              });*/
-            wx.getLocation({
-                    //type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
-                    type: 'gcj02',
-                    success: function (res) {
-                         //alert("定位成功=="+JSON.stringify(res));
-                        latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
-                        longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
-                        var speed = res.speed; // 速度，以米/每秒计
-                        var accuracy = res.accuracy; // 位置精度
-                        //显示地图
-                        //$('#reposition').show();
-                        //var position = Convert_GCJ02_To_BD09(latitude,longitude);
-                        var position = GCJ02_To_BD09(latitude,longitude);
-                        var lng = position[0];
-                        var lat = position[1];
-
-                        toReposition(lng,lat);
-                        //toReposition(longitude,latitude);
-                    },
-                    cancel: function (res) {
-                        alert("用户拒绝授权获取地理位置");
-                    },
-                    fail: function (res) {
-                        alert("获取位置失败=="+JSON.stringify(res)+",请重试");
-                        //alert("获取地理位置失败,请检查是否开启定位功能哦");
-                    }
-           });
+    function getLocations(){
+         wx.getLocation({
+                //type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+                type: 'gcj02',
+                success: function (res) {
+                    // console.log("定位成功res=="+JSON.stringify(res));
+                    latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+                    longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+                    var speed = res.speed; // 速度，以米/每秒计
+                    var accuracy = res.accuracy; // 位置精度
+                    var position = GCJ02_To_BD09(latitude,longitude);
+                    var lng = position[0];
+                    var lat = position[1];
+                    toReposition(lng,lat);
+                },
+                cancel: function (res) {
+                    //alert("用户拒绝授权获取地理位置");
+                    shoplists(null,null);
+                },
+                fail: function (res) {
+                    shoplists(null,null);
+//                    alert("获取位置失败=="+JSON.stringify(res)+",请重试");
+                    //alert("获取地理位置失败,请检查是否开启定位功能哦");
+                },
+                complete: function (res) {
+                 // console.log("定位完成res=="+JSON.stringify(res));
+                },
        });
-
-
-         var mySwiper = new Swiper ('.swiper-container', {
-            direction: 'horizontal', // horizontal；垂直切换选项 vertical
-            loop: true, // 循环模式选项
-
-            // 如果需要分页器
-            pagination: {
-              el: '.swiper-pagination',
-            },
-            // 如果需要前进后退按钮
-            navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            },
-            // 如果需要滚动条
-            scrollbar: {
-              el: '.swiper-scrollbar',
-            },
-          })
-
-         //获取广告列表
-         adlist();
-});
-
-
+    }
 
     //火星坐标系 (GCJ-02) 与百度坐标系 (BD-09) 的转换算法 将 GCJ-02 坐标转换成 BD-09 坐标
     function GCJ02_To_BD09(lat,lng){
@@ -111,6 +110,7 @@ $(function () {
     }
 
     function toReposition(lng,lat){
+            //console.log("toReposition=="+JSON.stringify(lng));
             var map = new BMap.Map("allmap");
             var point = new BMap.Point(lng,lat);
             var gc = new BMap.Geocoder();
@@ -120,28 +120,47 @@ $(function () {
                 var mapAddress = addComp.province+addComp.city + addComp.district
                 + addComp.street + addComp.streetNumber;
                 //修改详细地址的值
-                $("#detailaddress").val(addComp.city + addComp.district+ addComp.street + addComp.streetNumber);
+                vm.detailaddress = addComp.city + addComp.district+ addComp.street + addComp.streetNumber;
             });
         //根据经纬度查询用户附近店铺列表 //后台给你提供的接口
-        $.ajax({
-            url:fontbaseURL + "/frontpage/bsactivity/shop/listinfo",
-            type:"GET",
-            data:{"lnt":lng,"lat":lat},
-            async:true,
-            dataType:"json",
-            success:function (data){
-               console.log("data=="+JSON.stringify(data));
-               debugger;
-               if(data.code==0){
-                    vm.shoplist = data.shoplist;
-               }
-            },
-            error:function (error){
-                alert(error)
-            }
-        });
+        vm.originLat = lat;
+        vm.originLog = lng;
+        shoplists(lng,lat);
     }
+    //附近店铺
+    function shoplists(lng,lat){
+        //console.log("shoplists=="+JSON.stringify(lng));
+             $.ajax({
+                url:fontbaseURL + "/frontpage/bsactivity/shop/listinfo",
+                type:"GET",
+                data:{"lnt":lng,"lat":lat},
+                async:true,
+                dataType:"json",
+                success:function (data){
+                   console.log("data=="+JSON.stringify(data));
+                   if(data.code==0){
+                       // vm.shoplist = data.shoplist;
+                         let shoplist = data.shoplist;
+                       shoplist.forEach(function(p) {
+                         p.shopImg =imgURL+p.shopImg;
+                       });
+                       vm.shoplist =shoplist;
+                       let originLat = vm.originLat;
+                       let originLog = vm.originLog;
+                       if(originLat=='' || originLog==''){
+                            vm.originLat=data.bsactivityShop.lat;
+                            vm.originLat=data.bsactivityShop.lat;
+                       }
 
+                   }
+                },
+                error:function (error){
+                    alert(error)
+                }
+            });
+        }
+
+    //广告列表
     function adlist(){
             //根据经纬度查询用户附近店铺列表 //后台给你提供的接口
         $.ajax({
@@ -152,7 +171,11 @@ $(function () {
             success:function (data){
                console.log("data=="+JSON.stringify(data));
                if(data.code==0){
-                    vm.adlist = data.adlist;
+                   let adlist = data.adlist;
+                   adlist.forEach(function(p) {
+                     p.adImgurl =imgURL+p.adImgurl;
+                   });
+                    vm.adlist =adlist;
                }
             },
             error:function (error){
@@ -166,18 +189,42 @@ var vm = new Vue({
 	data:{
 	    detailaddress:'西乡塘区衡阳东路',
         shoplist:[
-            {shopName:'test',
+            /*{shopName:'test',
             contactPhone:'145822',
             cityName:'faf',
             countyName:'country',
             address:'afaf',
             distance:320,
 
-            }
+            }*/
         ],
-        adlist:[]
+        adlist:[],
+        showgogetLocation:false,
+        originLat:'',
+        originLog:''
 	},
 	methods: {
+         closeWindown:function(){
+              vm.showgogetLocation = false;
+         },
+         cancelGet:function(){
+             vm.showgogetLocation = false;
+         },
+         //确认授权
+         okGet:function(){
+               getLocations();
+                vm.showgogetLocation = false;
+         },
 
+          goToBaidumap:function(item){
+             let originLat = vm.originLat;
+             let originLog = vm.originLog;
+             let destiLat = item.lat;
+             let destLog = item.lnt;
+             let address = item.address;
+             var url='http://api.map.baidu.com/direction?origin='+originLat+','+originLog+'&destination='+destiLat+','+destLog+'&mode=driving&region='+address+'&output=html';
+             window.location.href=url;
+             return;
+         }
 	}
 });

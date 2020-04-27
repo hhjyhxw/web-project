@@ -19,6 +19,7 @@ import java.net.URL;
 @Component
 public class AccessTokenAndJsapiTicketUtil {
 
+    
     @Autowired
     private MyPropertitys myPropertitys;
 
@@ -94,17 +95,17 @@ public class AccessTokenAndJsapiTicketUtil {
 					in = null;
 				}
 			} catch (Exception ex) {
-				System.out.println("释放资源异常" + ex);
+				log.info("释放资源异常" + ex);
 			}
 		}
 		//1.3获取请求返回的xml
 		String xml = rtn.toString();// TOKENCONTENT
 		log.error("access_token返回数据xml=="+xml);
-		//System.out.println("access_token返回数据xml=="+xml);
+		//log.info("access_token返回数据xml=="+xml);
 		int beginIndex = xml.indexOf("<apptoken>");
 		int endIndex   = xml.indexOf("</apptoken>");
 		String access_token = xml.substring(beginIndex, endIndex).replace("<apptoken>", "");
-		//System.out.println("access_token=="+access_token);
+		//log.info("access_token=="+access_token);
 		return access_token;		
 	}
 
@@ -117,11 +118,11 @@ public class AccessTokenAndJsapiTicketUtil {
 	public  String getJsapiTicket() {
 	
 		 String addr = IMCC_URL.replace("host:port", myPropertitys.getWx().getHost()).replace("HOSTTEL", myPropertitys.getWx().getHosttel()).replace("IMTYPE", imtype).replace("HOSTNUMBER", myPropertitys.getWx().getHostnumber());
-		
+
+        log.info("getJsapiTicket_addr===="+addr);
 		String xml = invokeComm(addr, JSAPICONTENT);
-		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++");
-		System.out.println("JSAPIxml:"+xml);
-		System.out.println("++++++++++++++++++++++");
+        log.info("JSAPIxml:"+xml);
+		log.info("++++++++++++++++++++++");
 		try{
 			if(xml!=null&&!"".equals(xml)){
 				int beginIndex = xml.indexOf("<appticket>");
@@ -147,8 +148,8 @@ public class AccessTokenAndJsapiTicketUtil {
 		OutputStream os = null;
 		PrintWriter pw = null;
 		BufferedReader in = null;
-		System.out.println("addr:" + addr);
-		System.out.println("content:" + content);
+		log.info("addr:" + addr);
+		log.info("content:" + content);
 		try {
 			URL url = new URL(addr);
 			HttpURLConnection uc = (HttpURLConnection)url.openConnection();
@@ -180,7 +181,7 @@ public class AccessTokenAndJsapiTicketUtil {
 			return "time_out";
 		}
 		catch (Exception ex) {
-			System.out.println("调用IMCC监控中心接口异常" + ex);
+			log.info("调用IMCC监控中心接口异常" + ex);
 		} finally {
 			try {
 				if (pw != null) {
@@ -199,10 +200,10 @@ public class AccessTokenAndJsapiTicketUtil {
 				}
 			}
 			catch (Exception ex) {
-				System.out.println("释放资源异常" + ex);
+				log.info("释放资源异常" + ex);
 			}
 		}
-		System.out.println("ret:" + rtn.toString());
+		log.info("ret:" + rtn.toString());
 		return rtn.toString();
 	}
 
@@ -217,7 +218,7 @@ public class AccessTokenAndJsapiTicketUtil {
 		PrintWriter pw = null;
 		BufferedReader in = null;
 		//增加access-token参数
-		System.out.println("addr:" + addr);
+		log.info("addr:" + addr);
 		try {
 			URL url = new URL(addr);
 			HttpURLConnection uc = (HttpURLConnection)url.openConnection();
@@ -252,7 +253,7 @@ public class AccessTokenAndJsapiTicketUtil {
 			return "connect_exception";
 		}
 		catch (Exception ex) {
-			System.out.println("调用IMCC监控中心接口异常" + ex);
+			log.info("调用IMCC监控中心接口异常" + ex);
 		} finally {
 			try {
 				if (pw != null) {
@@ -271,10 +272,10 @@ public class AccessTokenAndJsapiTicketUtil {
 				}
 			}
 			catch (Exception ex) {
-				System.out.println("释放资源异常" + ex);
+				log.info("释放资源异常" + ex);
 			}
 		}
-		System.out.println("mc ret:" + rtn.toString());
+		log.info("mc ret:" + rtn.toString());
 		log.warn("mc ret:" + rtn.toString());
 		return rtn.toString();
 	}

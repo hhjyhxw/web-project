@@ -3,6 +3,7 @@
 <head>
     <title></title>
 		<#include "/header.html">
+    <script src="${request.contextPath}/statics/libs/ajaxupload.js"></script>
 </head>
 <body>
 <div id="icloudapp" v-cloak>
@@ -31,58 +32,36 @@
                             <input type="text" class="form-control" v-model="bsactivityAd.adName" placeholder="名称"/>
                         </div>
                     </div>
-											                    <div class="form-group">
-                        <div class="col-sm-2 control-label">图片url</div>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" v-model="bsactivityAd.adImgurl" placeholder="图片url"/>
-                        </div>
-                    </div>
+
+            <div class="form-group">
+                <div class="col-sm-2 control-label">图片url</div>
+                <img   :src="goodsimgshow" style="width:300px;height:150px;" v-model="bsactivityAd.adImgurl" placeholder="店铺图标"/>
+                <div class="col-sm-10">
+                    <a class="btn btn-primary" id="upload" style="margin-left:11rem;"><i class="fa fa-plus"></i>&nbsp;图片url</a>
+                </div>
+            </div>
 											                    <div class="form-group">
                         <div class="col-sm-2 control-label">跳转url</div>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" v-model="bsactivityAd.addJumpurl" placeholder="跳转url"/>
                         </div>
                     </div>
-											                    <div class="form-group">
-                        <div class="col-sm-2 control-label">0停用、1启用</div>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" v-model="bsactivityAd.status" placeholder="0停用、1启用"/>
-                        </div>
-                    </div>
-											                    <div class="form-group">
-                        <div class="col-sm-2 control-label">创建时间</div>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" v-model="bsactivityAd.createTime" placeholder="创建时间"/>
-                        </div>
-                    </div>
-											                    <div class="form-group">
-                        <div class="col-sm-2 control-label">创建人</div>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" v-model="bsactivityAd.createOperator" placeholder="创建人"/>
-                        </div>
-                    </div>
-											                    <div class="form-group">
-                        <div class="col-sm-2 control-label">修改时间</div>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" v-model="bsactivityAd.modifyTime" placeholder="修改时间"/>
-                        </div>
-                    </div>
-											                    <div class="form-group">
-                        <div class="col-sm-2 control-label">修改人</div>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" v-model="bsactivityAd.modifyOperator" placeholder="修改人"/>
-                        </div>
-                    </div>
-											                    <div class="form-group">
-                        <div class="col-sm-2 control-label">所在广告位</div>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" v-model="bsactivityAd.posittionId" placeholder="所在广告位"/>
-                        </div>
-                    </div>
+
+            <div class="form-group">
+                <div class="col-sm-2 control-label">状态</div>
+                <label class="radio-inline">
+                    <input type="radio" name="status" value="1" v-model="bsactivityAd.status"/> 启用
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="status" value="0" v-model="bsactivityAd.status"/> 停用
+                </label>
+            </div>
+
+
 											                    <div class="form-group">
                         <div class="col-sm-2 control-label">排序</div>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" v-model="bsactivityAd.sortNum" placeholder="排序"/>
+                            <input type="number" class="form-control" v-model="bsactivityAd.sortNum" placeholder="排序"/>
                         </div>
                     </div>
 							            <div class="form-group">

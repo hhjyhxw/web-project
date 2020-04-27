@@ -11,7 +11,11 @@ $(function () {
 			{ label: '来源 1、百色引流', name: 'fromType', index: 'from_type', width: 80 }, 			
 			{ label: '更新时间', name: 'modifyTime', index: 'modify_time', width: 80 }, 			
 			{ label: '赠送龙币', name: 'longcoin', index: 'longcoin', width: 80 }, 			
-			{ label: '0老会员  1 新注册会员', name: 'status', index: 'status', width: 80 }			
+			{ label: '状态', name: 'status', width: 60, formatter: function(value, options, row){
+                                    				return value === 0 ?
+                                    					'<span class="label label-danger">老会员</span>' :
+                                    					'<span class="label label-success">新会员注册</span>';
+                                    			}}
         ],
 		viewrecords: true,
         height: 385,

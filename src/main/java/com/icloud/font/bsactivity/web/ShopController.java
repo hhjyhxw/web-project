@@ -73,7 +73,7 @@ public class ShopController {
             log.info("listinfo_params_query="+ JSON.toJSONString(bsactivityShop));
             List<BsactivityShop> list = bsactivityShopService.selectByposition(bsactivityShop);
             log.info("listinfo_result="+ JSON.toJSONString(list));
-            return R.ok().put("shoplist",list);
+            return R.ok().put("shoplist",list).put("bsactivityShop",bsactivityShop);
         } catch (Exception e) {
             e.printStackTrace();
             log.info("queryGoodsByqcode_result="+ e.getMessage());

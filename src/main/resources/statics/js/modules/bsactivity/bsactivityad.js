@@ -3,11 +3,15 @@ $(function () {
         url: baseURL + 'bsactivity/bsactivityad/list',
         datatype: "json",
         colModel: [			
-			{ label: 'id', name: 'id', index: 'id', width: 50, key: true },
+			{ label: '编号', name: 'id', index: 'id', width: 50, key: true },
 			{ label: '名称', name: 'adName', index: 'ad_name', width: 80 }, 			
 			{ label: '图片url', name: 'adImgurl', index: 'ad_imgurl', width: 80 }, 			
 			{ label: '跳转url', name: 'addJumpurl', index: 'add_jumpurl', width: 80 }, 			
-			{ label: '0停用、1启用', name: 'status', index: 'status', width: 80 }, 			
+			{ label: '状态', name: 'status', width: 60, formatter: function(value, options, row){
+                                    				return value === 0 ?
+                                    					'<span class="label label-danger">停用</span>' :
+                                    					'<span class="label label-success">启用</span>';
+                                    			}},
 			{ label: '创建时间', name: 'createTime', index: 'create_time', width: 80 }, 			
 			{ label: '创建人', name: 'createOperator', index: 'create_operator', width: 80 }, 			
 			{ label: '修改时间', name: 'modifyTime', index: 'modify_time', width: 80 }, 			
@@ -40,6 +44,32 @@ $(function () {
         	$("#jqGrid").closest(".ui-jqgrid-bdiv").css({ "overflow-x" : "hidden" }); 
         }
     });
+
+      new AjaxUpload('#upload', {
+                    action: baseURL + "local/localUplaod/upload",
+                    name: 'file',
+                    autoSubmit:true,
+                    responseType:"json",
+                    onSubmit:function(file, extension){
+                        if (!(extension && /^(jpg|jpeg|png|gif)$/.test(extension.toLowerCase()))){
+                            alert('只支持jpg、png、gif格式的图片！');
+                            return false;
+                        }
+                    },
+                    onComplete : function(file, r){
+                        console.log("r=="+JSON.stringify(r));
+                        console.log("file=="+file);
+                        if(r.code == 0){
+                            alert("上传成功!");
+                            vm.bsactivityAd.adImgurl = r.url;
+                            vm.goodsimgshow = imgURL + r.url;
+                              console.log("vm.goodsimgshow=="+vm.goodsimgshow);
+                            //vm.reload();
+                        }else{
+                            alert(r.msg);
+                        }
+                    }
+            });
 });
 
 var vm = new Vue({
@@ -47,7 +77,8 @@ var vm = new Vue({
 	data:{
 		showList: true,
 		title: null,
-		bsactivityAd: {}
+		bsactivityAd: {},
+		goodsimgshow:''
 	},
 	methods: {
 		query: function () {
