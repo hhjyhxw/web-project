@@ -1,48 +1,48 @@
 package com.icloud.common.util;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
+import com.icloud.config.global.MyPropertitys;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.io.*;
 import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.SocketTimeoutException;
 import java.net.URL;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.icloud.common.ConfigUtil;
-
 /**
  * 到IMCC获取access_token
  * @author z
  */
+@Component
 public class AccessTokenAndJsapiTicketUtil {
-	
+
+    @Autowired
+    private MyPropertitys myPropertitys;
+
 	public final static Logger log = LoggerFactory.getLogger(AccessTokenAndJsapiTicketUtil.class);
 	public final static String IMCC_URL = "http://host:port/mc/comm_protocol?hostel=HOSTTEL&imtype=IMTYPE&hostnumber=HOSTNUMBER&waitret=true";
 	public final static String  TOKENCONTENT = "gethostnumberinfo";
 	public final static	String JSAPICONTENT = "getjsapi_ticket";
-	public final static String host =  
-			ConfigUtil.get("imcchost")+ ":"+ConfigUtil.get("imcchostport");
-	public final static String hosttel = ConfigUtil.get("hosttel");
-	public final static String hostnumber = ConfigUtil.get("hostnumber");
+//	public  String host = myPropertitys.getWx().getImcchost()+ ":"+myPropertitys.getWx().getImcchostport();
+//	public   String hosttel = myPropertitys.getWx().getHosttel();
+//	public   String hostnumber = myPropertitys.getWx().getHostnumber();
 	public final static String imtype = "161"; //161代表微信
 	/**
 	 * 步骤二
 	 * 根据服务器信息,获取access_token
 	 */
-	public static String getAccessToken(){
+	public  String getAccessToken(){
 		
 //		 String host = "10.104.1.120:7003";
 //	     String hosttel = "16760";
 //	     String hostnumber = "gh_1735a070991c";
 		//获取access_token的访问地址
-		String accessTokenAccessAddress = "http://"+host+"/mc/comm_protocol?hostel="+hosttel
+		String accessTokenAccessAddress = "http://"+myPropertitys.getWx().getHost()+"/mc/comm_protocol?hostel="+myPropertitys.getWx().getHosttel()
 				                                      +"&imtype=161"// 161代表微信
-				                                      +"&hostnumber="+hostnumber
+				                                      +"&hostnumber="+myPropertitys.getWx().getHostnumber()
 				                                      +"&waitret=true";		
 		StringBuilder rtn = new StringBuilder();
 		OutputStream os = null;
@@ -114,9 +114,9 @@ public class AccessTokenAndJsapiTicketUtil {
 
 	 * @return
 	 */
-	public static String getJsapiTicket() {
+	public  String getJsapiTicket() {
 	
-		 String addr = IMCC_URL.replace("host:port", host).replace("HOSTTEL", hosttel).replace("IMTYPE", imtype).replace("HOSTNUMBER", hostnumber);
+		 String addr = IMCC_URL.replace("host:port", myPropertitys.getWx().getHost()).replace("HOSTTEL", myPropertitys.getWx().getHosttel()).replace("IMTYPE", imtype).replace("HOSTNUMBER", myPropertitys.getWx().getHostnumber());
 		
 		String xml = invokeComm(addr, JSAPICONTENT);
 		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++");

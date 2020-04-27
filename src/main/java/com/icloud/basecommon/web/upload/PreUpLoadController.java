@@ -41,6 +41,8 @@ public class PreUpLoadController extends AppBaseController {
 	
 	@Autowired
 	private FtpFileService ftpFileService;
+    @Autowired
+    private WeixinInterfaceUtil weixinInterfaceUtil;
 
 	@RequestMapping(value = "/uploadFileImage",method=RequestMethod.POST)
 	@ResponseBody
@@ -56,7 +58,7 @@ public class PreUpLoadController extends AppBaseController {
 			if (!dirFile.exists()) {
 				dirFile.mkdirs();
 			}
-			basePath = WeixinInterfaceUtil.getImageUrlByMedia(mediaId,basePath,dirFile.getPath());
+			basePath = weixinInterfaceUtil.getImageUrlByMedia(mediaId,basePath,dirFile.getPath());
 			JSONObject data = new JSONObject();
 			if(basePath==null){
 				obj.put("code", 1);
@@ -102,7 +104,7 @@ public class PreUpLoadController extends AppBaseController {
 			if (!dirFile.exists()) {
 				dirFile.mkdirs();
 			}
-			JSONArray basePathArray = WeixinInterfaceUtil.getImageUrlByMedias(JSON.parseArray(mediaIds),basePath,dirFile.getPath());
+			JSONArray basePathArray = weixinInterfaceUtil.getImageUrlByMedias(JSON.parseArray(mediaIds),basePath,dirFile.getPath());
 			JSONObject data = new JSONObject();
 			if(basePathArray==null || basePathArray.size()<=0){
 				obj.put("code", 1);

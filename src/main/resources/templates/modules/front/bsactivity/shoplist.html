@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <title></title>
+    <#include "/header.html">
+    <script src="${request.contextPath}/statics/third_plugin/swiper/swiper.min.js"></script>
+    <link rel="stylesheet" href="${request.contextPath}/statics/third_plugin/swiper/swiper.min.css">
+
+    <!-- 百度地图api -->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nsHiiQyIYQiRhOwj9Hzswulw"></script>
+    <script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <style>
+        .swiper-container .swiper-slide img{
+            display:inline-block;
+            width:100%;
+            height: 100%;
+        }
+        .posiinfo{
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            background: rgb(242, 242, 242);
+        }
+        .positext1{
+            color: black;
+            font-weight: bold;
+            padding-right: 1rem;
+        }
+        .shoplist{
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem;
+            border-bottom: 1px solid lightgrey
+        }
+        .shopimg{
+            flex:1;
+            padding-right:1rem;
+        }
+        .shopimg img{
+            width: 100%;
+            height: 100%
+        }
+        .shopinfo{
+            flex:2;
+        }
+        .shopinfo .item{
+            padding:0.2rem;
+        }
+         .shopinfo .item2{
+            padding:0.2rem;
+            display: flex;
+            width: 130%;
+        }
+        .shopinfo .shopname{
+            white-space: nowrap;
+            text-align: left;
+            font-size: 16px;
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            font-family: "Segoe UI";
+            color: rgb(0, 0, 0);
+        }
+       .shopinfo .shoptext1{
+            white-space: nowrap;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            font-family: "Segoe UI";
+            color: rgb(27, 27, 27);
+        }
+        .shopinfo .shoptext2{
+
+        }
+       .shopinfo .shoptext3{
+            color:#999;
+            font-size: 1.3rem;
+        }
+        .shopinfo .icon{
+            margin-top: -0.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+        .distance{
+            flex: 1;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+        .distance_icon{
+            margin-top: -0.5rem;
+            width: 2rem;
+            height: 2rem;
+        }
+    </style>
+</head>
+<body>
+<div id="icloudapp" v-cloak>
+        <!--banner-->
+        <div class="swiper-container" style="height:20rem;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="${request.contextPath}/statics/third_plugin/jquery_swiper/images/img1.jpeg"/>
+                </div>
+                <div class="swiper-slide"><img src="${request.contextPath}/statics/third_plugin/jquery_swiper/images/img2.jpeg"/></div>
+                <div class="swiper-slide"><img src="${request.contextPath}/statics/third_plugin/jquery_swiper/images/img5.jpeg"/></div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <!--<div class="swiper-pagination"></div>-->
+
+            <!-- 如果需要导航按钮 -->
+           <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- 如果需要滚动条 -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+        <!--banner end-->
+        <!--位置信息-->
+        <div class="posiinfo">
+            <div class="positext1">您当前位置:</div><div>{{detailaddress}}</div>
+        </div>
+    <!--位置信息end-->
+    <!--店铺列表-->
+        <div class="shoplist">
+            <div class="shopimg">
+                <img src="${request.contextPath}/statics/third_plugin/jquery_swiper/images/img4.jpeg"/>
+            </div>
+            <div class="shopinfo">
+                <div class="shopname">百色旗舰店</div>
+                <div class="item"><text class="shoptext1">电话:</text><a class="shoptext3" href="tel:0311-85358073">0311-85358073</a><img class="icon" src="${request.contextPath}/statics/images/bsactivity/phone.png"></div>
+                <div class="item2"><text class="shoptext1">地址:</text><text class="shoptext3">南宁西乡塘区衡阳东路52号</text></div>
+            </div>
+            <div class="distance">
+                <img class="distance_icon" src="${request.contextPath}/statics/images/bsactivity/posit.png"/><div>1.2km</div>
+            </div>
+        </div>
+
+       <div class="shoplist"  v-for="(item,index) in shoplist" :key="index">
+            <div class="shopimg">
+                <img src="${request.contextPath}/statics/third_plugin/jquery_swiper/images/img4.jpeg"/>
+            </div>
+            <div class="shopinfo">
+                <div class="shopname">{{item.shopName}}</div>
+                <div class="item"><text class="shoptext1">电话:</text><a class="shoptext3" href="tel:item.contactPhone">{{item.contactPhone}}</a><img class="icon" src="${request.contextPath}/statics/images/bsactivity/phone.png"></div>
+                <div class="item2"><div class="shoptext1">地址:</div><div class="shoptext3">{{item.cityName}}{{item.countyName}}{{item.address}}</div></div>
+            </div>
+            <div class="distance">
+                <img class="distance_icon" src="${request.contextPath}/statics/images/bsactivity/posit.png"/><div>{{item.distance}}km</div>
+            </div>
+      </div>
+    <!--店铺列表end-->
+</div>
+
+<script src="${request.contextPath}/statics/js/front/bsactivity/shoplist.js?_${.now?long}"></script>
+</body>

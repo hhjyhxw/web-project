@@ -5,6 +5,8 @@ import com.icloud.common.ConfigUtil;
 import com.icloud.common.util.AccessTokenAndJsapiTicketUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -17,9 +19,13 @@ import java.net.URL;
  * 创建人: zhangdehai
  * 创建时间:2018年6月4日 上午9:42:06
  */
+@Component
 public class WeixinInterfaceUtil {
 
         public final static Logger log = LoggerFactory.getLogger(WeixinInterfaceUtil.class);
+
+    @Autowired
+    private AccessTokenAndJsapiTicketUtil accessTokenAndJsapiTicketUtil;
 
         /**
          * 单图片上传
@@ -48,7 +54,7 @@ public class WeixinInterfaceUtil {
          * @return
          * @date 2018年8月15日下午2:48:59
          */
-        public static String getImageUrlByMedia(String mediaId,String basePath,String savePath){
+        public  String getImageUrlByMedia(String mediaId,String basePath,String savePath){
             return downloadWeixinFiles(mediaId,basePath,savePath,0);
         }
 
@@ -62,10 +68,10 @@ public class WeixinInterfaceUtil {
          * @return
          * @date 2018年8月15日下午2:37:58
          */
-        private static String downloadWeixinFiles(String mediaId,String basePath,String savePath,int count){
+        private  String downloadWeixinFiles(String mediaId,String basePath,String savePath,int count){
             String filePath = null;
             String requestUrl = ConfigUtil.get("get_media_info");
-            String accessToken = AccessTokenAndJsapiTicketUtil.getAccessToken();
+            String accessToken = accessTokenAndJsapiTicketUtil.getAccessToken();
             log.info("get_media_info====="+requestUrl);
             log.info("accessToken====="+accessToken);
             log.info("mediaId====="+mediaId);
@@ -156,11 +162,11 @@ public class WeixinInterfaceUtil {
          * @return
          * @date 2018年8月8日上午10:21:35
          */
-        public static JSONArray getImageUrlByMedias(JSONArray jsonArray, String basePath,
+        public  JSONArray getImageUrlByMedias(JSONArray jsonArray, String basePath,
                                                     String savePath) {
             JSONArray filePathArray = new JSONArray();
             String requestUrl = ConfigUtil.get("get_media_info");
-            String accessToken = AccessTokenAndJsapiTicketUtil.getAccessToken();
+            String accessToken = accessTokenAndJsapiTicketUtil.getAccessToken();
             log.info("get_media_info====="+requestUrl);
             log.info("accessToken====="+accessToken);
             log.info("mediaIds====="+jsonArray);

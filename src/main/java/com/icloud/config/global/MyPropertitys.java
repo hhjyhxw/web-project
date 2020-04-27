@@ -26,9 +26,14 @@ public class MyPropertitys {
         private String appid;
         private String appsecret;
         private String getUserInfo;//第三方登陆接口
-        private String hostnumber;//gh号 用于区分不同公众号的id
         private String infokey;//登陆接口签名Key
         private String jssdk_key;//获取jssdk对象key
+
+        private String hostnumber;//gh号 用于区分不同公众号的id
+        private String imcchost;//登陆接口签名Key
+        private String imcchostport;//登陆接口签名Key
+        private String hosttel;//登陆接口签名Key
+        private String host;
     }
 
     @Data

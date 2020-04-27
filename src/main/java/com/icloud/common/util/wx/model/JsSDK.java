@@ -5,9 +5,8 @@
   */
 package com.icloud.common.util.wx.model;
 
-import com.icloud.common.util.AccessTokenAndJsapiTicketUtil;
 import com.icloud.common.util.wx.PayUtil;
- 
+
 
 /**   
  * @filename     : JsSDK.java   
@@ -22,18 +21,20 @@ import com.icloud.common.util.wx.PayUtil;
  *--------------------------------------------------------------
  *2015-3-30 下午5:58:24
  */
+
 public class JsSDK extends MchBean {
+
+
 	/** 签名 */
 	private String sign; 
 	/** 生成签名必须参数  */
 	private String jsTick; 
 	/** 调起JS目录 用来签名  */
 	private String url;
-	
+    public JsSDK(){}
 	/**
 	 * @author fwx215666
 	 * @description 构造出调用JS方法的必须参数
-	 * @param APPID  APPSECRET URL调起JS的URL 
 	 * */
 	public JsSDK(String appid,String appsecret,String url) throws Exception{
 		
@@ -44,7 +45,7 @@ public class JsSDK extends MchBean {
 		//原来获取JsApiTicket
 		//this.jsTick    = JsApiTicketMap.get(appid).getJsApiTicket();
 		//现在获取JsApiTicket
-		this.jsTick    =AccessTokenAndJsapiTicketUtil.getJsapiTicket();
+//		this.jsTick    =AccessTokenAndJsapiTicketUtil.getJsapiTicket();
 		
 		
 		this.url = url;
@@ -71,5 +72,5 @@ public class JsSDK extends MchBean {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-		
+
 }
