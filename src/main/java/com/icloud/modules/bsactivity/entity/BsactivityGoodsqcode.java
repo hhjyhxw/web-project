@@ -31,6 +31,9 @@ public class BsactivityGoodsqcode implements Serializable {
    	   	   /* 同一时空唯一key */
        @TableField("qcode")
        private String qcode;
+        /* md5签名后的qcode */
+        @TableField("signqcode")
+        private String signqcode;
    	   	   /* 使用状态(0未使用，1已使用) */
        @TableField("status")
        private Integer status;

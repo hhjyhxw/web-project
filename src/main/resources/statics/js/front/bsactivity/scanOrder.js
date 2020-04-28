@@ -86,13 +86,15 @@ var vm = new Vue({
         //确认兑换
         submitorder:function () {
             let content = '兑换数量:'+vm.exchangeNum+";扣减龙币数:"+vm.totalAmount;
-           layer.confirm(content, {btn: ['确定', '取消'], title: "提示"}, function () {
+           layer.confirm(content, {btn: ['确定', '取消'], title: "提示"}, function (index) {
+                       layer.close(index);
                      $.get(fontbaseURL + "/frontpage/bsactivity/order/exchange?goodsId="+vm.goodsId+"&exchangeNum="+vm.exchangeNum, function(r){
                         console.log("r=="+JSON.stringify(r));
                         if(r.code==0){
                            vm.exchangeSuccess = true;//兑换成功
                            vm.msg = "兑换成功";
                            vm.showerror = true;//显示非商品内容
+
                         }else{
                            vm.exchangeSuccess = false;//在次调试使用
                            vm.msg = r.msg!=null?(r.msg!=''?r.msg:'兑换失败'):'兑换失败';

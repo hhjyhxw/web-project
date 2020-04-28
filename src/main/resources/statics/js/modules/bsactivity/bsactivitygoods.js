@@ -298,7 +298,29 @@ var vm = new Vue({
                      content: baseURL + "modules/bsactivity/bsactivitygoodsqcode.html?goodsid=" + id
                  });
          },
+         //下载二维码
+        downloadqcode: function (event) {
+                var ids = getSelectedRows();
+                if(ids == null){
+                    return ;
+                }
+                vm.bsactivityGoods.ids = ids;
+                var url = "bsactivity/bsactivitygoods/downLoadGoodsQcode";
+                $.ajax({
+                    type: "POST",
+                    url: baseURL + url,
+                    contentType: "application/json",
+                    data: JSON.stringify(vm.bsactivityGoods),
+                    success: function(r){
+                        if(r.code === 0){
+                             layer.msg("操作成功", {icon: 1});
+                        }else{
+                            layer.alert(r.msg);
+                        }
+                    }
 
+                });
+         },
 
 	}
 

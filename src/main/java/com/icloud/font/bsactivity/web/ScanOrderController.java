@@ -56,12 +56,13 @@ public class ScanOrderController {
         WxUser user = (WxUser) request.getSession().getAttribute("wx_user");
 //        return "modules/front/bsactivity/confirOrder";
         try {
-            user.setQcode(qcode);
+            user.setQcode(qcode.toLowerCase());
             request.getSession().setAttribute("wx_user",user);
-            String decodeQcode = AesUtils.decode(qcode,bsactivityGoodsqcodeProperties.getAsekey());
-            log.info("decodeQcode=="+decodeQcode);
+            String ecodeQcode = AesUtils.encode(user.getQcode(),bsactivityGoodsqcodeProperties.getAsekey());
+            log.info("ecodeQcode=="+ecodeQcode);
             QueryWrapper<BsactivityGoodsqcode> queryWrapper = new QueryWrapper<BsactivityGoodsqcode>();
-            queryWrapper.lambda().eq(BsactivityGoodsqcode::getQcode, decodeQcode);
+            queryWrapper.lambda().eq(BsactivityGoodsqcode::getQcode, user.getQcode())
+                    .eq(BsactivityGoodsqcode::getSignqcode,ecodeQcode);
             BsactivityGoodsqcode bsactivityGoodsqcode = (BsactivityGoodsqcode)bsactivityGoodsqcodeService.getOne(queryWrapper);
             if(bsactivityGoodsqcode.getStatus().intValue()==1){
                 return "modules/front/bsactivity/scanOrderComsued";
@@ -90,12 +91,12 @@ public class ScanOrderController {
                 log.info("queryGoodsByqcode_result=错误二维码;qcode="+qcode);
                return R.error("错误二维码!");
             }
-            //解码后的二维码
-            String decodeQcode = AesUtils.decode(qcode,bsactivityGoodsqcodeProperties.getAsekey());
-            log.info("decodeQcode=="+decodeQcode);
-//            QueryWrapper<BsactivityGoodsqcode> queryWrapper = new QueryWrapper<BsactivityGoodsqcode>();
-//            queryWrapper.lambda().eq(BsactivityGoodsqcode::getQcode, decodeQcode);
-            BsactivityGoods bsactivityGoods = bsactivityGoodsService.selectByQcode(decodeQcode);
+            String ecodeQcode = AesUtils.encode(qcode,bsactivityGoodsqcodeProperties.getAsekey());
+            QueryWrapper<BsactivityGoodsqcode> queryWrapper = new QueryWrapper<BsactivityGoodsqcode>();
+            queryWrapper.lambda().eq(BsactivityGoodsqcode::getQcode,qcode)
+                    .eq(BsactivityGoodsqcode::getSignqcode,ecodeQcode);
+            BsactivityGoodsqcode bsactivityGoodsqcode = (BsactivityGoodsqcode)bsactivityGoodsqcodeService.getOne(queryWrapper);
+            BsactivityGoods bsactivityGoods = (BsactivityGoods) bsactivityGoodsService.getById(bsactivityGoodsqcode.getGoodsid());
             log.info("queryGoodsByqcode_result="+ JSON.toJSONString(bsactivityGoods));
             return R.ok().put("goods",bsactivityGoods).put("qcode",qcode);
 
@@ -127,17 +128,26 @@ public class ScanOrderController {
             if(!StringUtil.checkStr(qcode)){
                 return R.error("错误二维码!");
             }
-            String decodeQcode = AesUtils.decode(qcode,bsactivityGoodsqcodeProperties.getAsekey());
-            BsactivityGoods bsactivityGoods = bsactivityGoodsService.selectByQcode(decodeQcode);
+//            String decodeQcode = AesUtils.decode(qcode,bsactivityGoodsqcodeProperties.getAsekey());
+//            BsactivityGoods bsactivityGoods = bsactivityGoodsService.selectByQcode(decodeQcode);
+
+            String ecodeQcode = AesUtils.encode(qcode,bsactivityGoodsqcodeProperties.getAsekey());
+            QueryWrapper<BsactivityGoodsqcode> queryWrapper = new QueryWrapper<BsactivityGoodsqcode>();
+            queryWrapper.lambda().eq(BsactivityGoodsqcode::getQcode,qcode)
+                    .eq(BsactivityGoodsqcode::getSignqcode,ecodeQcode);
+            BsactivityGoodsqcode bsactivityGoodsqcode = (BsactivityGoodsqcode)bsactivityGoodsqcodeService.getOne(queryWrapper);
+
+            BsactivityGoods bsactivityGoods = (BsactivityGoods) bsactivityGoodsService.getById(bsactivityGoodsqcode.getGoodsid());
+
             BsactivityGoods bsactivityGoods2 = (BsactivityGoods) bsactivityGoodsService.getById(goodsId);
             if(bsactivityGoods.getId()!=bsactivityGoods2.getId()){
               log.info("exchange_result=参数不匹配");
               return R.error("参数不匹配");
             }
             //下单，扣减库存
-            QueryWrapper<BsactivityGoodsqcode> queryWrapper = new QueryWrapper<BsactivityGoodsqcode>();
-            queryWrapper.lambda().eq(BsactivityGoodsqcode::getQcode, decodeQcode);
-            BsactivityGoodsqcode bsactivityGoodsqcode = (BsactivityGoodsqcode)bsactivityGoodsqcodeService.getOne(queryWrapper);
+//            QueryWrapper<BsactivityGoodsqcode> queryWrapper = new QueryWrapper<BsactivityGoodsqcode>();
+//            queryWrapper.lambda().eq(BsactivityGoodsqcode::getQcode, decodeQcode);
+//            BsactivityGoodsqcode bsactivityGoodsqcode = (BsactivityGoodsqcode)bsactivityGoodsqcodeService.getOne(queryWrapper);
 
             if(bsactivityGoods.getStore()-(bsactivityGoods.getFreezeStore()!=null?bsactivityGoods.getFreezeStore():0)<exchangeNum){
                 return R.error("库存不足");

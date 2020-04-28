@@ -112,12 +112,14 @@ public class BsactivityGoodsqcodeService extends BaseServiceImpl<BsactivityGoods
                //二维码串
                String qcodeStr = UUID.randomUUID().toString();
                qcode.setQcode(qcodeStr);//二维码串
+
                //下载路径
-               qcode.setImgpath(relativePath+"/"+qcodeStr+".png");
+               qcode.setImgpath(relativePath+"/"+goods.getId()+"/"+qcodeStr+".png");
                //加密后的二维码串，用于用户微信扫码后再解码查询
                String encodeqcode = AesUtils.encode(qcodeStr,bsactivityGoodsqcodeProperties.getAsekey());
+               qcode.setSignqcode(encodeqcode);
                //二维码内容：用户扫码后后跳转地址
-               String text = bsactivityGoodsqcodeProperties.getText().replace("QCODE",encodeqcode);
+               String text = bsactivityGoodsqcodeProperties.getText().replace("QCODE",qcodeStr.toUpperCase());
                try {
                    AppQRCodeUtil.generateQRCodeImage2(text,bsactivityGoodsqcodeProperties.getWidth(),bsactivityGoodsqcodeProperties.getHeight(),absolutPath+"/"+qcodeStr+".png");
                } catch (Exception e) {

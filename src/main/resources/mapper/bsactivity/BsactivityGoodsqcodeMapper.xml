@@ -9,20 +9,22 @@
      <id property="id" column="id"/>
      <result property="goodsid" column="goodsid"/>
      <result property="qcode" column="qcode"/>
+     <result property="signqcode" column="signqcode"/>
      <result property="status" column="status"/>
      <result property="createTime" column="create_time"/>
      <result property="modifyTime" column="modify_time"/>
      <result property="userid" column="userid"/>
      <result property="imgpath" column="imgpath"/>
+
     </resultMap>
 
    <!-- 基础字段列 -->
    <sql id="Base_Column_List" >
-id,goodsid,qcode,status,create_time,modify_time,userid
+id,goodsid,qcode,signqcode,status,create_time,modify_time,userid
     </sql>
 
     <select id="queryMixList" resultMap="BaseResultMap">
-        select t.goodsid,t.qcode,t.status,t.create_time,t.modify_time,t.userid,
+        select t.goodsid,t.qcode,t.signqcode,t.status,t.create_time,t.modify_time,t.userid,
         g.name as "bsactivityGoods.name",u.nickname as "wxUser.nickname"
         from t_bsactivity_goodsqcode t
         LEFT join t_bsactivity_goods g on g.id = t.goodsid
@@ -37,6 +39,9 @@ id,goodsid,qcode,status,create_time,modify_time,userid
             </if>
             <if test="status != null">
                 and t.status = #{status}
+            </if>
+            <if test="signqcode != null">
+                and t.signqcode = #{signqcode}
             </if>
             <if test="nickname != null and nickname.trim() != ''">
                 and u.nickname like '%'||#{phone}||'%'

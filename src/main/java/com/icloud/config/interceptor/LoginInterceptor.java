@@ -92,8 +92,9 @@ public class LoginInterceptor implements HandlerInterceptor{
                     log.error("签名错误,非法请求");
                     return false;
                 }
-                nickName= URLDecoder.decode(nickName, "utf-8");
-                headPhoto=URLDecoder.decode(headPhoto, "utf-8");
+                nickName= URLDecoder.decode(nickName, "UTF-8");
+                log.info("LoginInterceptor_nickName==="+nickName);
+                headPhoto=URLDecoder.decode(headPhoto, "UTF-8");
 //					nickName=EmotioUtil.resolveToByteFromEmoji(nickName);
 //					nickName=EmotioUtil.filterEmoji(nickName);
 

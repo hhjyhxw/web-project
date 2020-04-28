@@ -1,21 +1,18 @@
 package com.icloud.modules.bsactivity.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-import com.icloud.basecommon.model.Query;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import com.icloud.modules.bsactivity.entity.BsactivityAd;
-import com.icloud.modules.bsactivity.service.BsactivityAdService;
+import com.icloud.annotation.SysLog;
 import com.icloud.basecommon.model.Query;
 import com.icloud.common.PageUtils;
 import com.icloud.common.R;
 import com.icloud.common.validator.ValidatorUtils;
+import com.icloud.modules.bsactivity.entity.BsactivityAd;
+import com.icloud.modules.bsactivity.service.BsactivityAdService;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.Map;
 
 
 /**
@@ -59,6 +56,7 @@ public class BsactivityAdController {
     /**
      * 保存
      */
+    @SysLog("保存广告")
     @RequestMapping("/save")
     @RequiresPermissions("bsactivity:bsactivityad:save")
     public R save(@RequestBody BsactivityAd bsactivityAd){
@@ -70,6 +68,7 @@ public class BsactivityAdController {
     /**
      * 修改
      */
+    @SysLog("修改广告")
     @RequestMapping("/update")
     @RequiresPermissions("bsactivity:bsactivityad:update")
     public R update(@RequestBody BsactivityAd bsactivityAd){
@@ -82,6 +81,7 @@ public class BsactivityAdController {
     /**
      * 删除
      */
+    @SysLog("删除广告")
     @RequestMapping("/delete")
     @RequiresPermissions("bsactivity:bsactivityad:delete")
     public R delete(@RequestBody Long[] ids){

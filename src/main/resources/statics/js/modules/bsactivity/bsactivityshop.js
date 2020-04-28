@@ -160,7 +160,7 @@ var vm = new Vue({
 		},
 		getInfo: function(id){
 			$.get(baseURL + "bsactivity/bsactivityshop/info/"+id, function(r){
-               vm.goodsimgshow = imgURL + r.bsactivityShop.shopImg;
+                vm.goodsimgshow = imgURL + r.bsactivityShop.shopImg;
                 vm.bsactivityShop = r.bsactivityShop;
 
             });

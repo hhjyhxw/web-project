@@ -599,7 +599,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.4</version>
                 <configuration>
-                    <warName>housing</warName>
+                    <warName>zlactivity</warName>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                     <!-- 这个通常的webapp项目方式 -->
                     <!--  <webResources>
