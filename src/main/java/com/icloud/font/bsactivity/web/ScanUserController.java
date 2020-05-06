@@ -70,13 +70,17 @@ public class ScanUserController {
      * 1、用户扫描pos机二维码，如果用户已注册会员，直接提示谢谢参与
      * 2、如果没注册会员，直接注册成会员，并且赠送龙币
      * @param qcode
+     * @param ss 来源  ss=mini 终端
      * @return
      */
     @RequestMapping("/scanpos")
-    public String scanExchange(String qcode){
+    public String scanExchange(String qcode,String ss){
         WxUser user = (WxUser) request.getSession().getAttribute("wx_user");
         try {
-
+            int fromType= 1;
+            if("mini".equals(ss)){
+                fromType = 2;
+            }
 //            return "modules/front/bsactivity/registersuccess";//跳转注册成功页面
             LongQueryEntity entity = longCoinUtil.getQueryEntity(user.getOpenid());
             log.info("LongQueryEntity=="+ JSON.toJSONString(entity));
@@ -85,7 +89,7 @@ public class ScanUserController {
 
             if(result!=null && result.containsKey("returncode") && "000000".equals(result.getString("returncode"))){
                 //保存引流登陆日志
-                bsactivityFollowuserService.saveOrUpdate(user,0,0,1);
+                bsactivityFollowuserService.saveOrUpdate(user,0,0,fromType);
                 return "modules/front/bsactivity/thanksattend";//跳转谢谢参与页面
             }
 
@@ -94,7 +98,7 @@ public class ScanUserController {
             result = longbiServiceImpl.recharge(charge.getRequestParamMap());
             if(result!=null && result.containsKey("returncode") && "000000".equals(result.getString("returncode"))){
                 //保存引流登陆日志
-                bsactivityFollowuserService.saveOrUpdate(user,Integer.parseInt(myPropertitys.getLongcoin().getChareAmount()),1,1);
+                bsactivityFollowuserService.saveOrUpdate(user,Integer.parseInt(myPropertitys.getLongcoin().getChareAmount()),1,fromType);
                 return "modules/front/bsactivity/registersuccess";//跳转注册成功页面
             }else{
                 return "modules/front/bsactivity/thanksattend";//注册充值失败，跳转谢谢参与

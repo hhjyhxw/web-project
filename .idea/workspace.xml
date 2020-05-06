@@ -5,75 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6fbc680-6164-4f33-9b24-94a00587f493" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/icloud/common/ziputils/DownloadZip.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/statics/js/front/bsactivity/registersuccess.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/百色现场会/索引" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/icloud/config/interceptor/InterceptorsStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icloud/config/interceptor/InterceptorsStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/icloud/config/interceptor/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icloud/config/interceptor/LoginInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/icloud/font/bsactivity/web/ScanOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icloud/font/bsactivity/web/ScanOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/icloud/font/bsactivity/web/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icloud/font/bsactivity/web/ShopController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/controller/BsactivityAdController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/controller/BsactivityAdController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/controller/BsactivityGoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/controller/BsactivityGoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/entity/BsactivityGoodsqcode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/entity/BsactivityGoodsqcode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icloud/basecommon/model/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icloud/basecommon/model/Query.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icloud/basecommon/service/BaseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icloud/basecommon/service/BaseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icloud/config/datasource/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icloud/config/datasource/MybatisPlusConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icloud/font/bsactivity/web/ScanUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icloud/font/bsactivity/web/ScanUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/entity/BsactivityFollowuser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/entity/BsactivityFollowuser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/service/BsactivityGoodsqcodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/service/BsactivityGoodsqcodeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/bsactivity/BsactivityGoodsqcodeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/bsactivity/BsactivityGoodsqcodeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icloud/thirdinterfaces/score/entity/LongBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icloud/thirdinterfaces/score/entity/LongBaseEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/statics/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/statics/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/statics/js/front/bsactivity/scanOrder.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/statics/js/front/bsactivity/scanOrder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/statics/js/modules/bsactivity/bsactivitygoods.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/statics/js/modules/bsactivity/bsactivitygoods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/statics/js/modules/bsactivity/bsactivityshop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/statics/js/modules/bsactivity/bsactivityshop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/modules/bsactivity/bsactivitygoods.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/modules/bsactivity/bsactivitygoods.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/registersuccess.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/registersuccess.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/1/185211b6-cd37-4bff-8a4c-815656ee576a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/1/1c865533-5dfd-43a4-9c8a-d4c26e4bcb0b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/1/3752c2bd-c1fe-4b6c-8d97-8e8ca65211e8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/1/53d6eeeb-c83e-450d-8aec-0f39091474a4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/1/812faf4e-1d89-4962-b0f6-d7b839305171.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/1/88f02d76-bd1e-4f63-96c9-b6f00c6f64f5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/1/a0890fc3-7d4b-4271-924d-704dedfb30c2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/1/b5c1e2d3-42ab-48d2-a32c-3ed985dda35a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/1/c1f960c7-affa-4b24-a5a7-0a5973b3b5b9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/1/d5bcd397-be32-4379-b24e-3851c72c3c88.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/2/27fd5706-db25-4716-bb78-be09d173c9ed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/2/5917a378-986f-4629-9514-0b00a9189b4d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/2/a372b15f-eb45-46b2-b70a-0dd44d7cceab.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/2/b8f565e1-a143-4e87-befd-21b774dbe826.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/2/bc92d7e8-932b-4868-a97c-92cee79f07d0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/2/c61d8ca0-b90a-499d-a818-e9f401a256d0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/2/d726b8fe-4e07-46ca-9df9-e6f3b7ba5d55.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/2/f366ee4d-7c5e-4185-bd2f-7cf8db3d8004.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/2/f431da56-7868-404f-a39e-09b38a33c8cc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/2/f9a19104-54e1-4186-b4e1-8fed7df932ec.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/3/0bf670e8-9b3e-4922-b928-327e751627eb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/3/137088e0-f6ff-4f5a-b5b8-dd6a53cad627.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/3/582da700-de32-4253-b9c9-9404fd176f0e.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/3/704d832d-dea8-444f-be5a-c3ba3103daeb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/3/8e3f8dec-a26a-4e65-9391-02c7387669c2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/3/8f15b47b-a58f-4132-a50e-8bb2c0b626e8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/3/b85c4673-1050-445e-bbae-a1632767213d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/3/c6663b0c-2de3-4f64-ad1b-76f045bcc0c5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/3/c7fb7d62-d417-4ad9-b46e-564cd1664c2e.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/3/ea817d64-ff55-46fc-bad6-c13203514305.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/4/1a0f066f-3a95-44ec-b128-8ac82d7eaa8e.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/4/36fe14db-9c98-4217-8710-c90ebfe92b4c.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/4/52d193a4-4098-49dd-9f53-cada831f4348.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/4/72dff089-8ed9-410b-a379-000421b05c03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/4/732dba67-380f-4443-8a72-90d3122cce80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/4/75dc006c-680f-4283-a042-435434ec1c91.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/4/97018965-bd22-4ae7-9393-d061cf9238bb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/4/9f095860-9872-4f0b-9808-ae355003b39f.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/4/de8b83a8-4a4e-47df-928b-4cdb9972e487.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/4/e411845a-3fb5-4bec-b54f-696948dc52b3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/5/16cb7b08-3c09-4db0-959a-a710521dfb2c.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/5/2f33fc36-f87e-45f4-b99e-7d32046a0cdf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/5/6a84229b-90d2-49a9-abf6-7366d8408365.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/5/6b6363a1-bc22-4922-9ec4-f452b757d9bd.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/5/75857cac-2fe2-4ddc-8e7e-ac9a6a931ad5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/5/77013e2c-48ea-4cb4-bbec-a893e74cdf04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/5/8a9d3e5d-4bc9-405b-9605-01450ebbf6b8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/5/a9d59335-dfee-49e4-968d-35e6c6c74bf0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/5/cda795b9-c732-4dc9-95e1-5860befb454a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadpath/5/d888edc6-c79b-467c-957d-d48ecfd615a6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/thanksattend.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/thanksattend.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -95,94 +38,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/modules/bsactivity/bsactivitygoods.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1050">
-              <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/statics/js/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            <state relative-caret-position="150">
+              <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/statics/js/modules/bsactivity/bsactivitygoods.js">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/font/bsactivity/web/ScanUserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="149" column="20" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="20" />
+            <state relative-caret-position="452">
+              <caret line="100" column="135" selection-start-line="100" selection-start-column="135" selection-end-line="100" selection-end-column="135" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/font/bsactivity/web/ScanOrderController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="267">
+              <caret line="154" column="49" selection-start-line="154" selection-start-column="49" selection-end-line="154" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/statics/js/modules/bsactivity/bsactivityshop.js">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/font/bsactivity/service/BsactivityGoodsExchangeService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="162" column="67" selection-start-line="162" selection-start-column="60" selection-end-line="162" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/modules/bsactivity/bsactivityshop.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="40" column="34" lean-forward="true" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#div#1;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application-prod.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="601" column="39" selection-start-line="601" selection-start-column="29" selection-end-line="601" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="33" column="38" lean-forward="true" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-375">
-              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+            <state relative-caret-position="309">
+              <caret line="172" column="5" lean-forward="true" selection-start-line="172" selection-start-column="5" selection-end-line="172" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -200,21 +86,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>shopphonete</find>
-      <find>shopinfo</find>
-      <find>listinfo</find>
-      <find>shoplist</find>
-      <find>.posiinfo</find>
-      <find>upload</find>
-      <find>www</find>
-      <find>goodimg</find>
-      <find>swiper-container</find>
-      <find>swiper-slide</find>
-      <find>layui-layer-shade</find>
-      <find>System.out.println(</find>
-      <find>update</find>
-      <find>closeWindown</find>
-      <find>getLocations</find>
       <find>showgogetLocation</find>
       <find>getLocation</find>
       <find>getGoodsAndQcode</find>
@@ -230,6 +101,21 @@
       <find>ajaxFindArticleList</find>
       <find>hous</find>
       <find>goodsimgshow</find>
+      <find>apache</find>
+      <find>alibaba</find>
+      <find>plus</find>
+      <find>springframework</find>
+      <find>spring-boot-starter-redis</find>
+      <find>web</find>
+      <find>redis</find>
+      <find>commons.configuration.version</find>
+      <find>httpclient</find>
+      <find>icu4j</find>
+      <find>queryMixList</find>
+      <find>page</find>
+      <find>BeanFans</find>
+      <find>RedisMessageListener</find>
+      <find>ClassUtils</find>
     </findStrings>
     <replaceStrings>
       <replace>com.icloud.bms.model.BmsMenu</replace>
@@ -257,17 +143,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/dao/BsactivityAdMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/template/Dao.xml.vm" />
-        <option value="$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/service/BsactivityFollowuserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/icloud/modules/wx/entity/WxUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/entity/BsactivityShop.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/bsactivity/BsactivityShopMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/dao/BsactivityShopMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/service/BsactivityShopService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/icloud/basecommon/web/upload/WeixinInterfaceUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/icloud/common/util/wx/model/JsSDK.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/icloud/basecommon/web/upload/PreUpLoadController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/statics/js/front/bsactivity/error.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/icloud/font/bsactivity/web/BsactivityShopController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/icloud/config/global/MyPropertitys.java" />
@@ -288,26 +163,37 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/modules/bsactivity/bsactivitygoods.html" />
         <option value="$PROJECT_DIR$/src/main/resources/statics/js/front/bsactivity/scanOrder.js" />
         <option value="$PROJECT_DIR$/src/main/resources/statics/js/front/bsactivity/registersuccess.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/registersuccess.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/icloud/font/bsactivity/web/ShopController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/entity/BsactivityGoodsqcode.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/bsactivity/BsactivityGoodsqcodeMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/service/BsactivityGoodsqcodeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/icloud/font/bsactivity/web/ScanOrderController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/icloud/config/interceptor/LoginInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/icloud/font/bsactivity/web/ScanUserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/icloud/config/interceptor/InterceptorsStack.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/icloud/NicknameTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/application-local.yml" />
         <option value="$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/controller/BsactivityGoodsController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/controller/BsactivityAdController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/statics/js/common.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/application-dev.yml" />
-        <option value="$PROJECT_DIR$/src/main/resources/application-prod.yml" />
         <option value="$PROJECT_DIR$/src/main/resources/statics/js/modules/bsactivity/bsactivityshop.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/icloud/thirdinterfaces/score/entity/LongBaseEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/icloud/thirdinterfaces/score/service/LongbiService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/icloud/TimeTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application-prod.yml" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/registersuccess.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/thanksattend.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/icloud/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/test/java/com/icloud/LongCoinChargeTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/entity/BsactivityFollowuser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/icloud/font/bsactivity/web/ScanUserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/icloud/config/datasource/MybatisPlusConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/icloud/basecommon/service/BaseServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/service/BsactivityGoodsqcodeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/icloud/basecommon/model/Query.java" />
+        <option value="$PROJECT_DIR$/doc/百色现场会/索引" />
+        <option value="$PROJECT_DIR$/src/main/resources/application-dev.yml" />
+        <option value="$PROJECT_DIR$/src/main/resources/statics/js/common.js" />
       </list>
     </option>
   </component>
@@ -349,7 +235,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="435" />
     <option name="y" value="105" />
     <option name="width" value="1400" />
@@ -361,7 +247,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -372,6 +257,17 @@
             <path>
               <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="web-project" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web-project" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
+              <item name="百色现场会" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web-project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -394,15 +290,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="icloud" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="icloud" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
@@ -448,69 +335,6 @@
               <item name="web-project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="icloud" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="bsactivity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="icloud" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="bsactivity" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="icloud" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="commons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="icloud" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="commons" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="icloud" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="sys" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="icloud" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="sys" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -529,103 +353,116 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="statics" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="statics" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="statics" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="bsactivity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="bsactivity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="bsactivity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="web-project" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web-project" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web-project" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web-project" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="icloud" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web-project" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="icloud" type="462c0819:PsiDirectoryNode" />
+              <item name="basecommon" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web-project" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="icloud" type="462c0819:PsiDirectoryNode" />
+              <item name="basecommon" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web-project" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="icloud" type="462c0819:PsiDirectoryNode" />
+              <item name="basecommon" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web-project" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="icloud" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web-project" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="icloud" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="bsactivity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web-project" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="icloud" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="bsactivity" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/src/test/java/com/icloud/NicknameTest.java&#10;D:/project/myproject/web-project/src/main/resources/application-dev.yml&#10;D:/project/myproject/web-project/src/main/resources/application-dev-init-bak.yml" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/statics/images/bsactivity" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/icloud/thirdinterfaces/score/service" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\project\myproject\web-project\src\main\resources\statics\third_plugin" />
-      <recent name="D:\project\myproject\web-project\src\main\resources\statics\js" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\myproject\web-project\src\main\java\com\icloud\thirdinterfaces\score\service" />
+      <recent name="D:\project\myproject\web-project\src\main\resources\statics\images\bsactivity" />
+      <recent name="D:\project\myproject\web-project\src\main\resources\statics\third_plugin\swiper" />
+      <recent name="D:\project\myproject\web-project\src\main\resources\statics\third_plugin\jquery_swiper" />
+      <recent name="D:\project\myproject\web-project\src\main\resources\statics\js\front\bsactivity" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.icloud.common.util.wx.model" />
@@ -634,12 +471,9 @@
       <recent name="com.icloud.config.interceptor" />
       <recent name="com.icloud.modules.oss.controller" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\project\myproject\web-project\src\main\resources\statics\images\bsactivity" />
-      <recent name="D:\project\myproject\web-project\src\main\resources\statics\third_plugin\swiper" />
-      <recent name="D:\project\myproject\web-project\src\main\resources\statics\third_plugin\jquery_swiper" />
-      <recent name="D:\project\myproject\web-project\src\main\resources\statics\js\front\bsactivity" />
-      <recent name="D:\project\myproject\web-project\src\main\java\com\icloud\modules\bsactivity\entity" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\project\myproject\web-project\src\main\resources\statics\third_plugin" />
+      <recent name="D:\project\myproject\web-project\src\main\resources\statics\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -655,19 +489,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Application">
-    <configuration name="AesUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.icloud.basecommon.util.codec.AesUtils" />
-      <module name="web-project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.icloud.basecommon.util.codec.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.icloud.Application" />
       <module name="web-project" />
@@ -695,7 +516,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LongCoinComsueTest.apiTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TimeTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.icloud.TimeTest" />
+      <module name="web-project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.icloud.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LongCoinChargeTest.apiTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="web-project" />
       <extension name="coverage">
         <pattern>
@@ -704,7 +538,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.icloud" />
-      <option name="MAIN_CLASS_NAME" value="com.icloud.LongCoinComsueTest" />
+      <option name="MAIN_CLASS_NAME" value="com.icloud.LongCoinChargeTest" />
       <option name="METHOD_NAME" value="apiTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -728,18 +562,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Application" />
-      <item itemvalue="Application.AesUtils" />
-      <item itemvalue="JUnit.LongCoinComsueTest.apiTest" />
-      <item itemvalue="JUnit.LongCoinQueryTest" />
       <item itemvalue="Application.NicknameTest" />
+      <item itemvalue="Application.TimeTest" />
+      <item itemvalue="JUnit.LongCoinQueryTest" />
+      <item itemvalue="JUnit.LongCoinChargeTest.apiTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Application" />
+        <item itemvalue="JUnit.LongCoinChargeTest.apiTest" />
+        <item itemvalue="Application.TimeTest" />
         <item itemvalue="Application.NicknameTest" />
         <item itemvalue="JUnit.LongCoinQueryTest" />
-        <item itemvalue="Application.AesUtils" />
-        <item itemvalue="JUnit.LongCoinComsueTest.apiTest" />
       </list>
     </recent_temporary>
   </component>
@@ -765,15 +599,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LongCoinChargeTest_apiTest - 2020.04.22 at 12h 01m 59s.xml">
-      <configuration name="LongCoinChargeTest.apiTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LongCoinChargeTest_apiTest - 2020.04.22 at 12h 13m 05s.xml">
-      <configuration name="LongCoinChargeTest.apiTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LongCoinChargeTest_apiTest - 2020.04.22 at 14h 08m 02s.xml">
-      <configuration name="LongCoinChargeTest.apiTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="LongCoinComsueTest_apiTest - 2020.04.22 at 14h 11m 33s.xml">
       <configuration name="LongCoinComsueTest.apiTest" configurationId="JUnit" />
     </history-entry>
@@ -795,6 +620,15 @@
     <history-entry file="LongCoinQueryTest - 2020.04.24 at 14h 55m 11s.xml">
       <configuration name="LongCoinQueryTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="LongCoinChargeTest_apiTest - 2020.04.29 at 18h 17m 16s.xml">
+      <configuration name="LongCoinChargeTest.apiTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LongCoinChargeTest_apiTest - 2020.04.29 at 18h 18m 15s.xml">
+      <configuration name="LongCoinChargeTest.apiTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LongCoinChargeTest_apiTest - 2020.04.29 at 18h 20m 01s.xml">
+      <configuration name="LongCoinChargeTest.apiTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -806,10 +640,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49881798" visible="true" weight="0.25737265" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49881798" visible="true" weight="0.27345845" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="JRebel" order="2" sideWeight="0.501182" side_tool="true" weight="0.2124665" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -817,17 +650,17 @@
       <window_info id="Designer" order="5" />
       <window_info id="UI Designer" order="6" />
       <window_info id="Capture Tool" order="7" />
-      <window_info anchor="bottom" id="Find" order="0" sideWeight="0.49932975" weight="0.4546742" />
+      <window_info anchor="bottom" id="Find" order="0" sideWeight="0.49932975" visible="true" weight="0.24787535" />
       <window_info anchor="bottom" id="JRebel Executor" order="1" sideWeight="0.8914209" weight="0.43342775" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.85790884" weight="0.13739377" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.85790884" weight="0.17847025" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932975" weight="0.5311615" />
       <window_info anchor="bottom" id="Messages" order="4" sideWeight="0.49865952" weight="0.30878186" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="8" weight="0.21529745" />
+      <window_info anchor="bottom" id="TODO" order="8" weight="0.388102" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.82841825" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.24362606" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.31161472" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5013405" side_tool="true" weight="0.21671388" />
       <window_info anchor="bottom" id="JRebel Console" order="12" sideWeight="0.10857909" side_tool="true" weight="0.08498584" />
       <window_info anchor="bottom" id="Problems" order="13" weight="0.26203966" />
@@ -843,7 +676,7 @@
       <window_info anchor="right" id="Coverage" order="8" sideWeight="0.50141644" side_tool="true" weight="0.11997319" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49881798" visible="true" weight="0.25737265" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49881798" visible="true" weight="0.27412868" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="JRebel" order="2" sideWeight="0.501182" side_tool="true" weight="0.2124665" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -853,15 +686,15 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Find" order="0" sideWeight="0.49932975" weight="0.4546742" />
       <window_info anchor="bottom" id="JRebel Executor" order="1" sideWeight="0.8914209" weight="0.43342775" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.85790884" visible="true" weight="0.13739377" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.85790884" visible="true" weight="0.14305949" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932975" weight="0.5311615" />
       <window_info anchor="bottom" id="Messages" order="4" sideWeight="0.49865952" weight="0.30878186" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="8" weight="0.21529745" />
+      <window_info anchor="bottom" id="TODO" order="8" weight="0.388102" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.82841825" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.24362606" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.31161472" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5013405" side_tool="true" weight="0.21671388" />
       <window_info anchor="bottom" id="JRebel Console" order="12" sideWeight="0.10857909" side_tool="true" weight="0.08498584" />
       <window_info anchor="bottom" id="Problems" order="13" weight="0.26203966" />
@@ -961,381 +794,411 @@
     </SUITE>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/statics/js/front/bsactivity/shoplist.js">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/thanksattend.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/statics/js/front/bsactivity/error.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/statics/js/front/bsactivity/scanOrder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="59" column="10" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="59" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/statics/js/front/bsactivity/registersuccess.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="17" />
+        <state relative-caret-position="250">
+          <caret line="190" column="102" selection-start-line="190" selection-start-column="102" selection-end-line="190" selection-end-column="102" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/registersuccess.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="185" column="36" selection-start-line="185" selection-start-column="36" selection-end-line="185" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/entity/BsactivityGoodsqcode.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
-          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+          <caret line="193" column="40" selection-start-line="193" selection-start-column="40" selection-end-line="193" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/bsactivity/BsactivityOrderMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/bsactivity/BsactivityGoodsqcodeMapper.xml">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="39" column="38" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
+        <state>
+          <caret selection-end-line="3" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/common/MD5Utils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/config/global/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/config/global/FilterConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/config/global/SwaggerConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/service/BsactivityGoodsqcodeService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/config/global/ShiroConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="118" column="51" selection-start-line="118" selection-start-column="45" selection-end-line="118" selection-end-column="51" />
+        <state relative-caret-position="275">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/service/BsactivityGoodsService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/config/global/MyPropertitys.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-          <folding>
-            <element signature="e#799#800#0" expanded="true" />
-            <element signature="e#863#864#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1125">
+          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/wx/service/WxUserService.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/icloud/LongCoinChargeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="1125">
+          <caret line="45" column="11" selection-end-line="50" />
         </state>
       </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/net/URLDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="77" column="13" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/application.yml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/service/BsactivityFollowuserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+        <state relative-caret-position="725">
+          <caret line="38" column="47" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/font/bsactivity/web/ScanOrderController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/entity/BsactivityFollowuser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+        <state relative-caret-position="775">
+          <caret line="38" column="20" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/font/bsactivity/web/ShopController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/config/global/KaptchaConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
-          <caret line="46" column="31" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="31" />
-          <folding>
-            <element signature="e#1452#1453#0" expanded="true" />
-            <element signature="e#1517#1518#0" expanded="true" />
-          </folding>
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/com/icloud/font/bsactivity/web/ScanUserController.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/config/global/FreemarkerConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1050" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/com/icloud/config/interceptor/LoginInterceptor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="87" column="40" selection-start-line="87" selection-start-column="40" selection-end-line="87" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#6197#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="225">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/font/bsactivity/web/ScanUserController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/bsactivity/BsactivityGoodsqcodeMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="87" column="53" selection-start-line="87" selection-start-column="53" selection-end-line="87" selection-end-column="53" />
+        <state relative-caret-position="825">
+          <caret line="33" column="39" lean-forward="true" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/config/interceptor/PermissionsInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.2.0.RELEASE/spring-webmvc-5.2.0.RELEASE.jar!/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/com/icloud/config/interceptor/InterceptorsStack.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="820">
-          <caret line="67" column="1" lean-forward="true" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#3108#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/config/interceptor/InterceptorsStack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="86" column="7" lean-forward="true" selection-start-line="86" selection-start-column="7" selection-end-line="86" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/config/interceptor/LoginInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1736">
-          <caret line="94" column="36" selection-start-line="94" selection-start-column="26" selection-end-line="94" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/icloud/MothRanksTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/config/datasource/DataSourceConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
-            <element signature="e#0#2329#0" expanded="true" />
+            <element signature="e#0#3006#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/icloud/NicknameTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/config/datasource/DruidConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        <state>
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#1436#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/scanactivity/controller/ScanactivityUserScanrecordController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="38" column="40" lean-forward="true" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/common/PageUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
+        <state relative-caret-position="184">
           <caret line="37" column="11" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/basecommon/service/BaseServiceImpl.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pagehelper/pagehelper/4.1.6/pagehelper-4.1.6-sources.jar!/com/github/pagehelper/PageInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application-local.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="78" selection-start-line="4" selection-start-column="78" selection-end-line="4" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/commons/entity/CommonsAd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/entity/BsactivityAd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/sys/controller/SysDeptController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2414">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/sys/controller/SysLoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-855">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/controller/BsactivityGoodsqcodeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        <state relative-caret-position="217">
+          <caret line="259" column="19" lean-forward="true" selection-start-line="259" selection-start-column="19" selection-end-line="259" selection-end-column="19" />
+          <folding>
+            <element signature="e#6869#6870#0" expanded="true" />
+            <element signature="e#6897#6898#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/controller/BsactivityOrderController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-405">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        <state relative-caret-position="500">
+          <caret line="37" column="56" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/controller/BsactivityShopController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        <state relative-caret-position="500">
+          <caret line="41" column="54" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/sys/service/impl/SysLogServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/sys/controller/SysLogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/statics/js/modules/bsactivity/bsactivitygoodsqcode.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="138" column="20" selection-start-line="138" selection-start-column="16" selection-end-line="138" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/controller/BsactivityGoodsController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
-          <caret line="107" column="19" selection-start-line="107" selection-start-column="19" selection-end-line="107" selection-end-column="19" />
+          <caret line="62" column="54" lean-forward="true" selection-start-line="62" selection-start-column="54" selection-end-line="62" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/controller/BsactivityAdController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/common/MapEntryUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="83" column="17" selection-start-line="83" selection-start-column="17" selection-end-line="83" selection-end-column="17" />
+        <state relative-caret-position="-55">
+          <caret line="351" column="38" selection-start-line="351" selection-start-column="38" selection-end-line="351" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/sys/controller/SysMenuController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/config/datasource/MybatisPlusConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="101" column="19" selection-start-line="101" selection-start-column="4" selection-end-line="101" selection-end-column="19" />
+        <state relative-caret-position="375">
+          <caret line="49" column="26" lean-forward="true" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/controller/BsactivityGoodsqcodeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="26" column="44" lean-forward="true" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="44" />
+        <state relative-caret-position="420">
+          <caret line="44" column="12" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/basecommon/model/BaseModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/basecommon/model/Query.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/com/icloud/basecommon/model/Query.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-375">
+          <folding>
+            <element signature="e#0#1076#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/com/icloud/modules/bsactivity/service/BsactivityFollowuserService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-150">
+          <folding>
+            <element signature="e#0#2126#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/com/icloud/modules/bsactivity/service/BsactivityAdService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-150">
+          <folding>
+            <element signature="e#0#730#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/com/icloud/modules/bsactivity/service/BsactivityGoodsqcodeService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-450">
+          <folding>
+            <element signature="e#0#4621#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/service/BsactivityGoodsqcodeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5">
+          <caret line="42" column="99" selection-start-line="42" selection-start-column="99" selection-end-line="42" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/controller/BsactivityFollowuserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="37" column="60" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/basecommon/service/BaseServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/com/icloud/basecommon/service/BaseServiceImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+          <folding>
+            <element signature="e#0#2133#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/modules/bsactivity/entity/BsactivityGoodsqcode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="20" column="35" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/百色现场会/索引">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="601" column="39" selection-start-line="601" selection-start-column="29" selection-end-line="601" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/statics/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="33" column="38" lean-forward="true" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-375">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        <state relative-caret-position="118">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application-prod.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+        <state relative-caret-position="125">
+          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/modules/bsactivity/bsactivitygoods.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application-local.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1050">
-          <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        <state relative-caret-position="125">
+          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/modules/bsactivity/bsactivityshop.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="40" column="34" lean-forward="true" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#1;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="225">
+          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/statics/js/modules/bsactivity/bsactivitygoods.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/basecommon/web/AppBaseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="149" column="20" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="20" />
+        <state relative-caret-position="61">
+          <caret line="103" column="15" selection-start-line="103" selection-start-column="15" selection-end-line="103" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/statics/js/modules/bsactivity/bsactivityshop.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/basecommon/util/reflect/ClassUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="162" column="67" selection-start-line="162" selection-start-column="60" selection-end-line="162" selection-end-column="67" />
+        <state relative-caret-position="110">
+          <caret line="173" column="8" selection-start-line="173" selection-start-column="8" selection-end-line="173" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/statics/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/font/bsactivity/web/ScanUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="100" column="135" selection-start-line="100" selection-start-column="135" selection-end-line="100" selection-end-column="135" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/font/bsactivity/web/ScanOrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="154" column="49" selection-start-line="154" selection-start-column="49" selection-end-line="154" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/icloud/font/bsactivity/service/BsactivityGoodsExchangeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="172" column="5" lean-forward="true" selection-start-line="172" selection-start-column="5" selection-end-line="172" selection-end-column="5" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
           <splitter-proportions>
@@ -1349,7 +1212,19 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>Android SDK</last-edited>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>web-project</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1373,6 +1248,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Maven: c3p0:c3p0:0.9.1.1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

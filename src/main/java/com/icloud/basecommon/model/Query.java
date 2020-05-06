@@ -17,18 +17,14 @@ public class Query extends LinkedHashMap<String, Object> {
     public Query(Map<String, Object> params){
         this.putAll(params);
         //分页参数
-        if(params.get("pageNum")!=null) {
-            this.pageNum = Integer.parseInt(params.get("pageNum").toString());
+        if(params.get("page")!=null) {
+            this.pageNum = Integer.parseInt(params.get("page").toString());
         }
-        if(params.get("pageNo")!=null) {
-            this.pageNum = Integer.parseInt(params.get("pageNo").toString());
+        if(params.get("limit")!=null) {
+            this.pageSize = Integer.parseInt(params.get("limit").toString());
         }
-        if(params.get("pageSize")!=null) {
-            this.pageSize = Integer.parseInt(params.get("pageSize").toString());
-        }
-        this.remove("pageNo");
-        this.remove("pageNum");
-        this.remove("pageSize");
+        this.remove("page");
+        this.remove("limit");
     }
 
     public int getPageNum() {

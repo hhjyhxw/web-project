@@ -36,7 +36,7 @@ public class BsactivityFollowuser implements Serializable {
    	   	   /* 创建时间 */
        @TableField("create_time")
        private Date createTime;
-   	   	   /* 来源 1、百色引流 */
+   	   	   /* 来源 1、百色引流  2、mini端*/
        @TableField("from_type")
        private Integer fromType;
    	   	   /* 更新时间 */

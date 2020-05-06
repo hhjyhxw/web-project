@@ -2,6 +2,7 @@ package com.icloud.modules.bsactivity.service;
 
 import cn.hutool.core.lang.UUID;
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.icloud.basecommon.service.BaseServiceImpl;
 import com.icloud.basecommon.util.codec.AesUtils;
 import com.icloud.common.MapEntryUtils;
@@ -40,7 +41,8 @@ public class BsactivityGoodsqcodeService extends BaseServiceImpl<BsactivityGoods
     public PageUtils<BsactivityGoodsqcode> findByPage(int pageNo, int pageSize, Map<String, Object> query) {
         PageHelper.startPage(pageNo, pageSize);
         List<BsactivityGoodsqcode> list = bsactivityGoodsqcodeMapper.queryMixList(MapEntryUtils.clearNullValue(query));
-        PageUtils<BsactivityGoodsqcode> page = new PageUtils<BsactivityGoodsqcode>(list,list!=null?list.size():0,pageSize,pageNo);
+        PageInfo<BsactivityGoodsqcode> pageInfo = new PageInfo<BsactivityGoodsqcode>(list);
+        PageUtils<BsactivityGoodsqcode> page = new PageUtils<BsactivityGoodsqcode>(list,(int)pageInfo.getTotal(),pageSize,pageNo);
         return page;
     }
 

@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.icloud.common.MapEntryUtils;
 import com.icloud.common.PageUtils;
 
@@ -35,7 +36,8 @@ public class BaseServiceImpl<M extends BaseMapper<T>, T> extends ServiceImpl imp
         }
         PageHelper.startPage(pageNo, pageSize);
         List<T> list = super.list(qw);
-        PageUtils<T> page = new PageUtils<T>(list,list!=null?list.size():0,pageSize,pageNo);
+        PageInfo<T> pageInfo = new PageInfo<T>(list);
+        PageUtils<T> page = new PageUtils<T>(list,(int)pageInfo.getTotal(),pageSize,pageNo);
         return page;
     }
 }
