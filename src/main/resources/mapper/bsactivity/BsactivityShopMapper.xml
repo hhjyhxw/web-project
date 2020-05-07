@@ -111,7 +111,7 @@ id,shop_name,shop_img,shop_license,contact_man,contact_phone,province_name,city_
         )
         )
         )
-        ) AS distance from t_bsactivity_shop t order by distance asc
+        ) AS distance from t_bsactivity_shop t where t.status=1 order by distance asc
 
     </select>
 </mapper>

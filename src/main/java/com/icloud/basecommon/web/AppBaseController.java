@@ -3,7 +3,6 @@ package com.icloud.basecommon.web;
 import com.alibaba.fastjson.JSONObject;
 import com.icloud.common.ResponseUtils;
 import com.icloud.common.util.RequestUtil;
-import com.icloud.common.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -100,14 +99,14 @@ public abstract class AppBaseController extends RequestUtil {
 	 * @version  : 1.0
 	 * @return   :
 	 */
-	public String getOpenId(){
-		Object beanFans = request.getSession().getAttribute("beanFans");
-		if(StringUtil.checkObj(beanFans)){
-//			BeanFans user = (BeanFans) beanFans;
-//			return user.getOpenid();
-		}
-		return null;
-	}
+//	public String getOpenId(){
+//		Object beanFans = request.getSession().getAttribute("beanFans");
+//		if(StringUtil.checkObj(beanFans)){
+////			BeanFans user = (BeanFans) beanFans;
+////			return user.getOpenid();
+//		}
+//		return null;
+//	}
 
 	/**
 	 * 添加Cookie

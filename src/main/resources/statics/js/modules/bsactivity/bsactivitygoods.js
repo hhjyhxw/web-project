@@ -157,6 +157,7 @@ var vm = new Vue({
 			vm.showList = false;
 			vm.title = "新增";
 			vm.bsactivityGoods = {};
+			vm.goodsimgshow = '';
 		},
 		update: function (event) {
 			var id = getSelectedRow();

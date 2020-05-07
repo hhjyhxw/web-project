@@ -17,7 +17,19 @@ $(function () {
 			{ label: '修改时间', name: 'modifyTime', index: 'modify_time', width: 80 }, 			
 			{ label: '修改人', name: 'modifyOperator', index: 'modify_operator', width: 80 }, 			
 			{ label: '所在广告位', name: 'posittionId', index: 'posittion_id', width: 80 }, 			
-			{ label: '排序', name: 'sortNum', index: 'sort_num', width: 80 }			
+			{ label: '排序', name: 'sortNum', index: 'sort_num', width: 80 }
+
+			//{header:'操作', name:'操作', width:90, sortable:false, title:false, align:'center', formatter: function(val, obj, row, act){
+            //				var actions = [];
+            //				actions.push('<a title="修改" style="display: inline-block;padding: 0 0.5rem;" onclick="vm.update('+row.id+')"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>&nbsp;')
+            //					actions.push('<a title="删除" style="display: inline-block;padding: 0 0.5rem;"   onclick="vm.bindPileList('+row.id+')"><i class="fa fa-trash-o" aria-hidden="true"></i></a>&nbsp;');
+
+//
+
+
+            	//			return actions.join('');
+            	//		}}
+
         ],
 		viewrecords: true,
         height: 385,
@@ -88,6 +100,7 @@ var vm = new Vue({
 			vm.showList = false;
 			vm.title = "新增";
 			vm.bsactivityAd = {};
+			vm.goodsimgshow = '';
 		},
 		update: function (event) {
 			var id = getSelectedRow();
@@ -154,6 +167,7 @@ var vm = new Vue({
 		getInfo: function(id){
 			$.get(baseURL + "bsactivity/bsactivityad/info/"+id, function(r){
                 vm.bsactivityAd = r.bsactivityAd;
+               vm.goodsimgshow = imgURL + r.bsactivityAd.adImgurl;
             });
 		},
 		reload: function (event) {

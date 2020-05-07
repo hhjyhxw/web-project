@@ -1,6 +1,7 @@
 package com.icloud.font.bsactivity.web;
 
 import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.icloud.annotation.LoginUser;
 import com.icloud.common.R;
 import com.icloud.common.util.StringUtil;
@@ -98,7 +99,9 @@ public class ShopController {
     @ResponseBody
     public R adlist(@LoginUser WxUser wxUser){
         try {
-            List<BsactivityAd> list = bsactivityAdService.list();
+            QueryWrapper<BsactivityAd> queryWrapper = new QueryWrapper<BsactivityAd>();
+            queryWrapper.lambda().eq(BsactivityAd::getStatus,1);
+            List<BsactivityAd> list = bsactivityAdService.list(queryWrapper);
             log.info("adlist_result="+ JSON.toJSONString(list));
             return R.ok().put("adlist",list);
         } catch (Exception e) {
