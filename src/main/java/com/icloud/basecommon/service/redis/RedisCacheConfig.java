@@ -3,6 +3,8 @@ package com.icloud.basecommon.service.redis;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.icloud.config.global.MyPropertitys;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.interceptor.KeyGenerator;
@@ -13,14 +15,20 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
+import org.springframework.session.web.http.CookieHttpSessionIdResolver;
+import org.springframework.session.web.http.CookieSerializer;
+import org.springframework.session.web.http.DefaultCookieSerializer;
+import org.springframework.session.web.http.HttpSessionIdResolver;
 
 import java.lang.reflect.Method;
 
 @Configuration
 @EnableCaching
-@EnableRedisHttpSession
+@EnableRedisHttpSession(maxInactiveIntervalInSeconds = 1600, redisNamespace = "spring:session:zlactivity")
 public class RedisCacheConfig extends CachingConfigurerSupport {
 
+    @Autowired
+    private MyPropertitys myPropertitys;
 	/**
 	 * 生成key的策略
 	 *
@@ -78,4 +86,30 @@ public class RedisCacheConfig extends CachingConfigurerSupport {
 		template.afterPropertiesSet();
 		return template;
 	}
+
+
+    //Cookie配置
+    @Bean
+    public CookieSerializer cookieSerializer(){
+        DefaultCookieSerializer cookieSerializer = new DefaultCookieSerializer();
+        cookieSerializer.setCookieName(myPropertitys.getSession().getCookieName());//sessionId名称
+        return  cookieSerializer;
+    }
+
+    /**
+     *  配置cookie解析sessionId
+     * @return
+     */
+    @Bean
+    public HttpSessionIdResolver httpSessionIdResolver() {
+        CookieHttpSessionIdResolver cookieHttpSessionIdResolver = new CookieHttpSessionIdResolver();
+        DefaultCookieSerializer cookieSerializer = new DefaultCookieSerializer();
+        cookieSerializer.setCookieName(myPropertitys.getSession().getCookieName());//cookies名称
+        cookieSerializer.setDomainName(myPropertitys.getSession().getParentDomainName());
+        cookieSerializer.setCookiePath("/");
+        cookieSerializer.setUseBase64Encoding(false);
+        cookieHttpSessionIdResolver.setCookieSerializer(cookieSerializer);
+        return cookieHttpSessionIdResolver;
+    }
+
 }

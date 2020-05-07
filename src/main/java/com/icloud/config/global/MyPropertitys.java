@@ -19,8 +19,13 @@ public class MyPropertitys {
     private Wx wx;
     //龙币接口相关参数
     private LongCoin longcoin;
+    //龙币接口相关参数
+    private Session session;
 
 
+    /**
+     * 微信相关参数
+     */
     @Data
     public static class Wx{
         private String appid;
@@ -36,6 +41,9 @@ public class MyPropertitys {
         private String host;
     }
 
+    /**
+     * 龙币接口相关
+     */
     @Data
     public static class LongCoin{
         private String sid;//商户号
@@ -48,5 +56,16 @@ public class MyPropertitys {
         private String sid_signup;//新会员注册充值 商户号
         private String key_signup;//新会员注册充值 签名key
         private String chareAmount;//给新用户充值的龙币值
+    }
+
+    /**
+     * spring redis session 相关参数
+     */
+    @Data
+    public static class Session{
+        private long timeout;//#spring-session中session过期时间 单位：秒
+        private String namespace;//#spring-session中redis命名空间
+        private String parentDomainName;// #父域名
+        private String cookieName;//#cookie名字
     }
 }
