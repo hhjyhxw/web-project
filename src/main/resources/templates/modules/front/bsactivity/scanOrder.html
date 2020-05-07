@@ -12,10 +12,11 @@
     <#include "/header.html">
     <style>
         .goodimg{
-            display: flex;
+          display: flex;
             justify-content: space-around;
-            padding: 2rem 1rem;
-            height: 33rem;
+            padding: 2rem 0.1rem;
+            height: 25rem;
+            padding-top: 0.1rem;
         }
         .goodimg img{
             width:100%;
@@ -34,15 +35,18 @@
         }
         .content_body{
            display: flex;
-           justify-content: space-around;
+           justify-content: center;
            padding:2rem;
            font-size: 2rem;
         }
        .content .content_left{
-          flex:1;
-           display: flex;
-           justify-content: space-around;
+              flex: 1;
+            display: flex;
+           justify-content: center;
+            padding-left: 1rem;
+            font-size: 1.5rem;
         }
+
        .content .content_left .countnum{
             display:inline-block;
             display: inline-block;
@@ -57,6 +61,7 @@
         .content .content_left .numdes{
                 font-weight: bold;
                 text-align: right;
+                padding-right:1rem;
         }
 
         .content .content_left .icon{
@@ -64,7 +69,7 @@
         }
         .content .content_left .minus{
             display: inline-block;
-            height: 3.2rem;
+            height: 2.2rem;
             width: 23px;
             text-indent: -9999px;
             background:url("${request.contextPath}/statics/images/bsactivity/minus.png") no-repeat;
@@ -75,7 +80,7 @@
         }
         .content .content_left .plus{
             display: inline-block;
-            height: 3.2rem;
+            height: 2.2rem;
             width: 23px;
             text-indent: -9999px;
             background:url("${request.contextPath}/statics/images/bsactivity/plus.png") no-repeat;
@@ -186,19 +191,24 @@
         </div>
         <!--中部-->
         <div class="content">
-            <div class="content_body">
+            <div class="content_body" style="padding-bottom:1rem;">
                 <div class="content_left">
-                    <div class="numdes">数量:</div>
+                    <div class="numdes" style="padding-right:1.3rem;">数量:</div>
 
                     <i class="icon minus" @click="minus">减</i>
                     <input :value="exchangeNum" class="countnum" readonly/>
                     <i class="icon plus" @click="plus">加</i>
 
                 </div>
-                <div class="content_right">
+
+               <!-- <div class="content_right">
                     <img class="cashcoin" src="${request.contextPath}/statics/images/bsactivity/cashcoin.png">
-                    <!--<div class="goodprice">{{goods.marketPrice}}</div>-->
                     <div class="goodprice">{{totalAmount}}</div>
+                </div>-->
+            </div>
+            <div class="content_body" style="padding-top:0rem;border-bottom: 2px solid #eee;">
+                <div class="content_left">
+                    <div class="numdes">需要支付：{{totalAmount}} 龙币</div>
                 </div>
             </div>
             <div class="longcoin">{{dcurrencyInfo}}</div>

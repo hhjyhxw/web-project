@@ -24,6 +24,8 @@ $(function () {
         });
          //获取广告列表
          adlist();
+         //线加载没用定位的店铺列表
+         listnocondition();
 });
 
 
@@ -159,6 +161,31 @@ $(function () {
                 }
             });
         }
+
+     //查询所有店铺列表，没用条件
+        function listnocondition(){
+                 $.ajax({
+                    url:fontbaseURL + "/frontpage/bsactivity/shop/listnocondition",
+                    type:"GET",
+                    async:true,
+                    dataType:"json",
+                    success:function (data){
+                       console.log("data=="+JSON.stringify(data));
+                       if(data.code==0){
+                           let shoplist = data.shoplist;
+                           shoplist.forEach(function(p) {
+                             p.shopImg =imgURL+p.shopImg;
+                             p.distance = 0;
+                           });
+                           vm.shoplist =shoplist;
+                       }
+                    },
+                    error:function (error){
+                        alert(error)
+                    }
+                });
+            }
+
 
     //广告列表
     function adlist(){

@@ -59,7 +59,29 @@ public class ShopController {
     }
 
     /**
-     * 获取店铺列表信息
+     * 根据经纬度 获取店铺列表信息 并按距离排序
+     * @return
+     */
+    @RequestMapping("/listnocondition")
+    @ResponseBody
+    public R listnocondition(@LoginUser WxUser wxUser,BsactivityShop bsactivityShop){
+        try {
+            log.info("listinfo_params_query="+ JSON.toJSONString(bsactivityShop));
+            QueryWrapper<BsactivityShop> queryWrapper = new QueryWrapper<BsactivityShop>();
+            queryWrapper.lambda().eq(BsactivityShop::getStatus,1);
+            List<BsactivityShop> list = bsactivityShopService.list(queryWrapper);
+            log.info("listinfo_result="+ JSON.toJSONString(list));
+            return R.ok().put("shoplist",list).put("bsactivityShop",bsactivityShop);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.info("queryGoodsByqcode_result="+ e.getMessage());
+            return R.error(e.getMessage());
+        }
+
+    }
+
+    /**
+     * 根据经纬度 获取店铺列表信息 并按距离排序
      * @return
      */
     @RequestMapping("/listinfo")
