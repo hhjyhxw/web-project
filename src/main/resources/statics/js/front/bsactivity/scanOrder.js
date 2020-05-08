@@ -85,6 +85,12 @@ var vm = new Vue({
         },
         //确认兑换
         submitorder:function () {
+
+          /* vm.exchangeSuccess = true;//兑换成功
+           vm.msg = "兑换成功";
+           vm.showerror = true;//显示非商品内容
+           return;*/
+
             let content = '兑换数量:'+vm.exchangeNum+";扣减龙币数:"+vm.totalAmount;
            layer.confirm(content, {btn: ['确定', '取消'], title: "提示"}, function (index) {
                        layer.close(index);
