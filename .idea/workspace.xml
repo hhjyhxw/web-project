@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6fbc680-6164-4f33-9b24-94a00587f493" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/statics/js/front/bsactivity/scanOrder.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/statics/js/front/bsactivity/scanOrder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/registersuccess.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/registersuccess.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/scanOrder.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/scanOrder.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/shoplist.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/shoplist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/thanksattend.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/thanksattend.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,7 +26,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/registersuccess.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="208">
@@ -119,11 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/shoplist.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="192" column="35" selection-start-line="192" selection-start-column="35" selection-end-line="192" selection-end-column="35" />
+              <caret line="192" column="41" selection-start-line="192" selection-start-column="41" selection-end-line="192" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -169,8 +164,8 @@
       <find>queryGoodsByqcode</find>
       <find>msgcolor_success</find>
       <find>footer</find>
-      <find>btn_confin_ok</find>
       <find>btn_go_locong</find>
+      <find>btn_confin_ok</find>
     </findStrings>
     <replaceStrings>
       <replace>com.icloud.bms.model.BmsMenu</replace>
@@ -244,11 +239,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/icloud/basecommon/service/redis/RedisCacheConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application-local.yml" />
         <option value="$PROJECT_DIR$/src/main/resources/application-prod.yml" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/shoplist.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/scanOrder.html" />
         <option value="$PROJECT_DIR$/src/main/resources/statics/js/front/bsactivity/scanOrder.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/thanksattend.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/registersuccess.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/shoplist.html" />
       </list>
     </option>
   </component>
@@ -1242,13 +1237,6 @@
         <state relative-caret-position="-636" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/shoplist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="192" column="35" selection-start-line="192" selection-start-column="35" selection-end-line="192" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/thanksattend.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -1273,6 +1261,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="190" column="106" selection-start-line="190" selection-start-column="106" selection-end-line="190" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/modules/front/bsactivity/shoplist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="192" column="41" selection-start-line="192" selection-start-column="41" selection-end-line="192" selection-end-column="41" />
         </state>
       </provider>
     </entry>
