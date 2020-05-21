@@ -16,6 +16,14 @@
      <result property="userid" column="userid"/>
      <result property="imgpath" column="imgpath"/>
 
+        <!--autoMapping:完成子对象的自动映射，若开启驼峰，则按驼峰匹配-->
+      <!--  <association property="bsactivityGoods" javaType="com.icloud.modules.bsactivity.entity.BsactivityGoods" autoMapping="true">
+            <id column="goodsid" property="goodsid"/>
+            <id column="name" property="name"/>
+        </association>
+        <association property="wxUser" javaType="com.icloud.modules.wx.entity.WxUser" autoMapping="true">
+            <id column="userid" property="userid"/>
+        </association>-->
     </resultMap>
 
    <!-- 基础字段列 -->

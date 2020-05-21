@@ -84,7 +84,7 @@ var vm = new Vue({
             }
         },
         //确认兑换
-        submitorder:function () {
+        submitorder_bak:function () {
 
           /* vm.exchangeSuccess = true;//兑换成功
            vm.msg = "兑换成功";
@@ -112,6 +112,33 @@ var vm = new Vue({
 
 
         },
+        //确认兑换
+        submitorder:function () {
+            vm.btnshow = false;//不能兑换商品
+          /* vm.exchangeSuccess = true;//兑换成功
+           vm.msg = "兑换成功";
+           vm.showerror = true;//显示非商品内容
+           return;*/
+
+             $.get(fontbaseURL + "/frontpage/bsactivity/order/exchange?goodsId="+vm.goodsId+"&exchangeNum="+vm.exchangeNum, function(r){
+                console.log("r=="+JSON.stringify(r));
+                if(r.code==0){
+                   vm.exchangeSuccess = true;//兑换成功
+                   vm.msg = "兑换成功";
+                   vm.showerror = true;//显示非商品内容
+
+                }else{
+                   vm.exchangeSuccess = false;//在次调试使用
+                   vm.msg = r.msg!=null?(r.msg!=''?r.msg:'兑换失败'):'兑换失败';
+                   vm.showerror = true;////显示非商品内容
+                     //layer.msg("兑换失败", {icon: 1});
+                }
+              })
+
+
+        },
+
+
 	}
 });
 //页面加载的时候加载数据

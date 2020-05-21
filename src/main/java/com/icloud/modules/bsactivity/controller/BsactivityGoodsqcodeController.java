@@ -56,7 +56,6 @@ public class BsactivityGoodsqcodeController {
     @RequiresPermissions("bsactivity:bsactivitygoodsqcode:info")
     public R info(@PathVariable("id") Long id){
         BsactivityGoodsqcode bsactivityGoodsqcode = (BsactivityGoodsqcode)bsactivityGoodsqcodeService.getById(id);
-
         return R.ok().put("bsactivityGoodsqcode", bsactivityGoodsqcode);
     }
 

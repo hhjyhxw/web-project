@@ -43,8 +43,21 @@
             justify-content: center;
             padding: 1rem;
             background: rgb(242, 242, 242);
+            padding-bottom:0;
+        }
+        .posiinfo1{
+            display: flex;
+            justify-content: left;
+            padding: 1rem;
+            background: rgb(242, 242, 242);
+            padding-left: 2.2rem;
         }
         .positext1{
+            color: red;
+            font-weight: bold;
+            padding-right: 1rem;
+        }
+        .positext2{
             color: black;
             font-weight: bold;
             padding-right: 1rem;
@@ -194,14 +207,14 @@
     </div>
 
         <!--位置信息-->
-        <div class="posiinfo">
-            <div class="positext1">您当前位置:</div><div>{{detailaddress}}</div>
+        <div class="posiinfo1">
+            <div class="positext2">您当前位置:</div><div>{{detailaddress}}</div>
         </div>
     <!--位置信息end-->
     <!--店铺列表-->
        <div class="shoplist"  v-for="(item,index) in shoplist" :key="index">
             <div class="shopimg">
-                <img :src="item.shopImg"/>
+               <!-- <img :src="item.shopImg"/>-->
             </div>
             <div class="shopinfo">
                 <div class="shopname">{{item.shopName}}</div>

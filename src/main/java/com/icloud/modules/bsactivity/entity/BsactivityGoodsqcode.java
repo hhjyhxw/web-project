@@ -1,9 +1,9 @@
 package com.icloud.modules.bsactivity.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.icloud.modules.wx.entity.WxUser;
 import lombok.Data;
 
@@ -17,6 +17,7 @@ import java.util.Date;
  * @email yyyyyy@cm.com
  * @date 2020-04-17 16:59:00
  */
+//@AutoLazy  //对标注了@Lazy(true)的延迟关联属性启动自动触发加载，否则须以手动触发加载（如initialize等方法）
 @Data
 @TableName("t_bsactivity_goodsqcode")
 public class BsactivityGoodsqcode implements Serializable {
@@ -52,9 +53,13 @@ public class BsactivityGoodsqcode implements Serializable {
 
     /*关联商品*/
     @TableField(exist = false)
+//    @OneToOne
+//    @JoinColumn(name = "goodsid", referencedColumnName = "goodsid")
     private BsactivityGoods bsactivityGoods;
     /*消费用户*/
     @TableField(exist = false)
+//    @OneToOne
+//    @JoinColumn(name = "userid", referencedColumnName = "userid")
     private WxUser wxUser;
    	
 }
