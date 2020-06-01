@@ -1,9 +1,9 @@
 package com.icloud.modules.bsactivity.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -90,9 +90,15 @@ public class BsactivityOrder implements Serializable {
    	   	   /* 邮编 */
        @TableField("zip_code")
        private String zipCode;
-    /* 邮第三方交易流水号*/
-    @TableField("transationid")
-    private String transationid;//如：龙币交易流水号
+        /* 邮第三方交易流水号*/
+        @TableField("transationid")
+        private String transationid;//如：龙币交易流水号
+        /* 商户id,就近根据用户经纬度读*/
+        @TableField("supplier_id")
+        private Long supplierId;//
+
+        @TableField(exist = false)
+        private BsactivityShop bsactivityShop;
 
    	
 }

@@ -1,7 +1,10 @@
 package com.icloud.modules.bsactivity.dao;
 
-import com.icloud.modules.bsactivity.entity.BsactivityOrder;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.icloud.modules.bsactivity.entity.BsactivityOrder;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * 
@@ -16,4 +19,6 @@ public interface BsactivityOrderMapper extends BaseMapper<BsactivityOrder> {
      * @return
      */
     public String getOrderNo();
+
+    List<BsactivityOrder> queryMixList(Map<String,Object> map);
 }

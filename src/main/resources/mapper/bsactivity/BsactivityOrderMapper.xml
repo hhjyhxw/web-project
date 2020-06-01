@@ -28,17 +28,48 @@
      <result property="townsName" column="towns_name"/>
      <result property="detailAddress" column="detail_address"/>
      <result property="zipCode" column="zip_code"/>
-        <result property="transationid" column="transationid"/>
+    <result property="transationid" column="transationid"/>
+    <result property="supplierId" column="supplier_id"/>
     </resultMap>
 
    <!-- 基础字段列 -->
    <sql id="Base_Column_List" >
 id,order_no,total_amount,good_name,userid,openid,order_type,order_status,shipping_status,delete_status,create_time,modify_time,goodid,qcodeid,
-       name,phone,province_name,city_name,county_name,towns_name,detail_address,zip_code,transationid
+       name,phone,province_name,city_name,county_name,towns_name,detail_address,zip_code,transationid,supplier_id
     </sql>
 
     <!--获取订单编号-->
     <select id="getOrderNo" resultType="String"  parameterType="java.lang.String" flushCache="true" useCache="false">
         select  system_sequence('zssp_order_no') FROM DUAL
+    </select>
+
+    <select id="queryMixList" resultMap="BaseResultMap">
+        select t.*,s.shop_name as "bsactivityShop.shopName"
+        from t_bsactivity_order t
+        LEFT JOIN t_bsactivity_shop s on s.id = t.supplier_id
+        <where>
+            <if test="goodsid != null">
+                and t.goodsid = #{goodsid}
+            </if>
+            <if test="userid != null">
+                and t.userid = #{userid}
+            </if>
+            <if test="supplierId != null">
+                and t.supplier_id = #{supplierId}
+            </if>
+            <if test="status != null">
+                and t.status = #{status}
+            </if>
+            <if test="name != null and name.trim() != ''">
+                and t.name = #{name}
+            </if>
+            <if test="phone != null and phone.trim() != ''">
+                and t.phone = #{phone}
+            </if>
+            <if test="openid != null and openid.trim() != ''">
+                and t.openid = #{openid}
+            </if>
+        </where>
+        order by t.create_time desc
     </select>
 </mapper>

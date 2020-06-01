@@ -50,9 +50,9 @@ public class BsactivityGoodsExchangeService {
      * 5、完善订单
      * @param goods
      */
-    public void scanExchange(BsactivityGoods goods, BsactivityGoodsqcode qcodeBean, WxUser user,Long exchangeNum){
+    public void scanExchange(BsactivityGoods goods, BsactivityGoodsqcode qcodeBean, WxUser user,Long exchangeNum,Long supplierId){
         //生成订单
-        BsactivityOrder order = createOrder(goods,qcodeBean,user);
+        BsactivityOrder order = createOrder(goods,qcodeBean,user,supplierId);
         DistributedLock lock = distributedLockUtil.getDistributedLock("zssp_createorder");
         try {
             if (lock.acquire()) {
@@ -85,7 +85,7 @@ public class BsactivityGoodsExchangeService {
      * @param user
      * @return
      */
-    public BsactivityOrder createOrder(BsactivityGoods goods, BsactivityGoodsqcode qcodeBean, WxUser user){
+    public BsactivityOrder createOrder(BsactivityGoods goods, BsactivityGoodsqcode qcodeBean, WxUser user,Long supplierId){
         BsactivityOrder order = new BsactivityOrder();
         order.setCreateTime(new Date());
         order.setGoodid(goods.getId());//商品id
@@ -97,6 +97,7 @@ public class BsactivityGoodsExchangeService {
         order.setShippingStatus(0);//发货状态 1：已发货 0：未发货
         order.setDeleteStatus(0);//删除状态 1：已删除 0：未删除
 
+        order.setSupplierId(supplierId);
         order.setName(user.getNickname());
         order.setPhone(user.getPhone());
         order.setUserid(user.getId().longValue());

@@ -10,6 +10,11 @@
 
     <title></title>
     <#include "/header.html">
+    <!-- 百度地图api -->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Vom9PNDgBgwxB5NHCrXGOoeawsOj1B98"></script>
+    <!--  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nsHiiQyIYQiRhOwj9Hzswulw"></script>-->
+    <script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
     <style>
         .goodimg{
           display: flex;
@@ -111,7 +116,16 @@
            display: flex;
            justify-content: center;
             padding:2rem;
-             font-size: 1.5rem;
+           font-size: 1.5rem;
+
+        }
+         .shoplist{
+           flex:1;
+           display: flex;
+           justify-content: center;
+            padding:2rem;
+            font-size: 1.5rem;
+            border-top: 2px solid #eee;
         }
         .footer{
             display: flex;
@@ -196,7 +210,7 @@
 <div id="icloudapp" v-cloak>
 
     <!--商品兑换-->
-    <div v-if="!showerror" style="margin-top:10rem;">
+    <div v-if="!showerror" style="margin-top:5rem;">
         <!--头部-->
         <div>
             <div class="goodimg">
@@ -236,6 +250,15 @@
             </div>
 
             <div class="longcoin">{{dcurrencyInfo}}</div>
+
+            <div class="shoplist">
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1" style="display:flex;justify-content:center;">请选择您当前所在的店铺</label>
+                    <select class="form-control" id="exampleFormControlSelect1" v-model="supplierId" style="background-color:white;box-shadow:none;transition:none;">
+                        <option  v-for="(item, index) in shoplist" :key="index" :value="item.id">{{item.shopName}}</option>
+                    </select>
+                </div>
+            </div>
         </div>
         <!--底部-->
         <div class="footer">

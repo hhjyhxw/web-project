@@ -358,7 +358,7 @@ public class MapEntryUtils {
         Iterator<Map.Entry<String, Object>> iter=map.entrySet().iterator();
         while (iter.hasNext()) {
             Map.Entry<String, Object> entry = iter.next();
-            System.out.println(entry.getKey()+"======="+entry.getValue());
+//            System.out.println(entry.getKey()+"======="+entry.getValue());
             if(entry.getKey()!=null && (entry.getValue()==null || "".equals(entry.getValue().toString().trim()))){
                 iter.remove();
             }

@@ -4,27 +4,16 @@ $(function () {
         datatype: "json",
         colModel: [			
 			{ label: 'id', name: 'id', index: 'id', width: 50, key: true },
-			{ label: '订单编号', name: 'orderNo', index: 'order_no', width: 80 }, 			
-			{ label: '总金额', name: 'totalAmount', index: 'total_amount', width: 80 }, 			
-			{ label: '商品名称', name: 'goodName', index: 'good_name', width: 80 }, 			
-			{ label: '用户id', name: 'userid', index: 'userid', width: 80 }, 			
-			{ label: 'openid', name: 'openid', index: 'openid', width: 80 }, 			
-			{ label: '订单类型（0、扫码消费、1、）', name: 'orderType', index: 'order_type', width: 80 }, 			
-			{ label: '订单状态 0：未支付，1：已支付  ，2已完成', name: 'orderStatus', index: 'order_status', width: 80 }, 			
-			{ label: '发货状态 1：已发货 0：未发货', name: 'shippingStatus', index: 'shipping_status', width: 80 }, 			
-			{ label: '删除状态 1：已删除 0：未删除', name: 'deleteStatus', index: 'delete_status', width: 80 }, 			
-			{ label: '订单创建时间', name: 'createTime', index: 'create_time', width: 80 }, 			
-			{ label: '订单修改时间', name: 'modifyTime', index: 'modify_time', width: 80 }, 			
-			{ label: '商品id', name: 'goodid', index: 'goodid', width: 80 }, 			
-			{ label: '商品二维id', name: 'qcodeid', index: 'qcodeid', width: 80 }, 			
-			{ label: '收货用户', name: 'name', index: 'name', width: 80 }, 			
-			{ label: '收货用户手机', name: 'phone', index: 'phone', width: 80 }, 			
-			{ label: '省', name: 'provinceName', index: 'province_name', width: 80 }, 			
-			{ label: '市', name: 'cityName', index: 'city_name', width: 80 }, 			
-			{ label: '县', name: 'countyName', index: 'county_name', width: 80 }, 			
-			{ label: '乡镇', name: 'townsName', index: 'towns_name', width: 80 }, 			
-			{ label: '详细地址', name: 'detailAddress', index: 'detail_address', width: 80 }, 			
-			{ label: '邮编', name: 'zipCode', index: 'zip_code', width: 80 }			
+			{ label: '订单编号', name: 'orderNo', index: 'order_no', width: 120 },
+			{ label: '消耗龙币（个）', name: 'totalAmount', index: 'total_amount', width: 80 },
+			{ label: '商品名称', name: 'goodName', index: 'good_name', width: 120 },
+			{ label: '商户名称', name: 'bsactivityShop.shopName', index: 'supplier_id', width: 120 },
+			{ label: '订单状态', name: 'orderStatus', width: 60, formatter: function(value, options, row){
+                                    				return value === 0 ?'<span class="label label-danger">未支付</span>' :
+                                    				(value === 1?'<span class="label label-danger">已支付</span>':'<span class="label label-success">已完成</span>');
+                                    			}},
+			{ label: '下单时间', name: 'createTime', index: 'create_time', width: 100 },
+			{ label: '用户昵称', name: 'name', index: 'name', width: 80 }
         ],
 		viewrecords: true,
         height: 385,

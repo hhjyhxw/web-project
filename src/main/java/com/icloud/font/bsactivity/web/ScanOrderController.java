@@ -115,7 +115,7 @@ public class ScanOrderController {
      */
     @RequestMapping("/exchange")
     @ResponseBody
-    public R exchange(@LoginUser WxUser wxUser, Long goodsId,Long exchangeNum){
+    public R exchange(@LoginUser WxUser wxUser, Long goodsId,Long exchangeNum,Long supplierId){
         try {
             String qcode = wxUser.getQcode();
             log.info("exchange_goodsId==="+goodsId+";qcode=="+qcode+";exchangeNum=="+exchangeNum);
@@ -124,6 +124,9 @@ public class ScanOrderController {
             }
             if(goodsId==null){
                 return R.error("商品参数为空!");
+            }
+            if(supplierId==null){
+                return R.error("请选择兑换商铺!");
             }
             if(!StringUtil.checkStr(qcode)){
                 return R.error("错误二维码!");
@@ -152,7 +155,7 @@ public class ScanOrderController {
             if(bsactivityGoods.getStore()-(bsactivityGoods.getFreezeStore()!=null?bsactivityGoods.getFreezeStore():0)<exchangeNum){
                 return R.error("库存不足");
             }
-            bsactivityGoodsExchangeService.scanExchange(bsactivityGoods,bsactivityGoodsqcode,wxUser,exchangeNum);
+            bsactivityGoodsExchangeService.scanExchange(bsactivityGoods,bsactivityGoodsqcode,wxUser,exchangeNum,supplierId);
             return R.ok("兑换成功");
         } catch (Exception e) {
             e.printStackTrace();
