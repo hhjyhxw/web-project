@@ -252,9 +252,10 @@
             <div class="longcoin">{{dcurrencyInfo}}</div>
 
             <div class="shoplist">
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1" style="display:flex;justify-content:center;">请选择您当前所在的店铺</label>
-                    <select class="form-control" id="exampleFormControlSelect1" v-model="supplierId" style="background-color:white;box-shadow:none;transition:none;">
+                <div class="form-group" style=" display: flex; justify-content: center; align-items: center;">
+<!--                    <label for="exampleFormControlSelect1" style="display:flex;justify-content:center;">请选择您当前所在的店铺</label>-->
+                    <label for="exampleFormControlSelect1" style="width:10rem;text-align:center;color:red;margin-bottom:0;">所属店铺:</label>
+                    <select class="form-control" id="exampleFormControlSelect1" v-model="supplierId" style="background-color:white;box-shadow:none;transition:none;border-color:red;">
                         <option  v-for="(item, index) in shoplist" :key="index" :value="item.id">{{item.shopName}}</option>
                     </select>
                 </div>

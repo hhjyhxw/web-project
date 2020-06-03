@@ -49,13 +49,23 @@ public class ShopController {
     public String firstlist(){
         return "redirect:/frontpage/bsactivity/shop/list";
     }
+
+
+    /**
+     * 进入店铺列表
+     * @return
+     */
+    @RequestMapping("/shoplist")
+    public String shoplist(){
+        return "modules/front/bsactivity/shoplist";
+    }
     /**
      * 进入店铺列表
      * @return
      */
     @RequestMapping("/list")
     public String list(){
-        return "modules/front/bsactivity/shoplist";
+        return "modules/front/bsactivity/beforeShoplist";
     }
 
     /**

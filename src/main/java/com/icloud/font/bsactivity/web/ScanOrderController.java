@@ -45,6 +45,11 @@ public class ScanOrderController {
     @Autowired
     private BsactivityGoodsExchangeService bsactivityGoodsExchangeService;
 
+
+    @RequestMapping("/toScanOrder")
+    public String toScanOrder(){
+        return "modules/front/bsactivity/scanOrder";
+    }
     /**
      * 用户扫商品专属二维码，跳转到专属二维码活动首页
      * @param qcode
@@ -67,7 +72,9 @@ public class ScanOrderController {
             if(bsactivityGoodsqcode.getStatus().intValue()==1){
                 return "modules/front/bsactivity/scanOrderComsued";
             }else{
-                return "modules/front/bsactivity/scanOrder";
+//                return "modules/front/bsactivity/scanOrder";
+                //用户第一次登陆需要到第三方系统获取用户信息，这时候微信jssdk 获取失败，所以做一个中转页面处理
+                return "modules/front/bsactivity/scanBeforeOrder";
             }
 //            return "modules/front/bsactivity/confirOrder?qcode="+qcode+"&time="+ RandomUtil.getRandomString(12);
         } catch (Exception e) {

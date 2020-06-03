@@ -46,12 +46,17 @@ $(function () {
 
 
     function getJssdk(){
+//         var link0 = window.location.href;
+//         console.log("link0=="+link0);
         //加载微信配置
         var link = (window.location.href).split('#')[0];
+//         console.log("link1=="+link);
         if(link.indexOf("?")>=0){
-             link = link.split('?')[0];
+//             link = link.split('?')[0];
         }
-         console.log("link=="+link);
+        console.log("link1=="+link);
+//        link = encodeURIComponent(link);
+         console.log("link2=="+link);
         $.ajax({
             url:fontbaseURL + "/frontpage/jsSdkConfig/getJsSdkConfig",//后台给你提供的接口
             type:"GET",
@@ -74,7 +79,7 @@ $(function () {
                 //type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
                 type: 'gcj02',
                 success: function (res) {
-                    // console.log("定位成功res=="+JSON.stringify(res));
+                     console.log("定位成功res=="+JSON.stringify(res));
                     latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
                     longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
                     var speed = res.speed; // 速度，以米/每秒计

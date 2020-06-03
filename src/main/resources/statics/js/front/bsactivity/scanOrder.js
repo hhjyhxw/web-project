@@ -23,9 +23,11 @@ function getJssdk(){
         //加载微信配置
         var link = (window.location.href).split('#')[0];
         if(link.indexOf("?")>=0){
-             link = link.split('?')[0];
+//             link = link.split('?')[0];
         }
          console.log("link=="+link);
+//         link = encodeURIComponent(link);
+          console.log("link2=="+link);
         $.ajax({
             url:fontbaseURL + "/frontpage/jsSdkConfig/getJsSdkConfig",//后台给你提供的接口
             type:"GET",
