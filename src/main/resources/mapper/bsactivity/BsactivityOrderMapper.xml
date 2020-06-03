@@ -69,6 +69,12 @@ id,order_no,total_amount,good_name,userid,openid,order_type,order_status,shippin
             <if test="openid != null and openid.trim() != ''">
                 and t.openid = #{openid}
             </if>
+            <if test="goodName != null and goodName.trim() != ''">
+                and t.good_name like '%'||#{goodName}||'%'
+            </if>
+            <if test="shopName != null and shopName.trim() != ''">
+                and s.shop_name like '%'||#{shopName}||'%'
+            </if>
         </where>
         order by t.create_time desc
     </select>
