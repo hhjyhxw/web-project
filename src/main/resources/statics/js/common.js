@@ -4,17 +4,19 @@ $.jgrid.defaults.responsive = true;
 $.jgrid.defaults.styleUI = 'Bootstrap';
 
 var baseURL = "../../";
-var imgURL = "http://localhost:8080/";//本地
-var fontbaseURL="http://localhost:8080/";
+// var imgURL = "http://localhost:8080/";//本地
+// var fontbaseURL="http://localhost:8080/";
+// var verify_remoteUrl="http://zl.haiyunzy.com/realWxCardManager/realWxCard!ajaxverification.action?"//卡券核销接口
 //test
 //var imgURL = "http://zl.haiyunzy.com/bsactivity/";
 //var fontbaseURL = "http://zl.haiyunzy.com/bsactivity/";
+var verify_remoteUrl="http://zl.haiyunzy.com/realWxCardManager/realWxCard!ajaxverification.action?"
 
 //pro
 ////var imgURL = "http://ld.thewm.cn/zlactivity/";
 // var imgURL = "http://res.thewm.cn/zlactivity/";
 // var fontbaseURL = "http://ld.thewm.cn/zlactivity/";
-
+// var verify_remoteUrl="http://wx.thewm.cn/realWxCardManager/realWxCard!ajaxverification.action?"
 //工具集合Tools
 window.T = {};
 
