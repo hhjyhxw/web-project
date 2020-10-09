@@ -4,11 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.cloud</groupId>
-    <artifactId>web-project</artifactId>
+    <artifactId>zlactivity</artifactId>
     <!-- <version>1.0.0</version> -->
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
+    <!--<packaging>war</packaging>-->
 
-    <name>web-project</name>
+    <name>zlactivity</name>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -613,6 +614,7 @@
     </dependencyManagement>
 
     <build>
+        <finalName>zlactivity-1.0.0</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

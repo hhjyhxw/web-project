@@ -20,15 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6fbc680-6164-4f33-9b24-94a00587f493" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/icloud/font/card/CardVerifyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/icloud/font/card/UserInfoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/statics/js/front/card/goverify.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/modules/front/card/beforeVerify.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/modules/front/card/goverify.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/web_project_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/web_project_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/icloud/font/H5LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/modules/front/card/verifySucess.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/modules/h5login/error.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/statics/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/statics/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/statics/js/front/bsactivity/shoplist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/statics/js/front/bsactivity/shoplist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icloud/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icloud/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icloud/basecommon/service/redis/RedisCacheConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icloud/basecommon/service/redis/RedisCacheConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icloud/config/interceptor/InterceptorsStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icloud/config/interceptor/InterceptorsStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icloud/config/interceptor/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icloud/config/interceptor/LoginInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icloud/font/s.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icloud/thirdinterfaces/s.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icloud/thirdinterfaces/s.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/template/Controller.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/template/Controller.java.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/template/Dao.xml.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/template/Dao.xml.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/template/Service.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/template/Service.java.vm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/web-project.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,9 +49,6 @@
   </component>
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
-  </component>
-  <component name="CompilerWorkspaceConfiguration">
-    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -57,9 +65,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JRebelWorkspace">
-    <option name="jrebelEnabledAutocompile" value="true" />
-  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -75,11 +80,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/src/test/java/com/icloud/NicknameTest.java&#10;D:/project/myproject/web-project/src/main/resources/application-dev.yml&#10;D:/project/myproject/web-project/src/main/resources/application.yml&#10;D:/project/myproject/web-project/src/main/resources/application-dev-init-bak.yml" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/modules/front/card" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/template" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -89,27 +96,27 @@
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\project\myproject\web-project\src\main\resources\templates\modules\front\card" />
-      <recent name="D:\project\myproject\web-project\src\main\resources\statics\js\front\card" />
-      <recent name="D:\project\myproject\web-project\src\main\resources\templates\modules\front\bsactivity" />
-      <recent name="D:\project\myproject\web-project\src\main\resources" />
-      <recent name="D:\project\myproject\web-project\src\main\resources\mapper\scanactivity" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.icloud.font.card" />
-      <recent name="com.icloud.aspect" />
-      <recent name="com.icloud.common.validator.group" />
-      <recent name="com.icloud.font.bsactivity.web" />
-      <recent name="com.icloud.common.util.wx.model" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\project\myproject\web-project\src\main\resources\templates\modules\front\" />
       <recent name="D:\project\myproject\web-project\src\main\resources\statics\third_plugin" />
       <recent name="D:\project\myproject\web-project\src\main\resources\statics\js" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.icloud.font" />
+      <recent name="com.icloud.font.card" />
+      <recent name="com.icloud.aspect" />
+      <recent name="com.icloud.common.validator.group" />
+      <recent name="com.icloud.font.bsactivity.web" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\myproject\web-project\src\main\resources\template" />
+      <recent name="D:\project\myproject\web-project\src\main\resources\templates\modules\h5login" />
+      <recent name="D:\project\myproject\web-project\src\main\java\com\icloud\modules" />
+      <recent name="D:\project\myproject\web-project\src\main\resources\templates\modules\front\card" />
+      <recent name="D:\project\myproject\web-project\src\main\resources\statics\js\front\card" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.LongCoinChargeTest.apiTest">
+  <component name="RunManager" selected="Application.Application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.icloud.Application" />
       <module name="web-project" />
@@ -181,17 +188,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="web-project" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.icloud.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Application" />
       <item itemvalue="Application.NicknameTest" />
       <item itemvalue="Application.TimeTest" />
       <item itemvalue="JUnit.LongCoinChargeTest.apiTest" />
       <item itemvalue="JUnit.LongCoinQueryTest" />
+      <item itemvalue="Spring Boot.Application" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LongCoinChargeTest.apiTest" />
         <item itemvalue="Application.Application" />
+        <item itemvalue="JUnit.LongCoinChargeTest.apiTest" />
         <item itemvalue="Application.TimeTest" />
         <item itemvalue="Application.NicknameTest" />
         <item itemvalue="JUnit.LongCoinQueryTest" />
@@ -209,7 +224,21 @@
       <option name="presentableId" value="Default" />
       <updated>1572515534215</updated>
       <workItem from="1592383846077" duration="1193000" />
-      <workItem from="1592445040522" duration="19734000" />
+      <workItem from="1592445040522" duration="20402000" />
+      <workItem from="1592794535484" duration="2888000" />
+      <workItem from="1594866675366" duration="2075000" />
+      <workItem from="1595235847896" duration="609000" />
+      <workItem from="1596161970770" duration="688000" />
+      <workItem from="1596417050561" duration="701000" />
+      <workItem from="1596502412179" duration="2019000" />
+      <workItem from="1600397508130" duration="1554000" />
+      <workItem from="1600483628770" duration="1911000" />
+      <workItem from="1600614186478" duration="1383000" />
+      <workItem from="1600764568676" duration="94000" />
+      <workItem from="1601556319641" duration="658000" />
+      <workItem from="1602081136370" duration="637000" />
+      <workItem from="1602230973421" duration="2026000" />
+      <workItem from="1602234504984" duration="1681000" />
     </task>
     <task id="LOCAL-00001" summary="修改写字楼售bug">
       <created>1574649748896</created>
@@ -267,30 +296,30 @@
     <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1279" height="174" key="GridCell.Tab.0.bottom" timestamp="1592391061445">
+    <state x="249" y="0" key="#Project_Structure" timestamp="1602234561952">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1279" height="174" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592391061445" />
-    <state width="1279" height="174" key="GridCell.Tab.0.center" timestamp="1592391061445">
+    <state x="249" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1602234561952" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1596417164907">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1279" height="174" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592391061445" />
-    <state width="1279" height="174" key="GridCell.Tab.0.left" timestamp="1592391061445">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596417164907" />
+    <state width="1277" height="289" key="GridCell.Tab.0.bottom" timestamp="1602236184753">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1279" height="174" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592391061445" />
-    <state width="1279" height="174" key="GridCell.Tab.0.right" timestamp="1592391061445">
+    <state width="1277" height="289" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602236184753" />
+    <state width="1277" height="289" key="GridCell.Tab.0.center" timestamp="1602236184753">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1279" height="174" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592391061445" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1592384187260">
+    <state width="1277" height="289" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602236184753" />
+    <state width="1277" height="289" key="GridCell.Tab.0.left" timestamp="1602236184753">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1592384187260" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1592470273403">
+    <state width="1277" height="289" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602236184753" />
+    <state width="1277" height="289" key="GridCell.Tab.0.right" timestamp="1602236184753">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1592470273403" />
+    <state width="1277" height="289" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602236184753" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -26,15 +26,4 @@ public class Application extends SpringBootServletInitializer {
         SpringApplication.run(Application.class, args);
     }
 
-
-//    @Bean
-//    public InternalResourceViewResolver htmlViewResolver() {
-//        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-//        viewResolver.setPrefix("");
-//        viewResolver.setViewClass(HandleResourceViewExists.class); //设置检查器
-//        viewResolver.setSuffix(".html");
-//        viewResolver.setOrder(0);
-//        viewResolver.setContentType("text/html;charset=UTF-8");
-//        return viewResolver;
-//    }
 }

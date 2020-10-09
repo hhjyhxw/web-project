@@ -62,6 +62,10 @@ public class LoginInterceptor implements HandlerInterceptor{
             visiturl.append("?" + request.getQueryString()); // 参数
         log.info("visiturl====="+visiturl);
 
+        if(visiturl.indexOf("/cardVerify/verify")>0){
+            return true;
+        }
+
         HttpSession session = request.getSession();
         WxUser user = null;
         Object uerobj =  session.getAttribute("wx_user");

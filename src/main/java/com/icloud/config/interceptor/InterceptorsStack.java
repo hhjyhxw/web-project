@@ -36,7 +36,7 @@ class InterceptorsStack implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
 //        registry.addInterceptor(new XssCsrfInterceptor()).addPathPatterns(new String[] { "/**" }).excludePathPatterns(new String[] { "/thirdInterfacePath/**" })
-//                .excludePathPatterns(new String[] { "/beanGoods/goodsDetail" })
+////                .excludePathPatterns(new String[] { "/beanGoods/goodsDetail" })
 //                .excludePathPatterns(new String[] { "/checkToken/removeToken" })
 //                .excludePathPatterns(new String[] { "/backpage/setting/beforeUpdate" })
 //                .excludePathPatterns(new String[] { "/backpage/setting/update" });
@@ -50,7 +50,7 @@ class InterceptorsStack implements WebMvcConfigurer {
         if("local".equals(myPropertitys.getActivein())){
             registry.addInterceptor(loginInterceptor_local).addPathPatterns(new String[]{"/frontpage/**"});
         }else{
-            registry.addInterceptor(loginInterceptor).addPathPatterns(new String[]{"/frontpage/**"});
+            registry.addInterceptor(loginInterceptor).addPathPatterns(new String[]{"/frontpage/**"}).excludePathPatterns(new String[] { "/frontpage/card/cardVerify/verify" });
         }
 
     }
